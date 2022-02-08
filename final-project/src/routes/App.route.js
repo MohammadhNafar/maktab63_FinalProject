@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../pages/Home/index';
+import Home from '../pages/Home/Home.page';
 import LoginPage from '../pages/Login/index';
 import Basket from '../pages/Basket/index';
 import Checkout from '../pages/Checkout/index';
@@ -18,30 +18,48 @@ import Quantity from '../pages/Panel/quantity/index';
 
 import {PATHS} from './routes.config'
 
-
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-function App() {
 
-  
+
+
+
+const AppRoute = () => {
+  return (
+
     <BrowserRouter>
     <Routes>
-    <Route path={PATHS.HOME} element={<Home />} />
-
-
-      
+    <Route path={PATHS.HOME} element={<Home/>} />
+    <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+    <Route path={PATHS.QUANTITY} element={<Quantity/>} />
     </Routes>
     
     
     
     </BrowserRouter>
 
-
-  // return (
-  //   <div>
-  //     <h1>my shop</h1>
-  //   </div>
-  // );
+  );
 }
 
-export default App;
+export default AppRoute;
+
+
+// function App() {
+
+  
+    // <BrowserRouter>
+    // <Routes>
+    // <Route path={PATHS.HOME} element={<Home/>} />
+    // <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+    // <Route path={PATHS.QUANTITY} element={<Quantity/>} />
+    // </Routes>
+    
+    
+    
+    // </BrowserRouter>
+
+
+
+// }
+
+// export default App;

@@ -1,0 +1,8 @@
+.container
+{
+    width: 100vw;
+    height: 30rem;
+    background-image: url('../../../../assets/images/middleimage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

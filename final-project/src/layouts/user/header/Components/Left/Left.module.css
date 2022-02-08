@@ -1,0 +1,13 @@
+.container
+{
+    display: flex;
+    gap: 3rem;
+}
+.cart
+{
+    cursor: pointer;
+}
+.login
+{
+    cursor: pointer;
+}
