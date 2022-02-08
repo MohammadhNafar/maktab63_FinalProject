@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from '../pages/Home/Home.page';
-import LoginPage from '../pages/Login/index';
+import LoginPage from '../pages/Login/login.page';
 import Basket from '../pages/Basket/index';
 import Checkout from '../pages/Checkout/index';
 import Paymentfaild from '../pages/Payment/paymentResultFail/index';
