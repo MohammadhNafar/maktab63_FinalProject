@@ -21,6 +21,7 @@
   }
   .form button {
     font-family: "Roboto", sans-serif;
+    
     text-transform: uppercase;
     outline: 0;
     background: red;
@@ -28,7 +29,8 @@
     border: 0;
     padding: 15px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 1.5rem;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;

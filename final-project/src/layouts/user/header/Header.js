@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className={Styles.container}>
             <Left/>
-            <img src={Logo}></img>
+            <img className={Styles.homeLogo} src={Logo}></img>
             <Right/>
             
         </div>

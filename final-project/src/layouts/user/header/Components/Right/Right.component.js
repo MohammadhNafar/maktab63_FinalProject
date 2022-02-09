@@ -4,7 +4,7 @@ import Styles from './Right.module.css';
 const RightComponent = () => {
     return (
         <div className= {Styles.right}>
-            <p>چوکوفور Chocofur</p>
+            <p>Chocofur</p>
         </div>
     );
 }

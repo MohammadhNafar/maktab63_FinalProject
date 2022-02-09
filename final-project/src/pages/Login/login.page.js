@@ -1,6 +1,8 @@
 import React from 'react';
+
 import {Link} from 'react-router-dom';
 import Styles from './login.page.module.css';
+
 
 const LoginPage = () => {
     return (
@@ -12,10 +14,11 @@ const LoginPage = () => {
             <div className={Styles.form}>
                 
                 <form className={Styles.form1}>
-                <h1>Login</h1>
+                <h1>ورود مدیریت</h1>
                 <input type="text" placeholder="username"/>
                 <input type="password" placeholder="password"/>
-                <button>login</button>
+                <Link to='/Quantity' ><button >ورود</button></Link>
+                
                 </form>
             </div>
             </div>

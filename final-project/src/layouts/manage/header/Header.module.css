@@ -1,0 +1,36 @@
+.container
+{
+    width: 100vw;
+    height: 14vh;
+    font-family: system-ui;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    font-size: 0.6rem;
+    color: rgb(95, 95, 95);
+}
+.btns
+{
+    
+    display: flex;
+    gap: 3rem;
+    
+}
+.manageHeaderH1
+{
+    margin-top: 2.8rem;
+    height: 4rem;
+    
+}
+.manageHeaderH1:hover
+{
+    -webkit-box-shadow: 0 8px 6px -6px red;
+	   -moz-box-shadow: 0 8px 6px -6px red;
+	        box-shadow: 0 8px 6px -6px red;
+            cursor: pointer;
+}
+.manageHeaderH2
+{
+    font-size: 1.2rem;
+    color: red;
+}

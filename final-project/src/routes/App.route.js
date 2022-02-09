@@ -5,11 +5,11 @@ import Basket from '../pages/Basket/index';
 import Checkout from '../pages/Checkout/index';
 import Paymentfaild from '../pages/Payment/paymentResultFail/index';
 import Paymentsuccess from '../pages/Payment/paymentResultSuccess';
-import Products from '../pages/Products/index';
-import Orders from '../pages/Panel/orders/index';
-import Product from '../pages/Panel/product/index';
-import profile from '../pages/Panel/product/index';
-import Quantity from '../pages/Panel/quantity/index';
+import Product from '../pages/Product/index';
+import Orders from '../pages/Panel/orders//Orders.page';
+import Products from '../pages/Panel/products/Products.page';
+import profile from '../pages/Panel/profile/index';
+import Quantity from '../pages/Panel/quantity/Quantity.page';
 
 
 
@@ -32,6 +32,9 @@ const AppRoute = () => {
     <Route path={PATHS.HOME} element={<Home/>} />
     <Route path={PATHS.LOIGN} element={<LoginPage/>} />
     <Route path={PATHS.QUANTITY} element={<Quantity/>} />
+    <Route path={PATHS.ORDERS} element={<Orders/>} />
+    <Route path={PATHS.PRODUCTS} element={<Products/>} />
+
     </Routes>
     
     
