@@ -1,7 +1,17 @@
 import React from 'react';
 import Styles from './table.module.css';
+import BASE_URL from '../../configs/variable.config';
+import axios from 'axios';
+
 
 const TableComponent = (props) => {
+   
+    
+
+
+
+
+    console.log(BASE_URL)
     return (
 
 
