@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './routes/App.route';
+import App from './App';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>,
+    </React.Fragment>,
   document.getElementById('root')
 );

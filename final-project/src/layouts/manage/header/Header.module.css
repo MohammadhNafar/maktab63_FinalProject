@@ -5,7 +5,11 @@
     font-family: system-ui;
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid rgb(219, 219, 219);
+    
+    -webkit-box-shadow: 0 8px 6px -4px red;
+	   -moz-box-shadow: 0 8px 6px -4px red;
+	        box-shadow: 0 8px 6px -8px red;
+
     font-size: 0.6rem;
     color: rgb(95, 95, 95);
 }
@@ -21,6 +25,8 @@
     margin-top: 2.8rem;
     height: 4rem;
     
+    color: black;
+    
 }
 .manageHeaderH1:hover
 {
@@ -33,4 +39,8 @@
 {
     font-size: 1.2rem;
     color: red;
+}
+.linkTxt
+{
+    text-decoration: none;
 }

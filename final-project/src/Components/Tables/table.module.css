@@ -1,32 +1,44 @@
 
-
-
+/* td{text-align: right;
+	 direction: rtl;
+	padding: 1rem;}
 .tableH1 {
-  font-size:3rem; 
-  font-weight: 300;
+  font-size:1rem; 
+  
   line-height:1em;
   text-align: center;
-  color: black;
+  color: rgb(228, 59, 59);
 }
 
-
+.tableH1First
+{
+	font-size: 1.2rem;
+	color: white;
+	text-align: right;
+	direction: rtl;
+	padding-right: 1rem;
+}
 
 
 
 .container th .tableH1 {
-	  font-weight: bold;
-	  font-size: 1.5rem;
-  text-align: left;
+	  
+	  font-size: 1.2rem;
+ 
   color: white;
+  text-align: right;
+	 direction: rtl;
+	padding-right: 1rem;
 }
 
 .container td {
 	  font-weight: normal;
-	  font-size: 1.3rem;
+	  font-size: 1rem;
       font-weight: bold;
   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
 	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
 	        box-shadow: 0 2px 2px -2px #0E1119;
+			border: 1px solid black;
 }
 
 .container {
@@ -45,20 +57,23 @@
 }
 
 /* Background-color of the odd rows */
-.container tr:nth-child(odd) {
-	  background-color: gray;
+/* .container tr:nth-child(odd) {
+	  background-color: white;
 }
 
 /* Background-color of the even rows */
-.container tr:nth-child(even) {
+/* .container tr:nth-child(even) {
 	  background-color: white;
 }
 
 .container th {
 	  background-color: rgb(83, 83, 83);
+	  
 }
 
-.container td:first-child { color: white; }
+.container td:first-child { color: black;
+	border: 1px solid black;
+}
 
 .container tr:hover {
    background-color: #464A52;
@@ -72,4 +87,72 @@
 @media (max-width: 800px) {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
+} */ 
+
+
+
+.styled {
+    border-collapse: collapse;
+    margin: 5rem 10%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	direction: rtl;
+}
+th
+{
+	background-color:red;
+	color: white;
+}
+.styled th,
+.styled td {
+    padding: 1rem 4rem;
+	font-size: 1rem;
+	border-left: solid 2px white;
+
+	
+}
+.styled tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled tbody tr:hover {
+    border-bottom: 2px solid red;
+	
+}
+
+.styled tbody tr:hover {
+    
+    color: red;
+}
+.Id
+{
+	border-left: solid 2px white;
+	
+}
+.nameSec
+{
+	padding-left: 10rem !important;
+	
+}
+.priceSec
+{
+	padding-left: 15rem !important;
+}
+.TimeSec
+{
+	
+}
+.statusSec
+{
+	
+}
+.infoSec
+{
+	color: red;
 }

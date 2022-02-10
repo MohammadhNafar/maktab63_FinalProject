@@ -10,12 +10,12 @@ export default function Header() {
         
         <div className= {Styles.container}>
             <div className= {Styles.btns}>
-          <Link to='/Orders' ><h1 className={Styles.manageHeaderH1} >سفارش ها</h1></Link>  
-          <Link to='/Products'> <h1 className={Styles.manageHeaderH1}>محصولات</h1></Link>          
-           <Link to='/Quantity'> <h1 className={Styles.manageHeaderH1} >موجودی ها</h1></Link>
+          <Link className={Styles.linkTxt} to='/Orders' ><h1 className={Styles.manageHeaderH1} >سفارش ها</h1></Link>  
+          <Link className={Styles.linkTxt} to='/Products'> <h1 className={Styles.manageHeaderH1}>محصولات</h1></Link>          
+           <Link className={Styles.linkTxt} to='/Quantity'> <h1 className={Styles.manageHeaderH1} >موجودی ها</h1></Link>
             </div>
             
-           <Link to='/' ><h1 className={Styles.manageHeaderH1} >بازگشت به سایت</h1></Link> 
+           <Link className={Styles.linkTxt} to='/' ><h1 className={Styles.manageHeaderH1} >بازگشت به سایت</h1></Link> 
             <h2 className={Styles.manageHeaderH2}>
                 <img src={Logo} ></img>
                 پنل مدیریت</h2>

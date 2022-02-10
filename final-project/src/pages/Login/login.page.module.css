@@ -3,9 +3,9 @@
     z-index: 1;
     
     max-width: 360px;
-    margin: 0 auto ;
+    margin-left: 32%;
     
-    padding-top: 10rem ;
+    
     text-align: center;
   }
   .form input {
@@ -63,7 +63,7 @@
     clear: both;
   }
   .container .info {
-    margin: 50px auto;
+   
     text-align: center;
   }
   .container .info h1 {
@@ -106,7 +106,7 @@
       height: 3rem;
       font-size: 1rem;
       margin-top: 2rem;
-      margin-left: 100rem;
+      margin-left: 90rem;
       background-image: url('../../assets/images/back.svg');
       background-color: white;
       background-repeat: no-repeat;

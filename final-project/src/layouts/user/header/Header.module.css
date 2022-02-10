@@ -5,9 +5,11 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
+    
 }
 .homeLogo
 {
     
-    width: 10rem;
+    width: 9rem;
+    margin-top: 3rem;
 }

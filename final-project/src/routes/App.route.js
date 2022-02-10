@@ -10,6 +10,8 @@ import Orders from '../pages/Panel/orders//Orders.page';
 import Products from '../pages/Panel/products/Products.page';
 import profile from '../pages/Panel/profile/index';
 import Quantity from '../pages/Panel/quantity/Quantity.page';
+import {Rtl} from '../Components/Rtl/Rtl.component'
+
 
 
 
@@ -26,7 +28,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 const AppRoute = () => {
   return (
-
+    <Rtl>
     <BrowserRouter>
     <Routes>
     <Route path={PATHS.HOME} element={<Home/>} />
@@ -40,29 +42,8 @@ const AppRoute = () => {
     
     
     </BrowserRouter>
-
+    </Rtl>
   );
 }
 
 export default AppRoute;
-
-
-// function App() {
-
-  
-    // <BrowserRouter>
-    // <Routes>
-    // <Route path={PATHS.HOME} element={<Home/>} />
-    // <Route path={PATHS.LOIGN} element={<LoginPage/>} />
-    // <Route path={PATHS.QUANTITY} element={<Quantity/>} />
-    // </Routes>
-    
-    
-    
-    // </BrowserRouter>
-
-
-
-// }
-
-// export default App;

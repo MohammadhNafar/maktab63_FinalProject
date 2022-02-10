@@ -7,9 +7,9 @@ import Styles from '../../assets/styles/home.page.css';
 const HomePage = () => {
     return (
         <div className={Styles.container}>
-            <h1>
+          
                 <Header/>
-            </h1>
+            
             <div className= {Styles.Mid} >
             <Middle/>
 

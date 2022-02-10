@@ -12,15 +12,21 @@ const Index = () => {
             </div>
             
             
-            <Table title1 = {'سلام'}
-            title2 = {'سلام'}
-            title3 = {'سلام'}
-            title4 = {'سلام'}
-            list1 = {"سلام"}
-            list2 = {"سلام"}
-            list3 = {"سلام"}
-            list4 = {"سلام"}
+            <Table id = {'سلام'}
+            name = {'سلام'}
+            price = {'سلام'}
+            time = {'سلام'}
+            status = {'سلام'}
+            info = {'سلام'}
+
+            idList = {'1'}
+            nameList = {'ممدحسین نفر'}
+            priceList = {'1200000'}
+            timeList = {'12/12/1400'}
+            statusList = {'faild'}
+            infoList = {'progress'}
             />
+           
         </div>
     );
 }
