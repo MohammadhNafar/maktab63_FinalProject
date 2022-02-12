@@ -15,8 +15,8 @@ const LoginPage = () => {
                 
                 <form className={Styles.form1}>
                 <h1>ورود مدیریت</h1>
-                <input type="text" placeholder="username"/>
-                <input type="password" placeholder="password"/>
+                <input type="text" placeholder="نام کاربری"/>
+                <input type="password" placeholder="رمز عبور"/>
                 <Link to='/Quantity' ><button >ورود</button></Link>
                 
                 </form>

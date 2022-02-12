@@ -1,0 +1,76 @@
+.tableHead
+{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding-top: 1rem;
+   
+	width: 80rem;
+	margin: 0 auto;
+    margin-top: 1rem;
+	height: 5rem;
+	display: flex;
+	justify-content: space-around;
+    
+    
+    
+}
+.tableHead:hover
+{
+    border-bottom: 2px solid red;
+    color: red;
+}
+.tableHead h2
+{
+	direction: rtl;
+	font-size: 1rem;
+	
+	padding: 0.2rem;
+    
+    
+  
+
+}
+.List
+{
+   
+    width: 18rem;
+    
+    
+
+    
+}
+.Btns
+{
+    display: flex;
+    
+    width: 1rem;
+    height: 2.5rem;
+    gap: 1rem;
+    padding-top: 0.5rem;
+   
+
+
+}
+.Btns button
+{
+    
+    border: none;
+    color: red;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10%;
+    font-weight: bold;
+    
+}
+.thumbnail
+{
+    width: 5rem;
+    height: 5rem;
+    padding-left: 15rem;
+    
+}
+
+.Btns button:hover
+{
+    box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
+    cursor: pointer;
+}

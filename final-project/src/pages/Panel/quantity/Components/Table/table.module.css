@@ -1,0 +1,81 @@
+.styled {
+    border-collapse: collapse;
+    margin: 1rem 25%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 50rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	direction: rtl;
+   
+}
+th
+{
+	background-color:red;
+	color: white;
+}
+.styled th,
+.styled td {
+    padding: 1rem 4rem;
+	font-size: 1rem;
+	border-left: solid 2px rgb(182, 182, 182);
+
+	
+}
+.styled tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled tbody tr:hover {
+    border-bottom: 2px solid red;
+	
+}
+
+.styled tbody tr:hover {
+    
+    color: red;
+}
+
+.tableHead
+{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding-top: 1rem;
+   
+	width: 50rem;
+	margin: 0 auto;
+    margin-top: 1rem;
+	height: 4rem;
+	display: flex;
+	justify-content: space-around;
+    
+    
+    
+}
+.tableHead:hover
+{
+    border-bottom: 2px solid red;
+    color: red;
+}
+.tableHead h2
+{
+	direction: rtl;
+	font-size: 1rem;
+	
+	padding: 0.2rem 5rem;
+    
+    
+  
+
+}
+.List
+{
+   
+    width: 18rem;
+    
+
+
+    
+}
