@@ -23,3 +23,27 @@
 	color: white;
 	padding: 1rem;
 }
+.buttons
+{
+	
+	display: flex;
+	gap: 1rem;
+	padding-left: 10rem;
+	padding-top: 2rem;
+}
+.buttons button
+{
+	width: 10rem;
+	height: 2rem;
+	color: red;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 2%;
+    font-weight: bold;
+	border: none;
+}
+.buttons button:hover
+{
+	box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
+    cursor: pointer;
+}

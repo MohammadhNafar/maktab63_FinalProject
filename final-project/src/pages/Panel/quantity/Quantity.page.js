@@ -11,10 +11,17 @@ import {getProducts} from '../../../api/products.api'
 
 
 
-
 const QuantityPage = () => {
 
     const  [rows, setRows] = useState([]);
+    
+//     function handleClick()
+// {
+//   getProducts().then(data => setRows(data.data) )
+//   rows.filter(item => item.count > 0 )
+//   console.log(rows)
+// }
+
 
     useEffect(() => {
         getProducts().then(data => setRows(data.data) )
@@ -22,13 +29,25 @@ const QuantityPage = () => {
       }, [])
       const datas = rows;
       console.log(datas)
-      if (!datas) return 'no data';
-      if (!Array.isArray(datas)) return 'results are not array'
+      if (datas.count > 0)
+      {
+        console.log('zero')
+      }
+      else
+      {
+        console.log('no zero')
+      }
+      
+     
       
     return (
       
         <div>
             <Header/>
+            <div className={Styles.buttons}>
+            <button>نمایش کالا های موجود </button>
+            <button  >نمایش همه </button>
+            </div>
             <div className= {Styles.title}>
             <h1>موجودی ها</h1>
             </div>
@@ -42,12 +61,13 @@ const QuantityPage = () => {
             datas.map(
                 data =>
                 
+                
               
              
               
               <Table 
              
-  
+              key = {data.id}
              
               nameList = {data.name}
               priceList = {`${data.price} تومان`}
