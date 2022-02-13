@@ -1,9 +1,11 @@
 .box
 {
-    color: white;
-    width: 20rem;
+
+    color: black;
+    width: 19.9rem;
     height: 25rem;
-    background-color: #EE2D40;
+    background-color: white;
+    border: 0.5px solid #EE2D40;
     margin: 1rem;
     cursor: pointer;
     border-radius: 2rem;
@@ -35,12 +37,12 @@
 }
 .boxMid
 {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     word-break: break-all;
 }
 .boxMid h4
 {
-    color: white
+    color: black
    
  
     
@@ -48,10 +50,19 @@
 h5
 {
     padding-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .boxFooter
 {
     display: flex;
     justify-content: space-around;
+}
+h3
+{
+    font-size: 1rem;
+}
+.priceSec
+{
+    
+    float: left;
 }

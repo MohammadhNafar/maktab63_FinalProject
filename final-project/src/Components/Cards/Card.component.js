@@ -12,7 +12,10 @@ const CardComponent = (props) => {
             <div className={Styles.boxMid}>
                 <h3>{props.Name}</h3>
                 <h4>{props.info}</h4>
+                <div className={Styles.priceSec} >
                 <h5>{props.Price} تومان</h5>
+                </div>
+                
 
 
             </div>
