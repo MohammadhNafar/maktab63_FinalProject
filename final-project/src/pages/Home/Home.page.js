@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react';
 import {getProducts} from '../../api/products.api'
 import {IMAGE_URL} from '../../configs/image.url';
 import {useEffect, useState} from 'react';
+import List from './components/List/List.component';
 
 
 
@@ -25,7 +26,22 @@ const HomePage = () => {
             
             <div className= {Styles.Mid} >
             <Middle/>
+            <div className={Styles.listHome}>
+            { datas.map(data =>
 
+             <List
+             btnTitle = {data.category}
+             
+             
+             />
+            
+            
+            
+            
+            )
+           
+}
+</div>
             </div>
             <div className= {Styles.bodySec}>
                 <div className={Styles.products}>
@@ -36,22 +52,14 @@ const HomePage = () => {
                         {
                             datas.map(
                                 data =>
-
                                 <Card
                     Name = {data.name}
                     info = {data.category}
                     Price = {data.price}
                     PicList = {data.image}
-                    
-                    
                     />
-
                             )
-                    
-                        }
-                    
-
-                    
+                        }                    
                     <h2><Icon  icon="ep:more-filled" width="50" height="50" /></h2>
                     </div>
                 </div>

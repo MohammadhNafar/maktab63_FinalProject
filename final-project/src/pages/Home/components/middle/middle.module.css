@@ -1,9 +1,10 @@
 .container
 {
-    width: 98.5vw;
+    width: 99vw;
     height: 30rem;
-    background-image: url('../../../../assets/images/newmid.png');
+    background-image: url('../../../../assets/images/lastMid.png');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 1rem;
     
 }

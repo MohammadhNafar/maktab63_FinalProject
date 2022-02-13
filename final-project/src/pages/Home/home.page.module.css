@@ -2,15 +2,18 @@
 body
 {
     overflow-x: hidden;
+
+    
 }
 
 
 .bodySec
 {
-    margin-top: 5rem;
-    width: 98.5vw;
+    margin: 0 auto;
+    width: 89.5vw;
     height: 200vh;
    direction: rtl;
+   /* background-color: #FACB82; */
     
 }
 .products
@@ -47,4 +50,12 @@ body
 {
     margin-top: 7rem;
     margin-right: 2rem;
+}
+.listHome
+{
+    margin: 0 auto;
+    width: 89.5vw;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,0 +1,31 @@
+.listContainer
+{
+    
+    margin: 0 auto;
+    width: 89.5vw;
+    height: 5rem;
+
+}
+.listBtns
+{
+    display: flex;
+    
+    
+}
+.listBtns button
+{
+    border-radius: 0.5rem;
+    background-color: #EE2D40;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    width: 10rem;
+    height: 3rem;
+    margin: 0 auto;
+}
+.listBtns button:hover
+{
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
