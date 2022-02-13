@@ -2,9 +2,12 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 import Styles from './login.page.module.css';
+import {useAuth} from '../../routes/ProtectedRoutes/protectedRtoutes';
 
 
 const LoginPage = () => {
+
+    
     return (
         <div>
             <Link to='/'>            <button className={Styles.HomeBtn}></button></Link>
@@ -17,7 +20,9 @@ const LoginPage = () => {
                 <h1>ورود مدیریت</h1>
                 <input type="text" placeholder="نام کاربری"/>
                 <input type="password" placeholder="رمز عبور"/>
-                <Link to='/Quantity' ><button >ورود</button></Link>
+                <Link to='/Quantity' ><button onClick={
+                    localStorage.setItem("loggedin" , "true")
+                } >ورود</button></Link>
                 
                 </form>
             </div>

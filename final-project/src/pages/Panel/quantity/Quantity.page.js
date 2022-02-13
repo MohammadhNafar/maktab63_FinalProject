@@ -28,16 +28,14 @@ const QuantityPage = () => {
         console.log(rows,'hello')
       }, [])
       const datas = rows;
+      let brands;
       console.log(datas)
-      if (datas.count > 0)
-      {
-        console.log('zero')
-      }
-      else
-      {
-        console.log('no zero')
-      }
-      
+     datas.map(data => (
+       console.log(data.brand)
+       
+     )
+     )
+    
      
       
     return (

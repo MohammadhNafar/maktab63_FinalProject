@@ -11,7 +11,7 @@ import Products from '../pages/Panel/products/Products.page';
 import profile from '../pages/Panel/profile/index';
 import Quantity from '../pages/Panel/quantity/Quantity.page';
 import {Rtl} from '../Components/Rtl/Rtl.component'
-
+import ProtectdRoutes from './ProtectedRoutes/protectedRtoutes';
 
 
 
@@ -33,9 +33,11 @@ const AppRoute = () => {
     <Routes>
     <Route path={PATHS.HOME} element={<Home/>} />
     <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+    <Route element = {<ProtectdRoutes/>}>
     <Route path={PATHS.QUANTITY} element={<Quantity/>} />
     <Route path={PATHS.ORDERS} element={<Orders/>} />
     <Route path={PATHS.PRODUCTS} element={<Products/>} />
+    </Route>
 
     </Routes>
     

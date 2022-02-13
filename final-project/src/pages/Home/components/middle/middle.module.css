@@ -1,8 +1,9 @@
 .container
 {
-    width: 100vw;
+    width: 98.5vw;
     height: 30rem;
     background-image: url('../../../../assets/images/newmid.png');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }

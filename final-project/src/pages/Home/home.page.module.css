@@ -1,0 +1,50 @@
+
+body
+{
+    overflow-x: hidden;
+}
+
+
+.bodySec
+{
+    margin-top: 5rem;
+    width: 98.5vw;
+    height: 200vh;
+   direction: rtl;
+    
+}
+.products
+{
+    width: 85%;
+    height: 100vh;
+    margin: 0 auto;
+
+  
+   
+}
+.firstSec
+{
+    
+    
+    
+    
+    width: 100%;
+    min-height: 20rem;
+    
+    
+    
+   
+}
+
+.firstSecCards
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+
+}
+.firstSecCards h2
+{
+    margin-top: 7rem;
+    margin-right: 2rem;
+}
