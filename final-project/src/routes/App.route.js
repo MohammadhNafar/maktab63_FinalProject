@@ -12,6 +12,7 @@ import profile from '../pages/Panel/profile/index';
 import Quantity from '../pages/Panel/quantity/Quantity.page';
 import {Rtl} from '../Components/Rtl/Rtl.component'
 import ProtectdRoutes from './ProtectedRoutes/protectedRtoutes';
+import NotFound from '../pages/notFound/notFound.page';
 
 
 
@@ -33,6 +34,9 @@ const AppRoute = () => {
     <Routes>
     <Route path={PATHS.HOME} element={<Home/>} />
     <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+    <Route path="*" element={<NotFound/>} />
+
+    
     <Route element = {<ProtectdRoutes/>}>
     <Route path={PATHS.QUANTITY} element={<Quantity/>} />
     <Route path={PATHS.ORDERS} element={<Orders/>} />

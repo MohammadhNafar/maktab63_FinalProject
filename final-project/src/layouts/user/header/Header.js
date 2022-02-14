@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className={Styles.wrapper}>
             <div className={Styles.addSec}>
-                <h1>محل تبلیغات</h1>
+             
             </div>
         <div className={Styles.container}>
             <Left/>
