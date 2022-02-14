@@ -122,13 +122,13 @@ th
 }
 
 .styled tbody tr:hover {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #EE2D40;
 	
 }
 
 .styled tbody tr:hover {
     
-    color: red;
+    color: #EE2D40;
 }
 .Id
 {
@@ -154,5 +154,5 @@ th
 }
 .infoSec
 {
-	color: red;
+	color: #EE2D40;
 }

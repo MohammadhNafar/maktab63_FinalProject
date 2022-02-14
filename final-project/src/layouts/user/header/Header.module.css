@@ -21,10 +21,11 @@
 {
     background-color: #EE2D40;
     width: 100vw;
-    height: 5rem;
+    height: 7rem;
+    background-repeat: repeat-x;
     text-align: center;
     background-size: contain;
-    background-image: url('../../../assets//images/lastMid.png');
+    background-image: url('../../../assets//images/ads.png');
 }
 .addSec h1
 {

@@ -24,6 +24,7 @@ const ProductPage = () => {
       
         <div>
             <Header/>
+            <div className={Styles.wrapper}>
             <div className= {Styles.title}>
             <h1>محصولات</h1>
             </div>
@@ -34,6 +35,7 @@ const ProductPage = () => {
               <h1>تصویر</h1>
 
             </div>
+            <div className={Styles.productList}>
              {
             datas.map(
                 data =>
@@ -53,7 +55,8 @@ const ProductPage = () => {
               />
               
             )}
-            
+            </div>
+            </div>
         </div>
     );
 }

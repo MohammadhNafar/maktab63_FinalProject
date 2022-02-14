@@ -8,7 +8,7 @@
 .tableHead
 {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: red;
+	background-color: #EE2D40;
 	
 	width: 50rem;
 	margin: 0 auto;
@@ -35,7 +35,7 @@
 {
 	width: 10rem;
 	height: 2rem;
-	color: red;
+	color: #EE2D40;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 2%;
@@ -46,4 +46,19 @@
 {
 	box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
     cursor: pointer;
+}
+.quantityList
+{
+	
+	width: 50rem;
+	height: 30rem;
+	overflow-y: scroll;
+	text-align: center;
+	margin: 0 auto;
+	border: solid 1px #EE2D40;
+}
+.wrapper
+{
+	
+	margin-bottom: 5rem;
 }

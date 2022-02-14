@@ -17,7 +17,7 @@ export default function Header() {
             
            <Link className={Styles.linkTxt} to='/' ><h1 className={Styles.manageHeaderH1} >بازگشت به سایت</h1></Link> 
             <h2 className={Styles.manageHeaderH2}>
-                <img src={Logo} ></img>
+              <Link to= '/'> <img src={Logo} ></img></Link> 
                 پنل مدیریت</h2>
         </div>
     );

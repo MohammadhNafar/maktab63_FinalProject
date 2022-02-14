@@ -17,10 +17,10 @@ const TableProductComponent = (props) => {
            </div>
            
             <div className={Styles.List}>
-            <h2>{props.categoryList}</h2>
+            <h2 className={Styles.h2Cat} >{props.categoryList}</h2>
             </div>
             <div className={Styles.List}>
-            <h2>{props.nameList}</h2>
+            <h2 className={Styles.h2Name} >{props.nameList}</h2>
             </div>
             <div className={Styles.List}>
                 <img className={Styles.thumbnail} src={`${IMAGE_URL}${props.PicList}`} ></img>

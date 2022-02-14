@@ -6,9 +6,9 @@
     display: flex;
     justify-content: space-around;
     
-    -webkit-box-shadow: 0 8px 6px -4px red;
-	   -moz-box-shadow: 0 8px 6px -4px red;
-	        box-shadow: 0 8px 6px -8px red;
+    -webkit-box-shadow: 0 8px 6px -4px #EE2D40;
+	   -moz-box-shadow: 0 8px 6px -4px #EE2D40;
+	        box-shadow: 0 8px 6px -8px #EE2D40;
 
     font-size: 0.6rem;
     color: rgb(95, 95, 95);
@@ -30,15 +30,15 @@
 }
 .manageHeaderH1:hover
 {
-    -webkit-box-shadow: 0 8px 6px -6px red;
-	   -moz-box-shadow: 0 8px 6px -6px red;
-	        box-shadow: 0 8px 6px -6px red;
+    -webkit-box-shadow: 0 8px 6px -6px #EE2D40;
+	   -moz-box-shadow: 0 8px 6px -6px #EE2D40;
+	        box-shadow: 0 8px 6px -6px #EE2D40;
             cursor: pointer;
 }
 .manageHeaderH2
 {
     font-size: 1.2rem;
-    color: red;
+    color: #EE2D40;
 }
 .linkTxt
 {

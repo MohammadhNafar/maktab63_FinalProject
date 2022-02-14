@@ -46,6 +46,7 @@ const QuantityPage = () => {
             <button>نمایش کالا های موجود </button>
             <button  >نمایش همه </button>
             </div>
+            <div className={Styles.wrapper}>
             <div className= {Styles.title}>
             <h1>موجودی ها</h1>
             </div>
@@ -55,14 +56,10 @@ const QuantityPage = () => {
               <h1>نام کالا </h1>
 
             </div>
+            <div className={Styles.quantityList}>
              {
             datas.map(
                 data =>
-                
-                
-              
-             
-              
               <Table 
              
               key = {data.id}
@@ -73,7 +70,8 @@ const QuantityPage = () => {
               />
               
             )}
-            
+            </div>
+            </div>
         </div>
     );
 }

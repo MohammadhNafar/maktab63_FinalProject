@@ -9,7 +9,7 @@
 .tableHead
 {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: red;
+	background-color: #EE2D40;
 	
 	width: 80rem;
 	margin: 0 auto;
@@ -25,4 +25,18 @@
 	padding-left: 15rem;
     padding-top: 1rem;
     border-left: 2px solid rgba(255, 255, 255, 0.418);
+}
+.wrapper
+{
+	padding-bottom: 5rem;
+}
+.productList
+{
+	height: 30rem;
+	width: 80rem;
+	margin: 0 auto;
+	text-align: center;
+	overflow-y: scroll;
+	border: solid 1px #EE2D40;
+	
 }
