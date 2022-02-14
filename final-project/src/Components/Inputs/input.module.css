@@ -1,0 +1,19 @@
+.inputs
+{
+    outline: 0;
+    background: #e0e0e0;
+    width: 100%;
+    border: 0;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-size: 14px;
+    direction: rtl;
+    
+    
+}
+.error
+{
+    color: #EE2D40;
+}
