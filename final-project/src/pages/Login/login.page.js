@@ -44,7 +44,7 @@ const LoginPage = () => {
                                     {console.log(formik.values)}
                                     <Form>
                                         <Inputs label="نام کاربری" name="userName" type="text"/>
-                                        <Inputs label="رمز عبور" name="passWord" type="text"/>
+                                        <Inputs label="رمز عبور" name="passWord" type="password"/>
 
                                     </Form>
                                     <Link to='/Quantity'>
