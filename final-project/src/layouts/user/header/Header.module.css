@@ -1,3 +1,7 @@
+
+@import url('../../../assets/styles/fonts/fontiran.css');
+
+
 .container
 {
     width: 100vw;
@@ -12,4 +16,23 @@
     
     width: 9rem;
     margin-top: 3rem;
+}
+.addSec
+{
+    background-color: #EE2D40;
+    width: 100vw;
+    height: 5rem;
+    text-align: center;
+    background-size: contain;
+    background-image: url('../../../assets//images/lastMid.png');
+}
+.addSec h1
+{
+    color: #EE2D40;
+    font-size: 1.5rem;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    margin: 0 auto;
+    font-family: IRANSans;
+    
 }

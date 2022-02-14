@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {Link} from 'react-router-dom';
 import Styles from './login.page.module.css';
@@ -6,6 +6,10 @@ import {useAuth} from '../../routes/ProtectedRoutes/protectedRtoutes';
 
 
 const LoginPage = () => {
+
+    useEffect(() => {
+        localStorage.setItem('loggedin', 'false')
+    });
 
     
     return (

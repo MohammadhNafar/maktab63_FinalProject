@@ -62,6 +62,24 @@ h3
 }
 .priceSec
 {
+    justify-content: space-between;
     
-    float: left;
+    display: flex;
 }
+.mojod
+{
+    
+    display: flex;
+    width: 10rem;
+    gap: 1rem;
+    
+}
+.mojod p
+{
+    padding-top: 0.5rem;
+}
+.mojod .cardIcon
+{
+    padding-top: 1.5rem;
+}
+

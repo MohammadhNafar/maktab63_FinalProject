@@ -30,6 +30,7 @@ const HomePage = () => {
             { datas.map(data =>
 
              <List
+             key = {data.id}
              btnTitle = {data.category}
              
              
@@ -53,6 +54,7 @@ const HomePage = () => {
                             datas.map(
                                 data =>
                                 <Card
+                                key = {data.id}
                     Name = {data.name}
                     info = {data.category}
                     Price = {data.price}

@@ -8,7 +8,14 @@ import {Link} from 'react-router-dom';
 
 
 const Header = () => {
+    const Style = {
+        
+    }
     return (
+        <div className={Styles.wrapper}>
+            <div className={Styles.addSec}>
+                <h1>محل تبلیغات</h1>
+            </div>
         <div className={Styles.container}>
             <Left/>
          <Link to='/'>
@@ -16,6 +23,7 @@ const Header = () => {
          </Link>   
             <Right/>
             
+        </div>
         </div>
     );
 }
