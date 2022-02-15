@@ -6,12 +6,14 @@ const useAuth = () =>
 {
     const user = {loggedIn: localStorage.getItem("loggedIn")}
     return user  && user.loggedIn;
+
    
 }
 
 const Protectedrtoutes = () => {
-  
     const isAuth = useAuth();
+
+  
     return   isAuth ? <Outlet/> : <Navigate to= {PATHS.LOIGN} />;
 };
 export default Protectedrtoutes;

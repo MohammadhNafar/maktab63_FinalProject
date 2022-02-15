@@ -17,6 +17,8 @@ const HomePage = () => {
     useEffect(() => {
         getProducts().then(data => setRows(data.data) )
         console.log(rows,'hello')
+        localStorage.setItem('loggedin', 'false')
+
       }, [])
       const datas = rows;
     return (
@@ -46,7 +48,7 @@ const HomePage = () => {
             </div>
             <div className= {Styles.bodySec}>
                 <div className={Styles.products}>
-                <h1 className= {Styles.firstH1} >شکلات</h1>
+                <h1 className= {Styles.firstH1} >محصولات</h1>
                 <div className={Styles.firstSec}>
                     
                     <div className={Styles.firstSecCards}>

@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link , useNavigate , useLocation} from 'react-router-dom';
 import Styles from './login.page.module.css';
-import {useAuth} from '../../routes/ProtectedRoutes/protectedRtoutes';
 import {Formik, Form} from 'formik';
 import Inputs from '../../Components/Inputs/Input.component';
 import * as Yup from 'yup';
 
+
 const LoginPage = () => {
+    
     const validate = Yup.object({
         userName: Yup
             .string()
@@ -19,7 +20,7 @@ const LoginPage = () => {
     })
 
     useEffect(() => {
-        localStorage.setItem('loggedin', 'false')
+        localStorage.setItem('loggedin', 'true')
     });
 
     return (

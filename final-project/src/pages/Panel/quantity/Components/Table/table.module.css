@@ -42,7 +42,7 @@ th
 .tableHead
 {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding-top: 1rem;
+    padding: 1.5rem;
    
 	width: 50rem;
 	margin: 0 auto;

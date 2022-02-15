@@ -1,8 +1,8 @@
 .container
 {
     width: 100vw;
-    height: 15vh;
-    
+    height: 16vh;
+    background-color: #EE2D40;
     display: flex;
     
     justify-content: space-around;
@@ -27,7 +27,7 @@
     height: 4rem;
     font-size: 0.9rem;
     
-    color: black;
+    color: white;
     
 }
 .manageHeaderH1:hover
@@ -38,7 +38,7 @@
 .manageHeaderH2
 {
     font-size: 1.2rem;
-    color: #EE2D40;
+    color: white;
 }
 .linkTxt
 {
