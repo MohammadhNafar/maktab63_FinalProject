@@ -7,14 +7,17 @@ const InputComponent = ({label, ...props}) => {
    
     return (
         <div>
-            <label htmlFor={field.name} >{label}</label>
+        <div>
+            <label className={Styles.inputLabel} htmlFor={field.name} >{label}</label>
         <input 
         className={Styles.inputs}
         {...field} {...props}
         autoComplete="off" 
         
         />
+        </div>
         <ErrorMessage component="div" className={Styles.error} name = {field.name} />
+
         </div>
     );
 }

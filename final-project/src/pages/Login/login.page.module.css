@@ -29,10 +29,7 @@
     cursor: pointer;
     margin-top: 1rem;
   }
-  .form button:hover,.form button:active,.form button:focus {
-    background: white;
-    color: #EE2D40;
-  }
+
   .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;

@@ -4,8 +4,8 @@
     background: #e0e0e0;
     width: 100%;
     border: 0;
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     padding: 1rem;
     box-sizing: border-box;
     font-size: 14px;
@@ -16,4 +16,17 @@
 .error
 {
     color: #EE2D40;
+    direction: rtl;
+    
+    margin-bottom: 1rem;
+    float: right;
+    
+}
+.inputLabel
+{
+    direction: rtl;
+    margin-bottom: 5rem;
+    margin-left: 26rem;
+    position: absolute;
+    
 }

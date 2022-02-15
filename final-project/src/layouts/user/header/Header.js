@@ -13,9 +13,9 @@ const Header = () => {
     }
     return (
         <div className={Styles.wrapper}>
-            <div className={Styles.addSec}>
+            {/* <div className={Styles.addSec}>
              
-            </div>
+            </div> */}
         <div className={Styles.container}>
             <Left/>
          <Link to='/'>

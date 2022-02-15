@@ -1,21 +1,29 @@
 
 @import url('../../../assets/styles/fonts/fontiran.css');
 
+.wrapper
+{
+    
+    background-color: white;
+    
+}
 
 .container
 {
+    
     width: 100vw;
-    height: 8rem;
+    height: 5rem;
     background-color: white;
     display: flex;
     justify-content: space-around;
+    
     
 }
 .homeLogo
 {
     
     width: 9rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .addSec
 {
