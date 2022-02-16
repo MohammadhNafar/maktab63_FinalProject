@@ -4,16 +4,14 @@ import {PATHS} from '../routes.config';
 
 const useAuth = () => 
 {
-    const user = {loggedIn: localStorage.getItem("loggedIn")}
+    const user = {loggedIn: true}
     return user  && user.loggedIn;
-
    
 }
 
 const Protectedrtoutes = () => {
-    const isAuth = useAuth();
-
   
-    return   isAuth ? <Outlet/> : <Navigate to= {PATHS.LOIGN} />;
+    const isAuth = useAuth();
+    return   isAuth ? <Outlet/> : <Navigate to= {PATHS.LOIGN}/>;
 };
 export default Protectedrtoutes;

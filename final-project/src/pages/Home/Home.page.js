@@ -17,7 +17,7 @@ const HomePage = () => {
     useEffect(() => {
         getProducts().then(data => setRows(data.data) )
         console.log(rows,'hello')
-        localStorage.setItem('loggedin', 'false')
+        //localStorage.setItem('loggedin', 'false')
 
       }, [])
       const datas = rows;

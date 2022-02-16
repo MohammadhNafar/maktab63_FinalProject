@@ -20,7 +20,7 @@ const LoginPage = () => {
     })
 
     useEffect(() => {
-        localStorage.setItem('loggedin', 'true')
+        //localStorage.setItem('loggedin', 'true')
     });
 
     return (
@@ -49,7 +49,7 @@ const LoginPage = () => {
 
                                     </Form>
                                     <Link to='/Quantity'>
-                                        <button onClick={localStorage.setItem("loggedin", "true")}>ورود</button>
+                                        <button>ورود</button>
                                     </Link>
 
                                 </form>
