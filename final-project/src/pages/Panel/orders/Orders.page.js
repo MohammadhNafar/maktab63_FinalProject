@@ -28,6 +28,7 @@ const OrdersPage = () => {
             }}
             
             >مودال</button>
+            
            {openModal && <Modal placeHolder2 = {"سلام"}
             placeHolder1 = {"سلام"}
              secendBtnTitle = {'باتل دوم'}

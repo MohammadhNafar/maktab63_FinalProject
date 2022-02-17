@@ -12,11 +12,17 @@ const CardComponent = (props) => {
             <div className={Styles.boxMid}>
                 <h3>{props.Name}</h3>
                 <h4>{props.info}</h4>
+                <div onClick = {() => props.show(true)} className={Styles.cardInfoSec}>
+                <Icon className={Styles.infoIcon} icon="ic:baseline-more" color="#ee2d40" width="25" height="25" />
+                <button className={Styles.infoButton}  >جزئیات</button>
+                </div>
+               
                 <div className={Styles.priceSec} >
                     <div className={Styles.mojod} ><Icon className={Styles.cardIcon} icon="ic:baseline-event-available" color="#ee2d40" width="25" height="25"  /> 
                     <p>موجود در انبار</p>
 </div>
                 <h5>{props.Price} تومان</h5>
+                
                 </div>
                 
 

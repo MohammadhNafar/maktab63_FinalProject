@@ -11,7 +11,9 @@ const TableProductComponent = (props) => {
             
             
            <div className={Styles.Btns}>
-               <button>ویرایش</button>
+               <button 
+               onClick = {() => props.show(true)}
+               >ویرایش</button>
                <button>حذف</button>
 
            </div>

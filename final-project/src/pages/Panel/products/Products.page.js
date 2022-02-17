@@ -39,6 +39,12 @@ const ProductPage = () => {
 
             </div>
             <div className={Styles.productList}>
+            {openModal && <Modal placeHolder2 = {"سلام"}
+            placeHolder1 = {"سلام"}
+             secendBtnTitle = {'باتل دوم'}
+              firstBtnTitle = {'باتن اول'} 
+              titleHead = {'ویرایش'} 
+              closeModal = {setOpenModal}/>} 
              {
             datas.map(
                 data =>
@@ -52,6 +58,7 @@ const ProductPage = () => {
               
                PicList = {data.image}
                 categoryList = {data.category}
+                show = {setOpenModal}
               />
               
             )}
