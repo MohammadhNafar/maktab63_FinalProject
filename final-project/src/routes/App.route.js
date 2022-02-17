@@ -34,6 +34,7 @@ const AppRoute = () => {
     <Routes>
     <Route exact path={PATHS.HOME} element={<Home/>} />
     <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+
     <Route path="*" element={<NotFound/>} />
     <Route element = {<ProtectdRoutes/>}>
     <Route exact path={PATHS.QUANTITY} element={<Quantity/>} />

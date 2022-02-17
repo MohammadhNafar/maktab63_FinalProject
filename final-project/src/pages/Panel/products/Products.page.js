@@ -5,11 +5,14 @@ import Table from './Components/Table/table.product.component';
 import {useEffect, useState} from 'react';
 import {getProducts} from '../../../api/products.api'
 import {IMAGE_URL} from '../../../configs/image.url';
+import Modal from '../../../Components/Modal/modal.page';
 
 
 const ProductPage = () => {
     
     const  [rows, setRows] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
 
     useEffect(() => {
         getProducts().then(data => setRows(data.data) )
@@ -40,9 +43,6 @@ const ProductPage = () => {
             datas.map(
                 data =>
                 
-              
-             
-              
               <Table 
              
   

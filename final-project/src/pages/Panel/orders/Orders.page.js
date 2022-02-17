@@ -4,10 +4,12 @@ import Styles from './orders.module.css';
 import Header from '../../../layouts/manage/header/Header';
 import {useEffect, useState} from 'react';
 import {getOrders} from '../../../api/user.api'
+import Modal from '../../../Components/Modal/modal.page';
 
 const OrdersPage = () => {
 
     const  [rows, setRows] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
         getOrders().then(data => setRows(data) )
@@ -19,21 +21,21 @@ const OrdersPage = () => {
             <div className= {Styles.title}>
             <h1>موجودی ها</h1>
             </div>
+            <button
+
+            onClick={()=>{
+                setOpenModal(true);
+            }}
             
+            >مودال</button>
+           {openModal && <Modal placeHolder2 = {"سلام"}
+            placeHolder1 = {"سلام"}
+             secendBtnTitle = {'باتل دوم'}
+              firstBtnTitle = {'باتن اول'} 
+              titleHead = {'ویرایش'} 
+              closeModal = {setOpenModal}/>} 
             
-            <Table title1 = {'سلام'}
-            title2 = {'سلام'}
-            title3 = {'سلام'}
-            title4 = {'سلام'}
-            list1 = {"سلام"}
-            list2 = {"سلام"}
-            list3 = {"سلام"}
-            list4 = {"سلام"}
-            
-            
-            
-            
-            />
+           
             
         </div>
     );
