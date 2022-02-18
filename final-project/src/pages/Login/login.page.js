@@ -1,12 +1,42 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link , useNavigate , useLocation} from 'react-router-dom';
 import Styles from './login.page.module.css';
-import {Formik, Form} from 'formik';
+import {Formik} from 'formik';
+import {Form}  from 'formik';
+
 import Inputs from '../../Components/Inputs/Input.component';
 import * as Yup from 'yup';
 
 
 const LoginPage = () => {
+    
+    // const [FormData, setFormData] = useState({username: '' , password: ''});
+    // const formRef = useRef();
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const form = new FormData(e.target);
+    //     const data = Object.fromEntries(form);
+    //     setFormData(data);
+    //     try {
+    //         console.log('submit', e)
+    //         console.log("username is ",e , data)
+    //     } catch (e) {
+            
+    //     }
+
+    // };
+
+    // const handleBlur = (e) =>{
+    //     if (!formRef.current) return;
+    //     console.log("handleBlur: 0 " , formRef)
+
+
+    
+    //     const form = new FormData(formRef.current);
+    //     const data = Object.fromEntries(form);
+    //     console.log("handleBlur " , data)
+        
+    // }
     
     const validate = Yup.object({
         userName: Yup
@@ -39,18 +69,18 @@ const LoginPage = () => {
                         <div className={Styles.loginpage}>
 
                             <div className={Styles.form}>
-
-                                <form className={Styles.form1}>
+ 
+                                <form  className={Styles.form1}>
                                     <h1>ورود مدیریت</h1>
                                     {console.log(formik.values)}
-                                    <Form>
-                                        <Inputs label="نام کاربری" name="userName" type="text"/>
-                                        <Inputs label="رمز عبور" name="passWord" type="password"/>
+                                     <Form>
+                                        <Inputs   label="نام کاربری" name="userName" type="text"  />
+                                        <Inputs   label="رمز عبور" name="passWord" type="password" />
 
-                                    </Form>
-                                    <Link to='/Quantity'>
-                                        <button>ورود</button>
-                                    </Link>
+                                     </Form> 
+                                    {/* <Link to='/Quantity'> */}
+                                        <button type='submit' >ورود</button>
+                                    {/* </Link> */}
 
                                 </form>
                             </div>

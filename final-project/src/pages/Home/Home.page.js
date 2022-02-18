@@ -44,6 +44,7 @@ const HomePage = () => {
                 <div className={Styles.products}>
                 <h1 className= {Styles.firstH1} >محصولات</h1>
                 <div className={Styles.firstSec}>
+                    
                 {openModal && <Modal placeHolder2 = {"سلام"}
             placeHolder1 = {"سلام"}
              secendBtnTitle = {'باتل دوم'}

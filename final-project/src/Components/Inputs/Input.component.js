@@ -8,12 +8,16 @@ const InputComponent = ({label, ...props}) => {
     return (
         <div>
         <div>
-            <label className={Styles.inputLabel} htmlFor={field.name} >{label}</label>
+            <label className={Styles.inputLabel} id = {field.name} name = {field.name} htmlFor={field.name} >{label}</label>
         <input 
+        
         className={Styles.inputs}
         {...field} {...props}
         autoComplete="off" 
         
+        id = {field.name}
+         name = {field.name}
+         
         />
         </div>
         <ErrorMessage component="div" className={Styles.error} name = {field.name} />
