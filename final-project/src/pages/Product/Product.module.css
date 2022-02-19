@@ -28,7 +28,7 @@
 {
     width: 25rem;
     height: 25rem;
-    border: 1px solid gray;
+    
     margin-right: 1rem;
 }
 .productLittleImg
@@ -52,7 +52,9 @@
 .productLittleImg
 {
     
-    border: 1px solid gray;
+    border: 1px solid rgba(128, 128, 128, 0.466);
+
+    border-radius: 1rem;
 }
 .quantityInput
 {

@@ -28,3 +28,14 @@
     color: #EE2D40;
     font-size: 0.6rem;
 }
+.animation
+{
+    width: 45rem;
+    height: 45rem;
+    padding-top: 2rem;
+    
+    position: absolute;
+    margin-left: 27rem;
+    align-items: center;
+    
+}
