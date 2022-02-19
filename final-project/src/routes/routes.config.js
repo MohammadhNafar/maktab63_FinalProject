@@ -8,6 +8,7 @@ export const PATHS = {
     PAYMENTFAILD: '/Paymentfaild',
     PAYMENTSUCCESS: '/Paymentsuccess',
     PRODUCTS: '/Products',
+    PRODUCT: '/Product',
     ORDERS: '/Orders',
     PROFILE: '/Profile',
     QUANTITY: '/Quantity'

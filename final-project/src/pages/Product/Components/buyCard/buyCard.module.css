@@ -1,0 +1,43 @@
+.buyBox
+{
+    width: 20rem;
+    height: 25rem;
+    background-color: white;
+    direction: rtl;
+    border: 2px solid #EE2D40;
+    border-radius: 1rem;
+
+    
+}
+.boxItems
+{
+    margin: 1rem;
+}
+.boxItems h1
+{
+    font-size: 1.5rem;
+
+}
+.delivery
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.mojod
+{
+    display: flex;
+    gap: 1rem;
+}
+.addButton
+{
+    width: 100%;
+    height: 3rem;
+    margin-top: 9.5rem;
+    background-color: #EE2D40;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+
+}

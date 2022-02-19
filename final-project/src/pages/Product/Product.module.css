@@ -1,0 +1,85 @@
+.body
+{
+    
+   
+    margin-top: 4rem;
+    direction: rtl;
+    padding: 1rem;
+}
+.levels
+{
+    color: #EE2D40;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+.productSec
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
+}
+.information
+{
+    display: flex;
+    gap: 1rem;
+}
+.productIMG
+{
+    width: 25rem;
+    height: 25rem;
+    border: 1px solid gray;
+    margin-right: 1rem;
+}
+.productLittleImg
+{
+    width: 5rem;
+    height: 5rem;
+}
+.images
+{
+    display: flex;
+    flex-direction: column;
+}
+.littles
+{
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    margin-right: 4rem;
+}
+.productLittleImg
+{
+    
+    border: 1px solid gray;
+}
+.quantityInput
+{
+    width: 3rem;
+}
+.centerQuantitySec
+{
+    padding-top: 15rem;
+    display: flex;
+    gap: 1rem;
+}
+.nazarat
+{
+    direction: rtl;
+    padding-top: 3rem;
+    margin-right: 2rem;
+}
+.hrHeader
+{
+    
+    border:none;
+    
+       color: gray;
+      height: 50px;
+      
+      border-bottom: 1px solid #1f1209;
+      box-shadow: 0 20px 20px -20px #333;
+   
+
+}

@@ -9,6 +9,7 @@ import {IMAGE_URL} from '../../configs/image.url';
 import {useEffect, useState} from 'react';
 import List from './components/List/List.component';
 import Modal from '../../Components/Modal/modal.page';
+import {PATHS} from '../../routes/routes.config';
 
 
 
@@ -62,6 +63,7 @@ const HomePage = () => {
                     Price = {data.price}
                     PicList = {data.image}
                     show = {setOpenModal}
+                    linkToPage = {PATHS.PRODUCT}
                     />
                             )
                         }      
