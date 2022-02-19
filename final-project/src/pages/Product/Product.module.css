@@ -62,7 +62,7 @@
 }
 .centerQuantitySec
 {
-    padding-top: 15rem;
+    padding-top: 2rem;
     display: flex;
     gap: 1rem;
 }
@@ -77,11 +77,19 @@
     
     border:none;
     
-       color: gray;
+       color: white;
       height: 50px;
       
-      border-bottom: 1px solid #1f1209;
+      border-bottom: 1px solid #ffffff;
       box-shadow: 0 20px 20px -20px #333;
    
 
+}
+
+.productInfo
+{
+    
+    width: 40rem;
+    min-height: 10rem;
+    word-break: break-all;
 }

@@ -19,7 +19,7 @@
 }
 .notFoundWrapper h1
 {
-    margin-top: 2rem;
+    margin-top: 10rem;
     direction: rtl;
 }
 .notFoundLink
@@ -37,5 +37,14 @@
     position: absolute;
     margin-left: 27rem;
     align-items: center;
+    z-index: -1;
     
+}
+.notFoundH1
+{
+    z-index: 1;
+}
+.notFoundTxt
+{
+    z-index: 0;
 }

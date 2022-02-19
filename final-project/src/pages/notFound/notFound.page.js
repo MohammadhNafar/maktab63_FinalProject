@@ -26,14 +26,14 @@ const NotfoundPage = () => {
 
             </div>
             <div className={Styles.notFoundWrapper}>
-                    <div  className={Styles.notFoundImage}>
+                    {/* <div  className={Styles.notFoundImage}>
 
                         
-                    </div>
-                    <h1>صفحه مورد نظر پیدا نشد !</h1>
+                    </div> */}
+                    <h1 className={Styles.notFoundTxt} >صفحه مورد نظر پیدا نشد !</h1>
 
                     <Link className={Styles.notFoundLink} to="/" >
-                        <h1> صفحه اصلی  </h1>
+                        <h1 className={Styles.notFoundH1}> صفحه اصلی  </h1>
                         </Link>
             </div>
             
