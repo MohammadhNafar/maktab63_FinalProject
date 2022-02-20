@@ -10,86 +10,152 @@ import * as Yup from 'yup';
 
 const LoginPage = () => {
     
-    // const [FormData, setFormData] = useState({username: '' , password: ''});
-    // const formRef = useRef();
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const form = new FormData(e.target);
-    //     const data = Object.fromEntries(form);
-    //     setFormData(data);
-    //     try {
-    //         console.log('submit', e)
-    //         console.log("username is ",e , data)
-    //     } catch (e) {
+   //const [FormData, setFormData] = useState({username: '' , password: ''});
+    const formRef = useRef();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const data = Object.fromEntries(form);
+        //setFormData(data);
+        try {
+            console.log('submit', e)
+            console.log("username is ",e , data)
+        } catch (e) {
             
-    //     }
+        }
 
-    // };
+    };
 
-    // const handleBlur = (e) =>{
-    //     if (!formRef.current) return;
-    //     console.log("handleBlur: 0 " , formRef)
+    const handleBlur = (e) =>{
+        if (!formRef.current) return;
+        console.log("handleBlur: 0 " , formRef)
 
 
     
-    //     const form = new FormData(formRef.current);
-    //     const data = Object.fromEntries(form);
-    //     console.log("handleBlur " , data)
+        const form = new FormData(formRef.current);
+        const data = Object.fromEntries(form);
+        console.log("handleBlur " , data)
         
-    // }
+    }
     
-    const validate = Yup.object({
-        userName: Yup
-            .string()
-            .max(15, "کلمات وارد شده باید 15 یا کمتر باشند")
-            .required('لطفا این قسمت را خالی نگذارید'),
-        passWord: Yup
-            .string()
-            .max(6, "رمز عبور باید حداقل 6 کاراکتر باشد ")
-            .required('رمز عبور الزامی است ')
-    })
+    // const validate = Yup.object({
+    //     userName: Yup
+    //         .string()
+    //         .max(15, "کلمات وارد شده باید 15 یا کمتر باشند")
+    //         .required('لطفا این قسمت را خالی نگذارید'),
+    //     passWord: Yup
+    //         .string()
+    //         .max(6, "رمز عبور باید حداقل 6 کاراکتر باشد ")
+    //         .required('رمز عبور الزامی است ')
+    // })
 
     useEffect(() => {
         //localStorage.setItem('loggedin', 'true')
     });
 
     return (
-        <div>
-            <Link to='/'>
-                <button className={Styles.HomeBtn}></button>
-            </Link>
-            <Formik
-                initialValues={{
-                    userName: '',
-                    passWord: ''
-                }}
-                validationSchema={validate}>
-                {
-                    formik => (
-                        <div className={Styles.loginpage}>
+    //     <div>
+    //         <Link to='/'>
+    //             <button className={Styles.HomeBtn}></button>
+    //         </Link>
+    //         {/* <Formik
+    //             initialValues={{
+    //                 userName: '',
+    //                 passWord: ''
+    //             }} */}
+    //             validationSchema={validate}>
+    //             {
+    //                 formik => (
+    //                     <div className={Styles.loginpage}>
 
-                            <div className={Styles.form}>
+    //                         <div className={Styles.form}>
  
-                                <form  className={Styles.form1}>
-                                    <h1>ورود مدیریت</h1>
-                                    {console.log(formik.values)}
-                                     <Form>
-                                        <Inputs   label="نام کاربری" name="userName" type="text"  />
-                                        <Inputs   label="رمز عبور" name="passWord" type="password" />
+    //                             <form  className={Styles.form1}>
+    //                                 <h1>ورود مدیریت</h1>
+    //                                 {console.log(formik.values)}
+    //                                  <Form>
+    //                                     <Inputs   label="نام کاربری" name="userName" type="text"  />
+    //                                     <Inputs   label="رمز عبور" name="passWord" type="password" />
 
-                                     </Form> 
-                                    {/* <Link to='/Quantity'> */}
-                                        <button type='submit' >ورود</button>
-                                    {/* </Link> */}
+    //                                  </Form> 
+    //                                 {/* <Link to='/Quantity'> */}
+    //                                     <button type='submit' >ورود</button>
+    //                                 {/* </Link> */}
 
-                                </form>
-                            </div>
-                        </div>
-                    )
-                }
-            </Formik>
-        </div>
-    );
+    //                             </form>
+    //                         </div>
+    //                     </div>
+    //                 )
+    //             }
+    //         </Formik>
+    //     </div>
+    // );
+
+
+
+
+    <div>
+         <Link to='/'>
+                 <button className={Styles.HomeBtn}></button>
+            </Link>
+   
+    <div className={Styles.LoginPage}>
+        <form onSubmit={handleSubmit} className={Styles.form1}>
+            <h1>ورود</h1>
+
+            <label className={Styles.inputLabel} htmlFor = "username"  >Username</label>
+
+            <input onBlur={handleBlur}  className={Styles.inputs} name='username' id='username' type="text" placeholder='تام کاربری'></input>
+
+
+            <label className={Styles.inputLabel} htmlFor = "password"  >Password</label>
+
+            <input   className={Styles.inputs} name = 'passowrd' id='password' type="password" placeholder='رمز عبور'></input>
+
+
+            <button type='submit' >ورود</button>
+        </form>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    )
 }
 
 export default LoginPage;
