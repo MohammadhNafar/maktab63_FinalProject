@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../pages/Home/Home.page';
 import LoginPage from '../pages/Login/login.page';
-import Basket from '../pages/Basket/index';
+import Basket from '../pages/Basket/Basket.page';
 import Checkout from '../pages/Checkout/index';
 import Paymentfaild from '../pages/Payment/paymentResultFail/index';
 import Paymentsuccess from '../pages/Payment/paymentResultSuccess';
@@ -34,6 +34,7 @@ const AppRoute = () => {
     <Routes>
     <Route exact path={PATHS.HOME} element={<Home/>} />
     <Route path={PATHS.LOIGN} element={<LoginPage/>} />
+    <Route path={PATHS.BASKET} element={<Basket/>} />
     <Route  path={PATHS.PRODUCT} element={<Product/>} />
     <Route path="*" element={<NotFound/>} />
     <Route element = {<ProtectdRoutes/>}>

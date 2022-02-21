@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 
 
-const Header = () => {
+const Header = (props) => {
     const Style = {
         
     }
@@ -17,7 +17,10 @@ const Header = () => {
              
             </div> */}
         <div className={Styles.container}>
-            <Left/>
+            <Left
+            cartNum = {props.cart}
+            
+            />
          <Link to='/'>
          <img className={Styles.homeLogo} src={Logo}></img>
          </Link>   

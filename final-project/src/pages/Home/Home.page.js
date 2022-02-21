@@ -28,7 +28,11 @@ const HomePage = () => {
       
     return (
         <div className={Styles.container}>
-                <Header/>
+                <Header
+                cart = {'1'}
+                
+                
+                />
             <div className= {Styles.Mid} >
             <Middle/>
             <div className={Styles.listHome}>
@@ -75,7 +79,7 @@ const HomePage = () => {
                         datas.filter(value=> value.category == 'شکلات').map(
                             values => 
                             <ul>
-                                
+                                <li>{values.category}</li>
                             <li>{values.name}</li>
 
                             </ul>

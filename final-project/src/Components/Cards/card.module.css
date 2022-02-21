@@ -6,11 +6,11 @@
 
     color: black;
     width: 19.9rem;
-    height: 26rem;
+    height: 27rem;
     background-color: white;
     border: 0.5px solid #EE2D40;
     margin: 1rem;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 2rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     
@@ -119,4 +119,33 @@ h3
 {
     text-decoration: none;
     
+}
+.addToCart
+{
+    z-index: 2;
+}
+.addToCart:hover
+{
+    cursor: pointer;
+    
+}
+.btns
+{
+    display: flex;
+    gap: 1rem;
+    
+}
+.btns button
+{
+    height: 2rem;
+    background-color: white;
+    border: 0.5px solid #EE2D40;
+    color: rgb(88, 88, 88);
+    border-radius: 2rem;
+}
+.btns button:hover
+{
+    background-color: #EE2D40;
+    color: white;
+    cursor: pointer;
 }

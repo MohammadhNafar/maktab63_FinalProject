@@ -1,0 +1,63 @@
+.hrHeader
+{
+    
+    border:none;
+    
+       color: white;
+      height: 50px;
+      
+      border-bottom: 1px solid #ffffff;
+      box-shadow: 0 20px 20px -20px #333;
+   
+
+}
+
+.wrapper
+{
+    
+   
+    margin: 0 auto;
+    width: 55rem;
+    height: 40rem;
+    padding-top: 5rem;
+}
+.tableHead
+{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	background-color: #EE2D40;
+	
+	width: 50rem;
+	margin: 0 auto;
+	height: 5rem;
+	display: flex;
+	justify-content: space-around;
+}
+.tableHead h1
+{
+	direction: rtl;
+	font-size: 1.2rem;
+	color: white;
+	padding: 1rem;
+}
+
+.h1Head
+{
+    margin:  0 auto;
+    
+    text-align: center;
+}
+.confirmBtn
+{
+    margin-top: 3rem;
+    border: none;
+    background-color: #EE2D40;
+    color: white;
+    font-size: 1.2rem;
+    width: 15rem;
+    height: 3rem;
+   
+}
+.confirmBtn:hover
+{
+    cursor: pointer;
+}
