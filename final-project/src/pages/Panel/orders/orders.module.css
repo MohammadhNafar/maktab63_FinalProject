@@ -4,3 +4,47 @@
     display: flex;
     justify-content: center;
 }
+.tableHead
+{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	background-color: #EE2D40;
+	
+	width: 80rem;
+	margin: 0 auto;
+	height: 5rem;
+	display: flex;
+	justify-content: space-around;
+}
+.tableHead h1
+{
+	direction: rtl;
+	font-size: 1.2rem;
+	color: white;
+	padding-left: 15rem;
+    padding-top: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.418);
+}
+.buttons
+{
+	
+	display: flex;
+	gap: 1rem;
+	padding-left: 10rem;
+	padding-top: 2rem;
+}
+.buttons button
+{
+	width: 10rem;
+	height: 2rem;
+	color: #EE2D40;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 2%;
+    font-weight: bold;
+	border: none;
+}
+.buttons button:hover
+{
+	box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
+    cursor: pointer;
+}

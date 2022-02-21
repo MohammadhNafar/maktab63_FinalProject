@@ -70,6 +70,20 @@ const HomePage = () => {
                     <h2><Icon  icon="ep:more-filled" width="50" height="50" /></h2>
                     </div>
                 </div>
+                <div className={Styles.chokoSec}>
+                    {
+                        datas.filter(value=> value.category == 'شکلات').map(
+                            values => 
+                            <ul>
+                                
+                            <li>{values.name}</li>
+
+                            </ul>
+                            
+                        )
+                    }
+
+                </div>
                 </div>
             </div>
         </div>
