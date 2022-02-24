@@ -12,6 +12,7 @@ const useAuth = () =>
 const Protectedrtoutes = () => {
   
     const isAuth = useAuth();
+    if (localStorage.hasOwnProperty("IS_LOGGEDIN") )
     return   isAuth ? <Outlet/> : <Navigate to= {PATHS.LOIGN}/>;
 };
 export default Protectedrtoutes;

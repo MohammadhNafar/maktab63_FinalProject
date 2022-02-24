@@ -13,7 +13,7 @@ const BasketTableComponent = (props) => {
 
            </div>
             <div className={Styles.List}>
-            <h2>{props.count} </h2>
+            <h2> <input className={Styles.inputQ} type='number'></input> </h2>
 
                 
             </div>

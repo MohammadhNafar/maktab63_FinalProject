@@ -67,3 +67,7 @@
     box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
     cursor: pointer;
 }
+.inputQ
+{
+    width: 2rem;
+}

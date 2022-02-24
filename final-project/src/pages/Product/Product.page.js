@@ -4,16 +4,40 @@ import Styles from './Product.module.css';
 import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
+import {connect} from 'react-redux'
+import {addToCart} from '../../redux/Shopping/shopping-actions'
+import http from '../../services/http.service'
 
 import Comments from './Components/Coments/Comments.component';
 import IMG from '../../assets/images/productsImage/kisspng-cream-chocolate-spread-nutella-white-chocolate-nutella-crepe-5b1a06b75d0bc6.8532377415284323113811.png';
-const ProductPage = () => {
+import axios from 'axios';
+const ProductPage = ({current,addToCart}) => {
 
     const [like,setlike] = useState(0)
     const [dislike,setdislike] = useState(0)
     
     const [likeactive,setlikeactive] = useState(false)
     const [dislikeactive,setdislikeactive] = useState(false)
+    const [username,setusername] = useState([]);
+    const [comment,setcomment] = useState([]);
+    const [score,setscore] = useState([]);
+
+
+
+    async function sendComment(e)
+    {
+      e.preventDefault();
+      console.log(username,comment,score)
+      let items = {username,comment,score};
+      let result = http.post('http://localhost:3002/products' , {
+        username,
+        comment,
+        score
+    
+      })
+      result = await result.json();
+    }
+
   
     function likef(){
       if(likeactive){
@@ -81,11 +105,11 @@ const ProductPage = () => {
                 <div className={Styles.center}>
 
                 <h1>
-                        نام کالا
+                        {current.Name}
                     </h1>
                     <div className={Styles.productInfo}>
                     <p>
-                        توضیحاتسییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییییی
+                        {current.info}
                     </p>
                     </div>
                     
@@ -98,8 +122,9 @@ const ProductPage = () => {
                    
 
                 </div>
+               
                 <BuyCard
-                price = '2000'
+                price = {current.Price}
                 />
             </div>
 
@@ -108,14 +133,29 @@ const ProductPage = () => {
             <h1 className={Styles.nazarat}>
                 نظرات
             </h1>
+
+            <div className={Styles.addComment}>
+              <h2>نظر خودرا بنویسید</h2> 
+              <div className={Styles.commentSec}>
+              <form>
+                <input onChange={(e) => setusername(e.target.value)}
+                 className={Styles.input} type='text' placeholder='نام'></input>
+                <input onChange={(e) => setscore(e.target.value)}
+                 className={Styles.inputScore} type='number' placeholder='نمره'></input>
+                <input onChange={(e) => setcomment(e.target.value)}
+                 className={Styles.inputComment} type='text' placeholder='نظر'></input>
+                <button onClick={sendComment} className={Styles.submitBtn} >ثبت نظر</button>
+              </form>
+      </div>
+            </div>
 {
     datas.map(
         data =>
         <Comments
         key = {data.id}
         score = {data.score}
-        username = {data.username1}
-        userComment = {data.comm}
+        username = {data.username}
+        userComment = {data.comment}
         like = {likef}
         dislike = {dislikef}
         likes = {like}
@@ -129,6 +169,18 @@ const ProductPage = () => {
         </div>
     );
 }
+const mapStateToProps = state => {
+  return {
+    current: state.shop.currentItem
+  }
+}
 
-export default ProductPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id))
+  }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProductPage);
 

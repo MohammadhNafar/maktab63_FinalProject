@@ -40,3 +40,17 @@
 	border: solid 1px #EE2D40;
 	
 }
+.addBtn
+{
+	width: 10rem;
+	height: 2rem;
+	margin-left: 10rem;
+	margin-bottom: 5rem;
+	background-color: #EE2D40;
+	border: none;
+	color: white;
+}
+.addBtn:hover
+{
+	cursor: pointer;
+}

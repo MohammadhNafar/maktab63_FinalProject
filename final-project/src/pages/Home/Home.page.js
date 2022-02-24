@@ -10,21 +10,21 @@ import {useEffect, useState} from 'react';
 import List from './components/List/List.component';
 import Modal from '../../Components/Modal/modal.page';
 import {PATHS} from '../../routes/routes.config';
+import {connect} from 'react-redux';
 
 
+const HomePage = ({products}) => {
+    //const  [rows, setRows] = useState([]);
+    //const [openModal, setOpenModal] = useState(false);
 
-const HomePage = () => {
-    const  [rows, setRows] = useState([]);
-    const [openModal, setOpenModal] = useState(false);
 
+    // useEffect(() => {
+    //     getProducts().then(data => setRows(data.data) )
+    //     console.log(rows,'hello')
+    //     //localStorage.setItem('loggedin', 'false')
 
-    useEffect(() => {
-        getProducts().then(data => setRows(data.data) )
-        console.log(rows,'hello')
-        //localStorage.setItem('loggedin', 'false')
-
-      }, [])
-      const datas = rows;
+    //   }, [])
+    //   const datas = rows;
       
     return (
         <div className={Styles.container}>
@@ -36,13 +36,13 @@ const HomePage = () => {
             <div className= {Styles.Mid} >
             <Middle/>
             <div className={Styles.listHome}>
-            { datas.map(data =>
+            {/* { datas.map(data =>
              <List
              key = {data.id}
              btnTitle = {data.category}
              />           
             )
-}
+} */}
 </div>
             </div>
             <div className= {Styles.bodySec}>
@@ -50,24 +50,25 @@ const HomePage = () => {
                 <h1 className= {Styles.firstH1} >محصولات</h1>
                 <div className={Styles.firstSec}>
                     
-                {openModal && <Modal placeHolder2 = {"سلام"}
+                {/* {openModal && <Modal placeHolder2 = {"سلام"}
+
             placeHolder1 = {"سلام"}
              secendBtnTitle = {'باتل دوم'}
               firstBtnTitle = {'باتن اول'} 
               titleHead = {'ویرایش'} 
-              closeModal = {setOpenModal}/>} 
+              closeModal = {setOpenModal}/>}  */}
                     <div className={Styles.firstSecCards}>
                         {
-                            datas.map(
+                            products.map(
                                 data =>
                                 <Card
+                                id = {data.id}
                                 key = {data.id}
                     Name = {data.name}
                     info = {data.category}
                     Price = {data.price}
                     PicList = {data.image}
-                    show = {setOpenModal}
-                    linkToPage = {PATHS.PRODUCT}
+                    
                     />
                             )
                         }      
@@ -75,7 +76,7 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className={Styles.chokoSec}>
-                    {
+                    {/* {
                         datas.filter(value=> value.category == 'شکلات').map(
                             values => 
                             <ul>
@@ -85,7 +86,7 @@ const HomePage = () => {
                             </ul>
                             
                         )
-                    }
+                    } */}
 
                 </div>
                 </div>
@@ -94,5 +95,11 @@ const HomePage = () => {
         
     );
 }
+const mapStatToProps = state => {
+    return {
+    products: state.shop.products
+    }
 
-export default HomePage;
+}
+
+export default connect(mapStatToProps)(HomePage);
