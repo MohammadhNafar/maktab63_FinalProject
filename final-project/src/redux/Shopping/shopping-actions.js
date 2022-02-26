@@ -13,6 +13,8 @@ export const addToCart = (itemID) => {
 
 export const removeFromCart = (itemID) =>
 {
+    console.log({itemID})
+
     return {
         type: actionTypes.REMOVE_FROM_CART,
         payload: {

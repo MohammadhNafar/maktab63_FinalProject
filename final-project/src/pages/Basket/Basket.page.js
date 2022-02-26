@@ -2,8 +2,26 @@ import React from 'react';
 import Header from '../../layouts/user/header/Header';
 import Styles from './basket.module.css';
 import Table from './Components/Table/Basket.table.component';
+import { connect } from 'react-redux';
+import {useState, useEffect} from 'react';
 
-const BasketPage = () => {
+const BasketPage = ({cart}) => {
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
+    
+
+    useEffect(() => {
+
+
+        let items = 0;
+        let price = 0;
+        cart.forEach(item => {
+            items += item.qty;
+            price += item.qty * item.price
+        });
+        setTotalPrice(price);
+        setTotalItems(items);
+    }, [cart,totalItems,totalPrice,setTotalPrice,setTotalItems]);
     return (
         <div className={Styles.container}>
             <Header/>
@@ -25,11 +43,36 @@ const BasketPage = () => {
                     
 
                 </div>
-                <Table
-                product = 'شیر'
-                price = '12000'
-                count = '23'
-                />
+                
+                {cart.length > 0 ? <Table/> : <h1 className={Styles.empty} >سبد خرید خالی است</h1>}
+                {
+                    cart.map(item => (
+
+                        <Table
+                        key = {item.id}
+                        product = {item.name}
+                        price = {item.price}
+                        qty = {item.qty}
+                        id = {item.id}
+                        
+                        />
+
+                    ))
+
+                   
+                }
+               
+               
+                    <div className={Styles.totalPrice}>
+                            {/* قیمت نهایی: {cart.reduce((acc, item) => acc + item.price, 0)} تومان */}
+                             قیمت نهایی {totalPrice} تومان
+
+                        </div>
+                        <div className={Styles.totalItems}>
+                            {/* قیمت نهایی: {cart.reduce((acc, item) => acc + item.price, 0)} تومان */}
+                            تعداد کالا ها :  {totalItems} 
+
+                        </div>
                 <button className={Styles.confirmBtn}>
                     نهایی کردن خرید
                 </button>
@@ -39,4 +82,9 @@ const BasketPage = () => {
     );
 }
 
-export default BasketPage;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.shop.cart
+    }
+}
+export default connect(mapStateToProps)(BasketPage);
