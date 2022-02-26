@@ -44,10 +44,9 @@ const BasketPage = ({cart}) => {
 
                 </div>
                 
-                {cart.length > 0 ? <Table/> : <h1 className={Styles.empty} >سبد خرید خالی است</h1>}
+                {cart.length > 0 ? "" : <h1 className={Styles.empty} >سبد خرید خالی است</h1>}
                 {
                     cart.map(item => (
-
                         <Table
                         key = {item.id}
                         product = {item.name}
