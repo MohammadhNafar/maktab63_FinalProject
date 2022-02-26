@@ -58,11 +58,7 @@ const ProductPage = () => {
               {
                 openAddModal && <ModalAdd
                 closeModal = {setOpenAddModal}
-                placeHolder2 = {"سلام"}
-                placeHolder1 = {"سلام"}
-                 secendBtnTitle = {'باتل دوم'}
-                  firstBtnTitle = {'باتن اول'} 
-                  titleHead = {'ویرایش'} 
+                
                 
                 />
               }

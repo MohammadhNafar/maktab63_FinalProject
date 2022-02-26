@@ -84,11 +84,7 @@ const INITIAL_STATE = {
         "id": 13
       }],
     cart: [],
-    currentItem : [
-      {
-        "Name": "لواشک ورقه ایی",
-      }
-    ],
+ 
 }
 
 
@@ -125,13 +121,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
                         ...state,
                         cart: state.cart.map(item => item.id === action.payload.id ? {...item, qty: action.payload.qty}: item)
                     }
-                    case actionTypes.LOAD_CURRENT_ITEM:
-                        return {
-                            ...state,
-                            currentItem: action.payload,
-                           
-                           
-                        }
+                    
                         default:
                             return state
     }

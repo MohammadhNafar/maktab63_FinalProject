@@ -14,17 +14,17 @@ import {connect} from 'react-redux';
 
 
 const HomePage = ({products}) => {
-    //const  [rows, setRows] = useState([]);
+    const  [rows, setRows] = useState([]);
     //const [openModal, setOpenModal] = useState(false);
 
 
-    // useEffect(() => {
-    //     getProducts().then(data => setRows(data.data) )
-    //     console.log(rows,'hello')
-    //     //localStorage.setItem('loggedin', 'false')
+    useEffect(() => {
+        getProducts().then(data => setRows(data.data) )
+        console.log(rows,'hello')
+        //localStorage.setItem('loggedin', 'false')
 
-    //   }, [])
-    //   const datas = rows;
+      }, [])
+      const datas = rows;
       
     return (
         <div className={Styles.container}>
@@ -59,7 +59,7 @@ const HomePage = ({products}) => {
               closeModal = {setOpenModal}/>}  */}
                     <div className={Styles.firstSecCards}>
                         {
-                            products.map(
+                            datas.map(
                                 data =>
                                 <Card
                                 id = {data.id}

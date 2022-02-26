@@ -4,7 +4,7 @@ import {IMAGE_UR, IMAGE_URL} from '../../configs/image.url';
 import { Icon } from '@iconify/react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { addToCart, loadCurrentItem  } from '../../redux/Shopping/shopping-actions' 
+import { addToCart,   } from '../../redux/Shopping/shopping-actions' 
 const CardComponent = (props , addToCart , loadCurrentItem) => {
     return (
         // <Link className={Styles.Link} to={props.linkToPage} >
@@ -27,9 +27,9 @@ const CardComponent = (props , addToCart , loadCurrentItem) => {
                 >اضافه کردن به سبد خرید</button> 
 
 
-                <Link to={`/Product/${props.Name}`}>
+                <Link to={`/Product/${props.id}`}>
                 <button
-                onClick={() => loadCurrentItem(props)}
+                
                 
                 >نمایش اطلاعات</button> 
                 </Link>
@@ -58,8 +58,7 @@ const CardComponent = (props , addToCart , loadCurrentItem) => {
 const mapDispatchToProps = dispatch =>
 {
     return{
-        addToCart: (id) => dispatch (addToCart(id)),
-        loadCurrentItem: (item) => dispatch(loadCurrentItem(item))
+        addToCart: (id) => dispatch (addToCart(id))
     }
 }
 

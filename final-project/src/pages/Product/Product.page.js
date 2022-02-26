@@ -11,7 +11,7 @@ import http from '../../services/http.service'
 import Comments from './Components/Coments/Comments.component';
 import IMG from '../../assets/images/productsImage/kisspng-cream-chocolate-spread-nutella-white-chocolate-nutella-crepe-5b1a06b75d0bc6.8532377415284323113811.png';
 import axios from 'axios';
-const ProductPage = ({current,addToCart}) => {
+const ProductPage = (addToCart) => {
 
     const [like,setlike] = useState(0)
     const [dislike,setdislike] = useState(0)
@@ -29,7 +29,7 @@ const ProductPage = ({current,addToCart}) => {
       e.preventDefault();
       console.log(username,comment,score)
       let items = {username,comment,score};
-      let result = http.post('http://localhost:3002/products' , {
+      let result = http.post('http://localhost:3002/comments' , {
         username,
         comment,
         score
@@ -105,11 +105,11 @@ const ProductPage = ({current,addToCart}) => {
                 <div className={Styles.center}>
 
                 <h1>
-                        {current.Name}
+                        تست
                     </h1>
                     <div className={Styles.productInfo}>
                     <p>
-                        {current.info}
+                        تتست
                     </p>
                     </div>
                     
@@ -124,7 +124,7 @@ const ProductPage = ({current,addToCart}) => {
                 </div>
                
                 <BuyCard
-                price = {current.Price}
+                price = {'1222'}
                 />
             </div>
 
@@ -169,11 +169,7 @@ const ProductPage = ({current,addToCart}) => {
         </div>
     );
 }
-const mapStateToProps = state => {
-  return {
-    current: state.shop.currentItem
-  }
-}
+
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -182,5 +178,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProductPage);
+export default connect(mapDispatchToProps)(ProductPage);
 
