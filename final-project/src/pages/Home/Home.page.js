@@ -59,7 +59,7 @@ const HomePage = ({products}) => {
               closeModal = {setOpenModal}/>}  */}
                     <div className={Styles.firstSecCards}>
                         {
-                            datas.map(
+                            products.map(
                                 data =>
                                 <Card
                                 id = {data.id}

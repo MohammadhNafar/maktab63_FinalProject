@@ -4,8 +4,13 @@ import {IMAGE_UR, IMAGE_URL} from '../../configs/image.url';
 import { Icon } from '@iconify/react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { addToCart,   } from '../../redux/Shopping/shopping-actions' 
-const CardComponent = (props , addToCart , loadCurrentItem) => {
+import { useDispatch } from 'react-redux';
+import { addToCart   } from '../../redux/Shopping/shopping-actions' 
+const CardComponent = (props) => {
+
+    const dispatch = useDispatch();
+    
+
     return (
         // <Link className={Styles.Link} to={props.linkToPage} >
         <div className={Styles.box}>
@@ -22,7 +27,7 @@ const CardComponent = (props , addToCart , loadCurrentItem) => {
                 </div> */}
                 <div className={Styles.btns}>
                 <button
-                onClick={() => addToCart(props.id)}
+                onClick={() => dispatch(addToCart(props.id)) }
                 
                 >اضافه کردن به سبد خرید</button> 
 
@@ -55,11 +60,13 @@ const CardComponent = (props , addToCart , loadCurrentItem) => {
         // </Link>
     );
 }
-const mapDispatchToProps = dispatch =>
-{
-    return{
-        addToCart: (id) => dispatch (addToCart(id))
-    }
-}
+// const mapDispatchToProps = dispatch =>
+// {
+//     return{
+//         addToCart: (id) => dispatch (addToCart(id))
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(CardComponent);
+    export default CardComponent;
+
+// export default connect(null, mapDispatchToProps)(CardComponent);
