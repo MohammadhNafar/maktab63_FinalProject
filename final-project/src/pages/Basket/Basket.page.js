@@ -33,7 +33,7 @@ const BasketPage = ({cart}) => {
             </div>
             
             <div className={Styles.wrapper}>
-            <div className={Styles.tableHead}>
+                {totalItems ?  <div className={Styles.tableHead}>
             <h1>
                     </h1>
                     <h1>تعداد</h1>
@@ -42,7 +42,8 @@ const BasketPage = ({cart}) => {
                     </h1>
                     
 
-                </div>
+                </div> : "" }
+           
                 
                 {cart.length > 0 ? "" : <h1 className={Styles.empty} >سبد خرید خالی است</h1>}
                 {
@@ -62,20 +63,21 @@ const BasketPage = ({cart}) => {
                 }
                
                
-                    <div className={Styles.totalPrice}>
-                            {/* قیمت نهایی: {cart.reduce((acc, item) => acc + item.price, 0)} تومان */}
-                             قیمت نهایی {totalPrice} تومان
+              
+                            {totalPrice ?       <div className={Styles.totalPrice}>
+                    قیمت نهایی {totalPrice} تومان
 
-                        </div>
-                        <div className={Styles.totalItems}>
-                            {/* قیمت نهایی: {cart.reduce((acc, item) => acc + item.price, 0)} تومان */}
+                        </div> : "" }
+
+                            {totalItems ?   <div className={Styles.totalItems}>
+                            
                             تعداد کالا ها :  {totalItems} 
-
-                        </div>
-                <button className={Styles.confirmBtn}>
+                        </div> : ""}
+                       {totalItems ?   <button className={Styles.confirmBtn}>
                     نهایی کردن خرید
                 </button>
-
+: "" }
+               
             </div>
         </div>
     );

@@ -27,9 +27,10 @@ const Header = ({cart}) => {
             </div> */}
         <div className={Styles.container}>
             <Left
-                        //{...cartCount.length > 0 ? "" :{cartNum} = {cartCount} }
+                        // {...cartCount.length < 0 ? "" : {cartNum} = {cartCount} }
 
-            cartNum = {cartCount}
+
+            cartNum = {cartCount ? cartCount : ""}
             
             />
          <Link to='/'>
