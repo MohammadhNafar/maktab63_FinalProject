@@ -1,7 +1,7 @@
 .container
 {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
     padding-top: 1rem;
 }
 .cart
@@ -16,7 +16,7 @@
 .itemsInCart
 {
     position: absolute;
-    margin-left: 9.5rem;
+    margin-left: 5.5rem;
     margin-top: 2rem;
     color: #EE2D40;
     width: 2rem;
@@ -25,7 +25,7 @@
     height: 2rem;
     
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     
    
 }

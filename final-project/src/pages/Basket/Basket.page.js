@@ -4,6 +4,7 @@ import Styles from './basket.module.css';
 import Table from './Components/Table/Basket.table.component';
 import { connect } from 'react-redux';
 import {useState, useEffect} from 'react';
+import Empty from './Components/empty/Empty.basket.component'
 
 const BasketPage = ({cart}) => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -45,7 +46,7 @@ const BasketPage = ({cart}) => {
                 </div> : "" }
            
                 
-                {cart.length > 0 ? "" : <h1 className={Styles.empty} >سبد خرید خالی است</h1>}
+                {cart.length > 0 ? "" : <Empty/> }
                 {
                     cart.map(item => (
                         <Table

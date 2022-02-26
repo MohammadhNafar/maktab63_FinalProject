@@ -1,0 +1,21 @@
+.animations
+{
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto;
+    padding-bottom: 20rem;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container h1 
+{
+    padding-top: 5rem;
+    font-size: 0.8rem;
+    color: gray;
+}
