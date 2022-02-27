@@ -7,12 +7,15 @@ import {getProducts} from '../../../api/products.api'
 import {IMAGE_URL} from '../../../configs/image.url';
 import Modal from '../../../Components/Modal/modal.page';
 import ModalAdd from './Components/AddProductModal/addModal.js';
+import Pagination from '../../../Components/pagination/pagination.component';
 
 const ProductPage = () => {
     
     const  [rows, setRows] = useState([]);
     const [openModal, setOpenModal] = useState(false);
     const [openAddModal, setOpenAddModal] = useState(false);
+    const [currentPage , setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
 
 
 
@@ -30,7 +33,13 @@ const ProductPage = () => {
       setOpenAddModal(true);
       console.log('helslo')
     }
-      
+
+    //get current page
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
+      //change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber);
     return (
       
         <div>
@@ -63,7 +72,7 @@ const ProductPage = () => {
                 />
               }
              {
-            datas.map(
+            currentPosts.map(
                 data =>
               <Table 
               nameList = {data.name}
@@ -73,8 +82,16 @@ const ProductPage = () => {
               />
               
             )}
+             <Pagination
+             postsPerPage={postsPerPage}
+             totalPosts = {datas.length}
+             paginate = {paginate}
+             />
+           
             </div>
+           
             </div>
+           
         </div>
     );
 }

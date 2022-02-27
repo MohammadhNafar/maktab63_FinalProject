@@ -32,12 +32,12 @@
 }
 .productList
 {
-	height: 30rem;
+	height: 37rem;
 	width: 80rem;
 	margin: 0 auto;
 	text-align: center;
-	overflow-y: scroll;
-	border: solid 1px #EE2D40;
+	
+	
 	
 }
 .addBtn
