@@ -45,30 +45,31 @@ const Addmodal = (props) => {
                 <div className={Styles.items}>
                     <form>
                     <input 
-                    onChange={(e) => setname(e.target.value)}
+                    onChange={(e) => setname(e.target.value)} className={Styles.inputStyle}
                      placeholder= "نام کالا" type='text'></input>
-
+                        
                     <input
                     onChange={(e) => setbrand(e.target.value)}
-                    
+                    className={Styles.inputStyle}
                     placeholder= "نام برند " type='text' ></input>
 
                     <input
-                    onChange={(e) => setprice(e.target.value)}
+                    onChange={(e) => setprice(e.target.value)} className={Styles.inputStyle}
                     placeholder= "قیمت " type='number'></input>
+                    
                      <input
-                    onChange={(e) => setcategory(e.target.value)}
+                    onChange={(e) => setcategory(e.target.value)} className={Styles.inputStyle}
                     placeholder= "گروه" type='text'></input>
-
+                    
                     <input
-                     onChange={(e) => setcount(e.target.value)}
-                    placeholder= "تعداد" type='text'></input>
+                     onChange={(e) => setcount(e.target.value)} className={Styles.inputStyleNum}
+                    placeholder= "تعداد" type='number'></input>
+                    
+                    <input className={Styles.inputStyleFile} placeholder= "عکس" type='file'></input>
 
-                    <input placeholder= "عکس" type='file'></input>
 
 
-
-                    <button  onClick={addProduct}  > اضافه کردن کالا </button>
+                    <button className={Styles.btn}  onClick={addProduct}  > اضافه کردن کالا </button>
                     </form>
                     
                 </div>
