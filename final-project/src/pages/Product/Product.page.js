@@ -7,7 +7,7 @@ import {useEffect, useState} from 'react';
 import {connect} from 'react-redux'
 import {addToCart} from '../../redux/Shopping/shopping-actions'
 import http from '../../services/http.service'
-
+import Pagination from '../../Components/pagination/pagination.component';
 import Comments from './Components/Coments/Comments.component';
 import IMG from '../../assets/images/productsImage/kisspng-cream-chocolate-spread-nutella-white-chocolate-nutella-crepe-5b1a06b75d0bc6.8532377415284323113811.png';
 import axios from 'axios';
@@ -21,6 +21,8 @@ const ProductPage = (addToCart) => {
     const [username,setusername] = useState([]);
     const [comment,setcomment] = useState([]);
     const [score,setscore] = useState([]);
+    const [currentPage , setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
 
 
 
@@ -81,6 +83,15 @@ const ProductPage = (addToCart) => {
 
       }, [])
       const datas = rows;
+      const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+    
+    ;
+
+
+
     return (
 
         <div className={Styles.container}>
@@ -149,7 +160,7 @@ const ProductPage = (addToCart) => {
       </div>
             </div>
 {
-    datas.map(
+    currentPosts.map(
         data =>
         <Comments
         key = {data.id}
@@ -164,7 +175,16 @@ const ProductPage = (addToCart) => {
 
     )
 }
-        
+<div className={Styles.pageNums} >
+
+        <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts = {datas.length}
+                    paginate = {paginate}
+                    
+                    />
+                    
+                </div>
 
         </div>
     );

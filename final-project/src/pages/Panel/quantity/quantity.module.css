@@ -10,7 +10,8 @@
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	background-color: #EE2D40;
 	
-	width: 50rem;
+	width: 60rem;
+	
 	margin: 0 auto;
 	height: 5rem;
 	display: flex;
@@ -52,10 +53,10 @@
 	
 	width: 50rem;
 	height: 30rem;
-	overflow-y: scroll;
+	
 	text-align: center;
 	margin: 0 auto;
-	border: solid 1px #EE2D40;
+	
 }
 .wrapper
 {

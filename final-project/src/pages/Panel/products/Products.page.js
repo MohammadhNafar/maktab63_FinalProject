@@ -86,6 +86,7 @@ const ProductPage = () => {
              postsPerPage={postsPerPage}
              totalPosts = {datas.length}
              paginate = {paginate}
+             
              />
            
             </div>

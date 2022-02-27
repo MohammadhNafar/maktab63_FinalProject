@@ -3,12 +3,15 @@ import Header from '../../../layouts/manage/header/Header';
 import Table from './Components/Table/Table';
 import Styles from './quantity.module.css';
 import {useEffect, useState} from 'react';
-import {getProducts} from '../../../api/products.api'
+import {getProducts} from '../../../api/products.api';
+import Pagination from '../../../Components/pagination/pagination.component';
 
 const QuantityPage = () => {
 
     const [rows, setRows] = useState([]);
     const [filteredData, setFilter] = useState([])
+    const [currentPage , setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
 
     function handleClick(e) {
         e.preventDefault();
@@ -22,6 +25,12 @@ const QuantityPage = () => {
         console.log(rows, 'hello')
     }, [])
     
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = rows.slice(indexOfFirstPost, indexOfLastPost)
+    const filterdPaginate = filteredData.slice(indexOfFirstPost, indexOfLastPost);
+      //change page
+      const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
 
@@ -56,8 +65,8 @@ const QuantityPage = () => {
                 </div>
                 <div className={Styles.quantityList}>
                     {
-                        filteredData.length > 0
-                            ? filteredData.map(
+                        filterdPaginate.length > 0
+                            ? filterdPaginate.map(
                                 data => <Table
                                     key={data.id}
                                     nameList={data.name}
@@ -65,7 +74,7 @@ const QuantityPage = () => {
                                     quanitityList={data.count}/>
 
                             )
-                            : rows.map(
+                            : currentPosts.map(
                                 data => <Table
                                     key={data.id}
                                     nameList={data.name}
@@ -74,6 +83,11 @@ const QuantityPage = () => {
 
                             )
                     }
+                    <Pagination
+             postsPerPage={postsPerPage}
+             totalPosts = {rows.length}
+             paginate = {paginate}
+             />
                 </div>
             </div>
         </div>
