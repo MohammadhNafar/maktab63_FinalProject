@@ -9,6 +9,7 @@ import Empty from './Components/empty/Empty.basket.component'
 const BasketPage = ({cart}) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
+    const send = 12000;
     
 
     useEffect(() => {
@@ -65,19 +66,33 @@ const BasketPage = ({cart}) => {
                
                
               
-                            {totalPrice ?       <div className={Styles.totalPrice}>
-                    قیمت نهایی {totalPrice} تومان
-
-                        </div> : "" }
+                          
 
                             {totalItems ?   <div className={Styles.totalItems}>
                             
                             تعداد کالا ها :  {totalItems} 
                         </div> : ""}
-                       {totalItems ?   <button className={Styles.confirmBtn}>
-                    نهایی کردن خرید
-                </button>
-: "" }
+                        { totalItems ?
+                            <div className={Styles.priceSec}>
+                                <div className={Styles.priceSecP}> 
+                                {totalPrice ?       <div className={Styles.totalPrice}>
+                        قیمت نهایی {totalPrice} تومان
+    
+                            </div> : "" }
+                            { totalItems ? totalPrice < 300000 ? <div className={Styles.sendPrice} > {totalPrice+send} قیمت با هزینه ارسال </div> : <div className={Styles.freeSend} > هزینه ارسال خرید های بیشتر 300 هزار تومان رایگان است ! </div> : ""}
+    
+                                </div>
+                            
+                           {totalItems ?   <button className={Styles.confirmBtn}>
+                        نهایی کردن خرید
+                    </button>
+    : "" }
+                            </div>
+
+
+                      :""  }
+                        
+                
                
             </div>
         </div>

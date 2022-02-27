@@ -26,7 +26,7 @@
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	background-color: #EE2D40;
 	
-	width: 50rem;
+	width: 53rem;
 	margin: 0 auto;
 	height: 5rem;
 	display: flex;
@@ -48,7 +48,7 @@
 }
 .confirmBtn
 {
-    margin-top: 3rem;
+    
     border: none;
     background-color: #EE2D40;
     color: white;
@@ -77,13 +77,15 @@
 
 .totalPrice
 {
-    margin: 0 auto;
+    
     width: 50rem;
     height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
+    
+    
+    font-size: 1.2rem;
+    color: #EE2D40;
+    padding-top: 1rem;
+    
 }
 .totalItems
 {
@@ -99,4 +101,35 @@
 {
     font-size: 0.8rem;
     margin-top: 1.5rem;
+}
+
+.sendPrice
+{
+    color: #EE2D40;
+    height: 2rem;
+    margin-left: 7rem;
+    font-size: 1.3rem;
+    
+}
+.freeSend
+{
+    color: gray;
+    height: 2rem;
+    margin-left: 7rem;
+    font-size: 1rem;
+    
+}
+.priceSec
+{
+    margin: 0 auto;
+    width: 53rem;
+    
+    height: 13rem;
+    
+    
+}
+.priceSecP
+{
+    direction: rtl;
+    margin-right: 1rem;
 }
