@@ -54,11 +54,13 @@ const BasketPage = ({cart}) => {
                 {
                     cart.map(item => (
                         <Table
+                            count = {item.count}
                             key={item.id}
                             product={item.name}
                             price={item.price}
                             qty={item.qty}
                             id={item.id}/>
+                            
                     ))
                 }
 

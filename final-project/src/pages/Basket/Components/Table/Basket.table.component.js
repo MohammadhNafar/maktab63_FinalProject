@@ -19,7 +19,7 @@ const BasketTableComponent = (props) => {
                <div className={Styles.Btns}>
                
                <button className={Styles.rmvBtn} onClick={() => dispatch(removeFromCart(props.id))} >
-               <Icon className={Styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="40" height="40" />
+               <Icon className={Styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="30" height="30" />
                </button>
 
            </div>
@@ -30,7 +30,7 @@ const BasketTableComponent = (props) => {
             id='qty'
             name='qty'
             min='1'
-            max='10'
+            max= {props.count}
             value={input}
             onChange={onChangeHandler}
             className={Styles.qtyy} type='number' ></input>
