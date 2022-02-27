@@ -87,13 +87,13 @@ const BasketPage = ({cart}) => {
                                     }
                                     {
                                         totalItems
-                                            ? totalPrice < 300000
+                                            ? totalPrice < 200000
                                                 ? <div className={Styles.sendPrice}>
                                                         {totalPrice + send}
                                                         قیمت با هزینه ارسال
                                                     </div>
                                                 : <div className={Styles.freeSend}>
-                                                        هزینه ارسال خرید های بیشتر 300 هزار تومان رایگان است !
+                                                        هزینه ارسال خرید های بیشتر 200 هزار تومان رایگان است !
                                                     </div>
                                             : ""
                                     }
