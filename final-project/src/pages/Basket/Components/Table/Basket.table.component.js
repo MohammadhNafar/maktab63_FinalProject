@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Styles from './table.module.css';
 import { Icon } from '@iconify/react';
-import { removeFromCart } from '../../../../redux/Shopping/shopping-actions';
+import { removeFromCart,adjustItemQty } from '../../../../redux/Shopping/shopping-actions';
 import { useDispatch } from 'react-redux';
 
 
 const BasketTableComponent = (props) => {
     const dispatch = useDispatch();
+    const [input,setInput] = useState(props.qty);
+    const onChangeHandler = (e) => {
+        console.log(e.target.value);
+        setInput(e.target.value);
+      dispatch(adjustItemQty(props.id,e.target.value));
+    }
     return (
         <div>
                <div className= {Styles.tableHead}>
@@ -19,7 +25,17 @@ const BasketTableComponent = (props) => {
            </div>
             <div className={Styles.List}>
             {/* <h2> <input className={Styles.inputQ} type='number'></input> </h2> */}
-            <h2>{props.qty}</h2>
+            
+            <input
+            id='qty'
+            name='qty'
+            min='1'
+            max='10'
+            value={input}
+            onChange={onChangeHandler}
+            className={Styles.qtyy} type='number' ></input>
+            
+
                 
             </div>
             <div className={Styles.List}>
