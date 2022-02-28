@@ -9,6 +9,8 @@ import { IMAGE_URL } from '../../configs/image.url';
 import {getProducts} from '../../api/products.api';
 import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'
+import { useDispatch, useSelector } from 'react-redux';
+
 import http from '../../services/http.service'
 import { useParams } from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
@@ -26,7 +28,7 @@ const ProductPage = (props) => {
     const [score,setscore] = useState([]);
     const [currentPage , setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
-
+    const dispatch = useDispatch();
     let {id} = useParams(); 
     console.log(id)
 
@@ -108,7 +110,9 @@ const ProductPage = (props) => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
-    
+    function test() {
+      console.log("sd")
+    }
     ;
 
 
@@ -163,6 +167,7 @@ const ProductPage = (props) => {
                                     <BuyCard
                                     count = {data.count}
                                     price = {data.price}
+                                    click = {test}
                                     />
                                 </div>
                                 </div>

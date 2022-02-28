@@ -29,7 +29,9 @@ const BuycardComponent = (props) => {
 
     
             { props.count > 0 ? 
-                        <button className={Styles.addButton}>افزودن به سبد خرید</button>
+                        <button
+                        onClick={props.click}
+                        className={Styles.addButton}>افزودن به سبد خرید</button>
                         : <h1 className={Styles.namojod} >ناموجود</h1>
 
             }

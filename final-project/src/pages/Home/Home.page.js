@@ -12,13 +12,14 @@ import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 const HomePage = () => {
     const dispatch = useDispatch();
     const productsNew = useSelector(state => state.shop.products.data)
-   
+    const proDatas = useSelector(state => state.shop)
+    const loading = proDatas.loading
+    const error = proDatas.error
     
 
 
     useEffect(() => {
         dispatch(fetchProducts())
-       
     }, [])
       
       
@@ -31,6 +32,8 @@ const HomePage = () => {
                 />
             <div className= {Styles.Mid} >
             <Middle/>
+            {loading && <h1>loading</h1>}
+            {error && !loading && <h1>دریافت محصولات با خطا مواجه شد لطفا بعدا تلاش کنید</h1>}
             <div className={Styles.listHome}>
             {/* { datas.map(data =>
              <List
