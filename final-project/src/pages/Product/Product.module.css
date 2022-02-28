@@ -47,12 +47,12 @@
     display: flex;
     gap: 2rem;
     padding-top: 1rem;
-    margin-right: 4rem;
+    margin-right: 5rem;
 }
 .productLittleImg
 {
     
-    border: 1px solid rgba(128, 128, 128, 0.466);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     border-radius: 1rem;
 }
@@ -92,6 +92,7 @@
     width: 40rem;
     min-height: 10rem;
     word-break: break-all;
+    margin-right: 1rem;
 }
 
 .addComment
@@ -153,4 +154,24 @@
     width: 100%;
     height: 2rem;
     margin-left: 35rem;
+}
+.productInfo .pName
+{
+    font-size: 2rem;
+}
+.productIMG
+{
+    width: 20rem;
+    height: 20rem;
+    padding : 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 1rem;
+    margin-right: 4rem;
+}
+.info
+{
+   
+    width: 42rem;
+    min-height: 10rem;
+    word-break: normal;
 }

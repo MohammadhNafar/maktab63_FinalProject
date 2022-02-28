@@ -1,7 +1,7 @@
 import * as actionTypes from './shopping-types';
 
 export const addToCart = (itemID) => {
-    console.log({itemID})
+   
     return {
         type: actionTypes.ADD_TO_CART,
         payload: {
@@ -13,7 +13,7 @@ export const addToCart = (itemID) => {
 
 export const removeFromCart = (itemID) =>
 {
-    console.log({itemID})
+    
 
     return {
         type: actionTypes.REMOVE_FROM_CART,
@@ -33,4 +33,23 @@ export const adjustItemQty = (itemID, qty) => {
     };
   };
 
- 
+  export const getProductsRequest = () => {
+    return {
+        type: actionTypes.FETCH_PRODUCTS_REQUEST,
+    }
+};
+
+
+export const getProductsSuccess = (data) => {
+    return {
+        type: actionTypes.FETCH_PRODUCTS_SUCCESS,
+        payload: data
+    }
+};
+
+export const getProductsFailed = (err) => {
+    return {
+        type: actionTypes.FETCH_PRODUCTS_FAILED,
+        payload: err
+    }
+};

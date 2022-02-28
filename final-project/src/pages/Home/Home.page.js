@@ -4,27 +4,23 @@ import Middle from './components/middle/middle.component';
 import Styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
 import { Icon } from '@iconify/react';
-import {getProducts} from '../../api/products.api'
-import {IMAGE_URL} from '../../configs/image.url';
 import {useEffect, useState} from 'react';
-import List from './components/List/List.component';
-import Modal from '../../Components/Modal/modal.page';
-import {PATHS} from '../../routes/routes.config';
-import {connect} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 
 
-const HomePage = ({products}) => {
-    const  [rows, setRows] = useState([]);
-    //const [openModal, setOpenModal] = useState(false);
+const HomePage = () => {
+    const dispatch = useDispatch();
+    const productsNew = useSelector(state => state.shop.products.data)
+   
+    
 
 
     useEffect(() => {
-        getProducts().then(data => setRows(data.data) )
-        console.log(rows,'hello')
-        //localStorage.setItem('loggedin', 'false')
-
-      }, [])
-      const datas = rows;
+        dispatch(fetchProducts())
+       
+    }, [])
+      
       
     return (
         <div className={Styles.container}>
@@ -59,7 +55,7 @@ const HomePage = ({products}) => {
               closeModal = {setOpenModal}/>}  */}
                     <div className={Styles.firstSecCards}>
                         {
-                            datas.map(
+                             productsNew?.map(
                                 data =>
                                 <Card
                                 id = {data.id}
@@ -68,6 +64,7 @@ const HomePage = ({products}) => {
                     info = {data.category}
                     Price = {data.price}
                     PicList = {data.image}
+                    count = {data.count}
                     
                     />
                             )
@@ -95,11 +92,6 @@ const HomePage = ({products}) => {
         
     );
 }
-const mapStatToProps = state => {
-    return {
-    products: state.shop.products
-    }
 
-}
 
-export default connect(mapStatToProps)(HomePage);
+export default HomePage;

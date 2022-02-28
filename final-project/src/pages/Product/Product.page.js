@@ -5,17 +5,20 @@ import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
 import {connect} from 'react-redux'
+import { IMAGE_URL } from '../../configs/image.url';
+import {getProducts} from '../../api/products.api';
+import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'
 import http from '../../services/http.service'
+import { useParams } from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
 import Comments from './Components/Coments/Comments.component';
 import IMG from '../../assets/images/productsImage/kisspng-cream-chocolate-spread-nutella-white-chocolate-nutella-crepe-5b1a06b75d0bc6.8532377415284323113811.png';
 import axios from 'axios';
-const ProductPage = (addToCart) => {
+const ProductPage = (props) => {
 
     const [like,setlike] = useState(0)
     const [dislike,setdislike] = useState(0)
-    
     const [likeactive,setlikeactive] = useState(false)
     const [dislikeactive,setdislikeactive] = useState(false)
     const [username,setusername] = useState([]);
@@ -24,21 +27,26 @@ const ProductPage = (addToCart) => {
     const [currentPage , setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
 
-
+    let {id} = useParams(); 
+    console.log(id)
 
     async function sendComment(e)
     {
+      
+
       e.preventDefault();
       console.log(username,comment,score)
-      let items = {username,comment,score};
+    
       let result = http.post('http://localhost:3002/comments' , {
         username,
         comment,
         score
     
       })
+     
       result = await result.json();
     }
+   
 
   
     function likef(){
@@ -76,10 +84,23 @@ const ProductPage = (addToCart) => {
 
 
     const  [rows, setRows] = useState([]);
+    const  [product, setProduct] = useState([]);
+
+   
+
     useEffect(() => {
         getComments().then(data => setRows(data.data) )
         console.log(rows,'hello')
-        //localStorage.setItem('loggedin', 'false')
+        getProduct(id).then(data => 
+          setProduct(data.data)
+          
+          )
+        // http.get("http://localhost:3002/products").then(data => setProduct(data.data))
+        console.log(product,"sdsd");
+       
+        
+        
+        
 
       }, [])
       const datas = rows;
@@ -97,49 +118,61 @@ const ProductPage = (addToCart) => {
         <div className={Styles.container}>
             <Header/>
             <hr className={Styles.hrHeader}></hr>
+        
 
-            <div className={Styles.body}>
-            <div className={Styles.levels} >محصولات/شکلات</div>
+              <div className={Styles.body}>
+              {
+                            product.map(
+                                data =>
+                                <div> 
+                                <div className={Styles.levels} >محصولات/{data.category}</div>
 
-            <div className={Styles.productSec}>
-
-                <div className={Styles.information} >
-                    <div className={Styles.images}>
-                <img className={Styles.productIMG} src={IMG}></img>
-                <div className={Styles.littles}>
-                <img className={Styles.productLittleImg} src={IMG}></img>
-                <img className={Styles.productLittleImg} src={IMG}></img>
-                <img className={Styles.productLittleImg} src={IMG}></img>
-                </div>
-                
-                </div>
-                <div className={Styles.center}>
-
-                <h1>
-                        تست
-                    </h1>
-                    <div className={Styles.productInfo}>
-                    <p>
-                        تتست
-                    </p>
-                    </div>
+                                <div className={Styles.productSec}>
                     
-                    <div className={Styles.centerQuantitySec}>
-
-                    <input className={Styles.quantityInput} type='number' ></input>  تعداد 
-
-                    </div>
-                </div>
-                   
-
-                </div>
-               
-                <BuyCard
-                price = {'1222'}
-                />
-            </div>
-
-            </div>
+                                    <div className={Styles.information} >
+                                        <div className={Styles.images}>
+                                    <img className={Styles.productIMG} src={`${IMAGE_URL}${data.image}`}></img>
+                                    <div className={Styles.littles}>
+                                    <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                                    <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                                    <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                                    </div>
+                                    
+                                    </div>
+                                    <div className={Styles.center}>
+                    
+                                    <h1>
+                                            
+                                        </h1>
+                                        <div className={Styles.productInfo}>
+                                        <p className={Styles.pName}>
+                                            {data.name}
+                                        </p>
+                                        <p className={Styles.pBrand} >محصول: {data.brand}</p>
+                                        <p className={Styles.info} >
+                                        {data.info}
+                                      </p>
+                                        </div>
+                                      
+                                       
+                                    </div>
+                                       
+                    
+                                    </div>
+                                   
+                                    <BuyCard
+                                    count = {data.count}
+                                    price = {data.price}
+                                    />
+                                </div>
+                                </div>
+                                
+                                
+                            )
+                        }     
+           
+          </div>
+            
             <hr></hr>
             <h1 className={Styles.nazarat}>
                 نظرات

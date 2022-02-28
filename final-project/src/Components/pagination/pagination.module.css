@@ -1,6 +1,7 @@
 ::selection {
-    color: #fff;
-    background: #EE2D40;
+    color: #EE2D40;
+    background: white;
+    
   }
   .container {
     background: #fff;
@@ -9,14 +10,17 @@
     align-items: center;
     justify-content: center;
     padding: 20px 30px;
+    
    
   }
   .container .title {
     font-size: 50px;
     font-weight: 600;
+    
   }
   .container p {
     font-size: 19px;
+    
   }
   .pagination {
     margin: 25px 0 15px 0;
@@ -27,14 +31,16 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    
   }
   .pagination li {
-    background: #EE2D40;
+    background: white;
     list-style: none;
+    
   }
   .pagination li a {
     text-decoration: none;
-    color: #fdfdfd;
+    color: #EE2D40;
     height: 2rem;
     width: 2rem;
     font-size: 18px;
