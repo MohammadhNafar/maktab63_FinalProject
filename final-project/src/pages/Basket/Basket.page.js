@@ -22,6 +22,33 @@ const BasketPage = ({cart}) => {
         setTotalPrice(price);
         setTotalItems(items);
     }, [cart, totalItems, totalPrice, setTotalPrice, setTotalItems]);
+//     let orders = ["totalItems" = totalItems , "totalPrice" = totalPrice, 
+//     cart.map(item => (
+//         item.name, item.qty, item.price
+//     ))
+
+// ]
+    function submit()
+    {
+        // localStorage.setItem('ORDERS', orders);
+        // localStorage.setItem('ORDERS', totalItems , totalPrice , cart.map(item =>(
+        //     item.name, item.price , item.qty , [...data,new data]
+        // ))
+        // )
+        // localStorage.setItem('totalItems',totalItems );
+        // localStorage.setItem('totalPrice',totalPrice );
+        // localStorage.setItem('productName', cart.map(item => (
+        //     item.name
+        // ))) 
+        // localStorage.setItem('qty', cart.map(item => (
+        //     item.qty
+        // ))) 
+        // localStorage.setItem('productId', cart.map(item => (
+        //     item.id
+        // ))) 
+
+
+    }
     return (
         <div className={Styles.container}>
             <Header/>
@@ -91,7 +118,7 @@ const BasketPage = ({cart}) => {
                                                 ? <div className={Styles.sendPrice}>
                                                        
                                                             قیمت با هزینه ارسال  :         
-                                                          {totalPrice + send}  تومان
+                                                          { totalPrice + send}  تومان
                                                     </div>
                                                 : <div className={Styles.freeSend}>
                                                         هزینه ارسال خرید های بیشتر 200 هزار تومان رایگان است !
@@ -102,7 +129,7 @@ const BasketPage = ({cart}) => {
 
                                 {
                                     totalItems
-                                        ? <button className={Styles.confirmBtn}>
+                                        ? <button onClick={submit} className={Styles.confirmBtn}>
                                                 نهایی کردن خرید
                                             </button>
                                         : ""

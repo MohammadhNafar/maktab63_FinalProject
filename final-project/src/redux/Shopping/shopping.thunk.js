@@ -2,7 +2,7 @@ import {getProductsRequest , getProductsSuccess , getProductsFailed} from './sho
 import axios from 'axios';
 
 
-const url = "http://localhost:3002/prod2ucts";
+const url = "http://localhost:3002/products";
 
 export const fetchProducts = () => {
     return (dispatch) => {

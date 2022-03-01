@@ -3,7 +3,7 @@ import Styles from './table.module.css';
 import { Icon } from '@iconify/react';
 import { removeFromCart,adjustItemQty } from '../../../../redux/Shopping/shopping-actions';
 import { useDispatch } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 const BasketTableComponent = (props) => {
     const dispatch = useDispatch();
@@ -44,7 +44,10 @@ const BasketTableComponent = (props) => {
 
             </div>
             <div className={Styles.List}>
-            <h2>{props.product}</h2>
+              <Link className={Styles.linkToProduct} to= {`/Product/${props.id}`} >
+              <h2>{props.product}</h2>
+              </Link>
+            
 
 
             </div>

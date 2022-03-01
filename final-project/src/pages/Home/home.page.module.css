@@ -1,9 +1,9 @@
 
-body
-{
-    overflow-x: hidden;
 
-    
+
+.wrapper
+{
+    display: flex;
 }
 
 
@@ -13,6 +13,8 @@ body
     width: 89.5vw;
     height: 200vh;
    direction: rtl;
+   display: flex;
+   
    /* background-color: #FACB82; */
     
 }
@@ -33,7 +35,7 @@ body
     
     width: 100%;
     min-height: 20rem;
-    
+   
     
     
    
@@ -41,9 +43,12 @@ body
 
 .firstSecCards
 {
+    padding-top: 5rem;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 1rem;
+    justify-content: center;
 
 }
 .firstSecCards h2
@@ -58,4 +63,39 @@ body
     height: 5rem;
     display: flex;
     justify-content: space-between;
+}
+.animations
+{
+    width: 45rem;
+    height: 45rem;
+    padding-top: 2rem;
+    
+    position: absolute;
+    margin-left: 40rem;
+    align-items: center;
+    z-index: -1;
+}
+.loadingg
+{
+    width: 45rem;
+    height: 45rem;
+    padding-top: 2rem;
+    
+    position: absolute;
+    margin-left: 43rem;
+    align-items: center;
+    z-index: -1;
+
+}
+.sideBarContent
+{
+    margin-top: 4rem;
+    width: 15%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+   
 }

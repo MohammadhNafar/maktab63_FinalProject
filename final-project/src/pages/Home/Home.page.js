@@ -4,9 +4,12 @@ import Middle from './components/middle/middle.component';
 import Styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
 import { Icon } from '@iconify/react';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
+import lottie from 'lottie-web';
+import List from './components/List/List.component'
+import Sidebar from '../../layouts/user/sideBar/SideBar';
 
 
 const HomePage = () => {
@@ -15,38 +18,71 @@ const HomePage = () => {
     const proDatas = useSelector(state => state.shop)
     const loading = proDatas.loading
     const error = proDatas.error
+    const container = useRef(null)
+     //let categorys = productsNew.map(item =>  item.category)
+     //console.log(categorys)
+     
+    //  let productsSet = [...new Set(productsNew)]
+    //  console.log( productsSet)
+
     
+    
+
 
 
     useEffect(() => {
         dispatch(fetchProducts())
+        lottie.loadAnimation({
+            container: container.current,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: require('../../assets/lottie/cart/16982-shopping-loader.json')
+        })
     }, [])
       
       
     return (
+        
         <div className={Styles.container}>
+            
                 <Header
-                cart = {'1'}
-                
-                
                 />
-            <div className= {Styles.Mid} >
-            <Middle/>
-            {loading && <h1>loading</h1>}
-            {error && !loading && <h1>دریافت محصولات با خطا مواجه شد لطفا بعدا تلاش کنید</h1>}
-            <div className={Styles.listHome}>
-            {/* { datas.map(data =>
+                
+                   {/* { productsNew.map(data =>
              <List
              key = {data.id}
              btnTitle = {data.category}
              />           
-            )
-} */}
+            ) */}
+
+                            
+            
+            <div className= {Styles.Mid} >
+            <Middle/>
+            {loading && <h1 className={Styles.loadingg} >درحال بارگذاری</h1>}
+            {error && !loading && <div className={Styles.animations} ref={container}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</div>}
+           
+            <div className={Styles.listHome}>
+        
 </div>
             </div>
             <div className= {Styles.bodySec}>
+                <div className={Styles.sideBarContent}>
+                { productsNew?.filter(value=> value.category == 'شکلات').map(
+                 values => 
+                 <Sidebar
+                 key = {values.id}
+                 titles = {values.category}
+                 />        
+            )
+} 
+                </div>
+          
+            
                 <div className={Styles.products}>
-                <h1 className= {Styles.firstH1} >محصولات</h1>
+                
+                
                 <div className={Styles.firstSec}>
                     
                 {/* {openModal && <Modal placeHolder2 = {"سلام"}
@@ -90,9 +126,13 @@ const HomePage = () => {
 
                 </div>
                 </div>
+            
             </div>
+
+           
+
         </div>
-        
+                
     );
 }
 

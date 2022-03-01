@@ -72,3 +72,8 @@
     margin-top: 1rem;
     border: 2px solid #EE2D40;
 }
+.linkToProduct
+{
+    text-decoration: none;
+    color: #EE2D40;
+}
