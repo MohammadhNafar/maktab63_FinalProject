@@ -33,7 +33,15 @@ const ProductPage = () => {
       setOpenAddModal(true);
       console.log('helslo')
     }
-
+    // function deleteRows(id)
+    // {
+    //   console.log('clicked')
+    //   fetch('http://localhost:3002/products/'+id, {
+    //     method: 'DELETE',
+    //     headers: {'Aceept': 'application/json'},
+    //     'content-type': 'application/json'
+    // })
+    // }
     //get current page
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -79,6 +87,7 @@ const ProductPage = () => {
                PicList = {data.image}
                 categoryList = {data.category}
                 show = {setOpenModal}
+                // deleteItem = {deleteRows(data.id)}
               />
               
             )}

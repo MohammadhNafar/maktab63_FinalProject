@@ -95,7 +95,7 @@ const ProductPage = (props) => {
         console.log(rows,'hello')
         getProduct(id).then(data => 
           setProduct(data.data)
-          
+      
           )
         // http.get("http://localhost:3002/products").then(data => setProduct(data.data))
         console.log(product,"sdsd");
