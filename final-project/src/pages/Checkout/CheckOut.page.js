@@ -4,6 +4,7 @@ import Styles from './checkout.module.css'
 import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
+import moment from 'jalali-moment'
 const CheckoutPage = () => {
 
     const  [proDuctName, setProductName] = useState([])
@@ -32,22 +33,23 @@ const CheckoutPage = () => {
         e.preventDefault();
         console.log(name,proDuctName,email,phone,address,date,totalPrice,totalItems);
         
-        let result = http.post('http://localhost:3002/orders' , {
-            name,
+        // let result = http.post('http://localhost:3002/orders' , {
+        //     name,
            
 
-            email,
-            phone,
-            address,
-            date,
-            totalPrice,
-            totalItems,
-            goods,
-            status
-        })
-        console.log(result)
-
-
+        //     email,
+        //     phone,
+        //     address,
+        //     date,
+        //     totalPrice,
+        //     totalItems,
+        //     goods,
+        //     status
+        // })
+        
+        localStorage.setItem('datas', JSON.stringify(datas))
+        localStorage.setItem('price',totalPrice)
+        console.log(datas)
     }
 
 
@@ -75,15 +77,17 @@ const CheckoutPage = () => {
                 <h1 >
                     تکمیل خرید
                 </h1>
+            </div>
+      
+            { totalItems ?
+              <div>
             <Table
             name = {proDuctName}
             qty = {totalItems}
             price = {totalPrice}
 
             />
-                {/* قیمت    <h1>{price}</h1> 
-                تعداد    <h1>{totalItems}</h1> 
-                کالا ها   <h1>{name}</h1> */}
+              
 
 
 
@@ -122,6 +126,7 @@ const CheckoutPage = () => {
                     <span>لطفا شماره تلفن خودرا وارد کنید</span>
                 </li>
                 <li>
+                    
                     <label for="date">تاریخ تحویل</label>
                     <input
                     onChange={(e) => setDate(e.target.value)}
@@ -134,6 +139,9 @@ const CheckoutPage = () => {
                 </li>
                 </ul>
                 </form>
+                </div>
+            : <h1 className={Styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
+
 
 
 
@@ -158,7 +166,7 @@ const CheckoutPage = () => {
 
                 
             </div>
-        </div>
+        
     );
 }
 

@@ -144,3 +144,11 @@
 	color:#fff;
     direction: rtl;
 }
+
+.nothing
+{
+    color: gray;
+    font-size: 1rem;
+    padding-top: 10rem;
+    padding-left: 44rem;
+}

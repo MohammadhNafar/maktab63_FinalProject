@@ -11,5 +11,6 @@ export const PATHS = {
     PRODUCT: '/Product',
     ORDERS: '/Orders',
     PROFILE: '/Profile',
-    QUANTITY: '/Quantity'
+    QUANTITY: '/Quantity',
+    PAYMENT : '/Payment'
 }

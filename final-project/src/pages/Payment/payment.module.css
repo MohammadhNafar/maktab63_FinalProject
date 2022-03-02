@@ -1,0 +1,29 @@
+
+.container
+{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.inputs
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+    
+    justify-content: center;
+}
+.inputs input
+{
+    width: 35%;
+    height: 2rem;
+    margin: 0 auto;
+    direction: rtl;
+}
+.inputs button
+{
+    width: 15%;
+    height: 2rem;
+    margin: 0 auto;
+}
