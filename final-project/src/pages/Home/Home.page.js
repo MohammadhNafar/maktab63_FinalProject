@@ -108,7 +108,7 @@ const HomePage = () => {
                     />
                             )
                         }      
-                    <h2><Icon  icon="ep:more-filled" width="50" height="50" /></h2>
+                  
                     </div>
                 </div>
                 <div className={Styles.chokoSec}>
