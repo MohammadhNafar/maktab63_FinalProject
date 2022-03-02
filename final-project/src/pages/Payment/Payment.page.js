@@ -1,10 +1,21 @@
 import React from 'react';
 import Styles from './payment.module.css'
 import http from '../../services/http.service';
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 const PaymentPage = () => {
-
-
+    const Nav = useNavigate()
+    window.onbeforeunload = function (e) {
+        e = e || window.event;
+    
+        // For IE and Firefox prior to version 4
+        if (e) {
+            e.returnValue = 'Sure?';
+        }
+    }
+    window.onbeforeunload = function() {
+        return "";
+  }
 
     let datas = localStorage.getItem('datas');
     let price = localStorage.getItem('price');
@@ -17,6 +28,13 @@ const PaymentPage = () => {
         let result = http.post('http://localhost:3002/orders' , JSON.parse(datas))
         console.log(result)
         localStorage.clear();
+    }
+
+    function cancelData()
+    {
+        console.log("clicked")
+        localStorage.clear();
+        Nav('/')
     }
 
     return (
@@ -33,7 +51,9 @@ const PaymentPage = () => {
                         <input placeholder='cvv2' type="number"></input>
 
                         <div className={Styles.btns}>
-                            <button className={Styles.cancel}>لغو خرید</button>
+                            <button
+                            onClick={cancelData}
+                            className={Styles.cancel}>لغو خرید</button>
 
                             <button className={Styles.submit} onClick={sendData}>تکمیل خرید</button>
                         </div>

@@ -1,45 +1,52 @@
 import React, { useState } from 'react';
 import Styles from './addModal.module.css';
 import http from '../../../../../services/http.service';
-
+import { imageUpload } from '../../../../../api/uploadImage.api';
 
 const Addmodal = (props) => {
+
+ 
     const [name, setname] = useState([])
     const [brand, setbrand] = useState([])
     const [price, setprice] = useState([])
     const [category, setcategory] = useState([])
     const [count, setcount] = useState([])
     const [images , setImages] = useState(null)
-
-
-
-
+ 
+    
 
     async function addProduct(e)
     {
         e.preventDefault();
-        console.log(name,brand,price,category,images,count)
+        console.log(e.target.images.files[0])
         
-        let result = http.post('http://localhost:3002/products' , {
+        let form = new FormData();
+        form.append('image', e.target.images.files[0])
+        const reqConfig = {
+            headers: {
+                'content-type': 'multipart/form-data',
+                'token': localStorage.getItem('ACCESS_TOKEN')
+            }
+        }
+         imageUpload(form, reqConfig).then(res =>{
+            console.log(res.data.filename)
+            let result = http.post('http://localhost:3002/products' , {
             name,
             brand,
             price,
             category,
-            count
+            count,
+            image: res.data.filename
         })
         console.log(result)
-        // const formDATA = new FormData();
-        // FormData.append('file',files)
-        // FormData.append('name',name)
-        // FormData.append('brand',brand)
-        // FormData.append('price',price)
-        // FormData.append('category',category)
-        // FormData.append('count',count)
-        // let result = await fetch ('http://localhost:3002/products',{
-        //     method: 'POST',
-        //     body: formDATA
-        // })
-        // alert('Product Added')
+        })
+       
+    
+      
+        console.log(name,brand,price,category,images,count)
+        
+        
+       
     }
     
     return (
@@ -58,7 +65,7 @@ const Addmodal = (props) => {
                 </h1>
                 </div>
                 <div className={Styles.items}>
-                    <form>
+                    <form onSubmit={addProduct} >
                     <input 
                     onChange={(e) => setname(e.target.value)} className={Styles.inputStyle}
                      placeholder= "نام کالا" type='text'></input>
@@ -80,14 +87,14 @@ const Addmodal = (props) => {
                      onChange={(e) => setcount(e.target.value)} className={Styles.inputStyleNum}
                     placeholder= "تعداد" type='number'></input>
                 
-                    {/* <input
-                    onChange={(e) => setImages(e.target.files[0])}
-                     className={Styles.inputStyleFile} placeholder= "عکس" type='file'></input> */}
+                    <input
+                     name = "images" id='images' type='file'
+                     className={Styles.inputStyleFile} placeholder= "عکس"/>
 
 
 
 
-                    <button className={Styles.btn}  onClick={addProduct}  > اضافه کردن کالا </button>
+                    <button className={Styles.btn}   > اضافه کردن کالا </button>
                     </form>
                     
                 </div>

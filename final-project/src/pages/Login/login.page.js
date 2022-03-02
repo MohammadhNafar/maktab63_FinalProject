@@ -80,7 +80,7 @@ const LoginPage = () => {
          
     }) .catch(function (error) {
         console.log(error);
-        toast('نام کاربری یا رمز عبور صحیح نمیباشند')
+        toast.error('نام کاربری یا رمز عبور صحیح نمیباشند')
       });
 
     }

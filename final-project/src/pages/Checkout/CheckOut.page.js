@@ -5,6 +5,8 @@ import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
 import moment from 'jalali-moment'
+import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router';
 const CheckoutPage = () => {
     const Nav = useNavigate();
@@ -48,10 +50,11 @@ const CheckoutPage = () => {
         //     status
         // })
         
-        localStorage.setItem('datas', JSON.stringify(datas))
-        localStorage.setItem('price',totalPrice)
-        console.log(datas)
-        Nav('/Payment')
+             localStorage.setItem('datas', JSON.stringify(datas))
+         localStorage.setItem('price',totalPrice)
+         console.log(datas)
+         Nav('/Payment')
+         toast.success('سفارش شما با موفقیت ثبت شد')
     }
 
 
