@@ -15,8 +15,8 @@
 }
 .tableHead:hover
 {
-    border-bottom: 2px solid red;
-    color: red;
+    border-bottom: 2px solid #EE2D40;
+    color: #EE2D40;
 }
 .tableHead h2
 {
@@ -55,7 +55,7 @@
     width: 100%;
     height: 3rem;
     border: none;
-    color: red;
+    color: #EE2D40;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10%;

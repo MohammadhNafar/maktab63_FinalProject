@@ -10,7 +10,7 @@
 }
 th
 {
-	background-color:red;
+	background-color:#EE2D40;
 	color: white;
 }
 .styled th,
@@ -30,13 +30,13 @@ th
 }
 
 .styled tbody tr:hover {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #EE2D40;
 	
 }
 
 .styled tbody tr:hover {
     
-    color: red;
+    color: #EE2D40;
 }
 
 .tableHead
@@ -56,8 +56,8 @@ th
 }
 .tableHead:hover
 {
-    border-bottom: 2px solid red;
-    color: red;
+    border-bottom: 2px solid #EE2D40;
+    color: #EE2D40;
 }
 .tableHead h2
 {

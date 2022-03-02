@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import Styles from './addModal.module.css';
 import http from '../../../../../services/http.service';
 
+
 const Addmodal = (props) => {
     const [name, setname] = useState([])
     const [brand, setbrand] = useState([])
     const [price, setprice] = useState([])
     const [category, setcategory] = useState([])
     const [count, setcount] = useState([])
+    const [images , setImages] = useState(null)
+
 
 
 
 
     async function addProduct(e)
     {
-        console.log(name,brand,price,category)
+        e.preventDefault();
+        console.log(name,brand,price,category,images,count)
         
         let result = http.post('http://localhost:3002/products' , {
             name,
@@ -23,8 +27,19 @@ const Addmodal = (props) => {
             category,
             count
         })
-        result = await result.json();
-        
+        console.log(result)
+        // const formDATA = new FormData();
+        // FormData.append('file',files)
+        // FormData.append('name',name)
+        // FormData.append('brand',brand)
+        // FormData.append('price',price)
+        // FormData.append('category',category)
+        // FormData.append('count',count)
+        // let result = await fetch ('http://localhost:3002/products',{
+        //     method: 'POST',
+        //     body: formDATA
+        // })
+        // alert('Product Added')
     }
     
     return (
@@ -64,8 +79,11 @@ const Addmodal = (props) => {
                     <input
                      onChange={(e) => setcount(e.target.value)} className={Styles.inputStyleNum}
                     placeholder= "تعداد" type='number'></input>
-                    
-                    <input className={Styles.inputStyleFile} placeholder= "عکس" type='file'></input>
+                
+                    {/* <input
+                    onChange={(e) => setImages(e.target.files[0])}
+                     className={Styles.inputStyleFile} placeholder= "عکس" type='file'></input> */}
+
 
 
 

@@ -5,6 +5,7 @@ import Table from './Components/Table/Basket.table.component';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
 import Empty from './Components/empty/Empty.basket.component'
+import { Link } from 'react-router-dom';
 
 const BasketPage = ({cart}) => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -35,17 +36,17 @@ const BasketPage = ({cart}) => {
         //     item.name, item.price , item.qty , [...data,new data]
         // ))
         // )
-        // localStorage.setItem('totalItems',totalItems );
-        // localStorage.setItem('totalPrice',totalPrice );
-        // localStorage.setItem('productName', cart.map(item => (
-        //     item.name
-        // ))) 
-        // localStorage.setItem('qty', cart.map(item => (
-        //     item.qty
-        // ))) 
-        // localStorage.setItem('productId', cart.map(item => (
-        //     item.id
-        // ))) 
+        localStorage.setItem('totalItems',totalItems );
+        localStorage.setItem('totalPrice',totalPrice );
+        localStorage.setItem('productName', [cart.map(item => (
+            item.name
+        ))]) 
+        localStorage.setItem('qty', cart.map(item => (
+            item.qty
+        ))) 
+        localStorage.setItem('productId', cart.map(item => (
+            item.id
+        ))) 
 
 
     }
@@ -129,9 +130,10 @@ const BasketPage = ({cart}) => {
 
                                 {
                                     totalItems
-                                        ? <button onClick={submit} className={Styles.confirmBtn}>
+                                        ? <Link to='/Checkout'  >
+                                        <button onClick={submit} className={Styles.confirmBtn}>
                                                 نهایی کردن خرید
-                                            </button>
+                                            </button></Link> 
                                         : ""
                                 }
                             </div>
