@@ -20,22 +20,33 @@ const PaymentPage = () => {
     }
 
     return (
+        
         <div className={Styles.container}>
-            <h1>
-                صفحه ی پرداخت
-            </h1>
-            <h1>مبلغ قابل پرداخت {price}</h1>
-            <div className={Styles.inputs}>
-            <input placeholder='شماره کارت' type="number"></input>
-            <input placeholder='تاریخ انقضا' type="number" ></input>
-            <input placeholder='cvv2' type="number" ></input>
-            <button onClick={sendData} >تکمیل خرید</button>
-            <button>لغو خرید</button>
+            {price ? 
+               
+              <><div className={Styles.back}>
+                    <img className={Styles.image} src={require('../../assets/images/payment.png')} alt="" />
 
-            </div>
+                </div><h1 className={Styles.priceSec}>{price}</h1><div className={Styles.inputs}>
+                        <input placeholder='شماره کارت' type="number"></input>
+                        <input placeholder='تاریخ انقضا' type="number"></input>
+                        <input placeholder='cvv2' type="number"></input>
+
+                        <div className={Styles.btns}>
+                            <button className={Styles.cancel}>لغو خرید</button>
+
+                            <button className={Styles.submit} onClick={sendData}>تکمیل خرید</button>
+                        </div>
+
+
+                    </div></>
+              
+            : <h1 className={Styles.none} >!چیزی برای نمایش وجود ندارد </h1> }
+            
+          
            
-
-        </div>
+            </div>
+    
     );
 }
 

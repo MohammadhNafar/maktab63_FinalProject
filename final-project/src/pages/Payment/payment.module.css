@@ -4,13 +4,30 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
+   
+}
+
+
+.backImage
+{
+    
+    width: 100%;
+    height: 95vh;
+    
+    
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    
 }
 .inputs
 {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding-top: 10rem;
+    padding-left: 12rem;
     gap: 1rem;
+   
     
     justify-content: center;
 }
@@ -20,10 +37,70 @@
     height: 2rem;
     margin: 0 auto;
     direction: rtl;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding-right: 1rem ;
 }
-.inputs button
+
+.btns
 {
-    width: 15%;
-    height: 2rem;
+    padding-top: 8rem;
+    display: flex;
+    gap: 1rem;
     margin: 0 auto;
+}
+
+.btns button
+{
+    width: 5rem;
+    height: 2rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+.btns button:hover
+{
+    cursor: pointer;
+}
+.cancel
+{
+    background: #D35749
+}
+.submit
+{
+    background-color: #3C7AAE;
+}
+.image
+{
+    
+    height: 40rem;
+    width: 55rem;
+    margin-right: 5rem;
+    z-index: -1;
+}
+.back
+{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    z-index: -1;
+    
+}
+.priceSec
+{
+    position: absolute;
+    padding-top: 27.5rem;
+    font-size: 1rem;
+    padding-left: 23rem;
+    color: #EE2D40;
+}
+.none
+{
+    margin: 0 auto;
+    padding-top: 15rem;
+    font-size: 0.8rem;
+    color: gray;
 }

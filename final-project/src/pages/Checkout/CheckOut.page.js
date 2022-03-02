@@ -5,8 +5,9 @@ import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
 import moment from 'jalali-moment'
+import { useNavigate } from 'react-router';
 const CheckoutPage = () => {
-
+    const Nav = useNavigate();
     const  [proDuctName, setProductName] = useState([])
     const [name, setName] = useState([])
     const [email , setEmail] = useState([])
@@ -50,6 +51,7 @@ const CheckoutPage = () => {
         localStorage.setItem('datas', JSON.stringify(datas))
         localStorage.setItem('price',totalPrice)
         console.log(datas)
+        Nav('/Payment')
     }
 
 
