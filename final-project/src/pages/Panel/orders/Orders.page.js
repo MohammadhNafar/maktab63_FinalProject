@@ -4,24 +4,31 @@ import Styles from './orders.module.css';
 import Header from '../../../layouts/manage/header/Header';
 import {useEffect, useState} from 'react';
 import {getOrders} from '../../../api/orders.api'
+import { useDispatch, useSelector } from 'react-redux';
+import {fetchOrders} from '../../../redux/Orders/orders.thunk'
 import Modal from './Components/ordersModal/OrdersModal.component';
 
 const OrdersPage = () => {
-
-    const [rows, setRows] = useState([]);
+    const proOrders = useSelector(state => state.orders)
+    const loading = proOrders.loading
+    const error = proOrders.error
+    const ordersNew = useSelector(state => state.orders.orders.data)
+    console.log(ordersNew ,"orders" )
+    // const [rows, setRows] = useState([]);
     const [openModal, setOpenModal] = useState(false);
     const [filteredData, setFilter] = useState([])
-    const reqConfig = {
-        headers: {
-            'content-type': 'application/json',
-            'token': localStorage.getItem('ACCESS_TOKEN')
-        }
-    }
+    const dispatch = useDispatch();
+    // const reqConfig = {
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         'token': localStorage.getItem('ACCESS_TOKEN')
+    //     }
+    // }
 
     useEffect(() => {
-        // getOrders().then(data => setRows(data.data))
-        // console.log(rows, 'hello from orders')
-        getOrders(reqConfig).then(data => setRows(data.data))
+        dispatch(fetchOrders())
+        // getOrders(reqConfig).then(data => setRows(data.data))
+
     }, [])
     return (
         <div>
@@ -32,7 +39,7 @@ const OrdersPage = () => {
 
                         e.preventDefault();
 
-                        setFilter(rows.filter(item => item.status = 1))
+                        // setFilter(rows.filter(item => item.status = 1))
 
                     }}>
                     سفارش های تحویل شده</button>
@@ -53,27 +60,19 @@ const OrdersPage = () => {
                 <h1>نام کاربر</h1>
 
             </div>
-            {
-                filteredData.length > 0
-                    ? filteredData.map(
-                        data => <Table
-                            key={data.id}
-                            name={data.name}
-                            price={`${data.totalPrice} تومان`}
-                            date={data.createdAt}/>
-
-                    )
-                    : rows.map(
-                        data => <Table
-                            key={data.id}
-                            name={data.name}
-                            date={data.date}
-                            price={data.totalPrice}
-                            show = {setOpenModal}
+            
+             
+                     { ordersNew.map(
+                         data => <Table
+                             key={data.id}
+                             name={data.name}
+                             date={data.date}
+                             price={data.totalPrice}
+                         show = {setOpenModal}
                             
-                            />
+                           />
 
-                    )
+                   )
             }
 
             {

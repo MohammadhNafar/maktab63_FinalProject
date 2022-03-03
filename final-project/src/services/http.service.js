@@ -14,11 +14,11 @@ class HttpService {
       axios.defaults.baseURL = BASE_URL;
   
       axios.interceptors.request.use((config) => {
-      //   console.log('CONFIG: ', config);
-      // let token = JSON.parse(localStorage.getItem(ACCESS_TOKEN));
-      //   if (config.url !== LOGIN && (config.url === WHOAMI || token)) {
-      //     config.headers['token'] = `${token}`
-      //   }
+        console.log('CONFIG: ', config);
+      // let token = JSON.parse(localStorage.getItem("ACCESS_TOKEN"));
+        // if (config.url !== LOGIN && (config.url === WHOAMI || token)) {
+        //   config.headers['token'] = `${token}`
+        // }
   
         return config;
       }, (error) => {
