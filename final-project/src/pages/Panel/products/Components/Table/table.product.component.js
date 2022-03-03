@@ -6,7 +6,14 @@ import { Icon } from '@iconify/react';
 
 
 const TableProductComponent = (props) => {
-    return (
+    const handleDelete = () => 
+            {
+                console.log(props.id)
+                props.deleteFunc(props.id)
+            }
+
+                return (
+
 
         <div className= {Styles.tableHead}>
             
@@ -15,7 +22,7 @@ const TableProductComponent = (props) => {
                <button 
                onClick = {() => props.show(true)}
                >ویرایش</button>
-               <button onClick={props.deleteFunc}> 
+               <button onClick={handleDelete}> 
                <Icon className={Styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="30" height="30" />
                </button>
            </div>
