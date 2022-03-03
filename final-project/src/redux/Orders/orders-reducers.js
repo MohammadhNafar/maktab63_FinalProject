@@ -1,7 +1,8 @@
 import * as actionTypes from './orders-types';
 
 const INITIAL_STATE = {
-    orders :[]
+    orders :[] ,
+    modal : null
 }
 
 
@@ -18,7 +19,11 @@ const ordersReducer  = (state = INITIAL_STATE, action) => {
 
             case actionTypes.FETCH_ORDERS_FAILED:
             return { ...state, loading: false, error: action.payload }
-
+            case actionTypes.LOAD_CURRENT_ITEM:
+                return {
+                    ...state,
+                    modal: action.payload,
+                };
 
 
 

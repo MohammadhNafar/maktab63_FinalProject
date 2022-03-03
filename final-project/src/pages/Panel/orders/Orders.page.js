@@ -62,14 +62,21 @@ const OrdersPage = () => {
             </div>
             
              
-                     { ordersNew.map(
+                     { ordersNew?.map(
                          data => <Table
                              key={data.id}
                              name={data.name}
                              date={data.date}
                              price={data.totalPrice}
                          show = {setOpenModal}
-                            
+                         id = {data.id}
+                         email = {data.email}
+                         phone = {data.phone}
+                            address = {data.address}
+                            status = {data.status}
+                            totalPrice = {data.totalPrice}
+                            products = {data.products}
+                            totalItems = {data.totalItems}
                            />
 
                    )
