@@ -42,7 +42,7 @@ const AppRoute = () => {
     <Route path="*" element={<NotFound/>} />
     <Route element = {<ProtectdRoutes/>}>
     <Route exact path={PATHS.QUANTITY} element={<Quantity/>} />
-    {/* <Route exact path={PATHS.ORDERS} element={<Orders/>} /> */}
+     <Route exact path={PATHS.ORDERS} element={<Orders/>} /> 
     <Route exact path={PATHS.PRODUCTS} element={<Products/>} />
     </Route>
     </Routes>

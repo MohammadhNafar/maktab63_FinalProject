@@ -8,12 +8,15 @@ import {useParams} from 'react-router-dom';
 const PaymentresultPage = () => {
     const {status} = useParams();
     return (
+        
         <div>
               <Header/>
+              
             <hr className={Styles.hrHeader}></hr>
-            
             {status === 'Success' ? <Success/> : <Failed/>}
+            
         </div>
+        
     );
 }
 

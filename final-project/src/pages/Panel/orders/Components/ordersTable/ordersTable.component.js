@@ -22,11 +22,14 @@ const OrderstableComponent = (props) => {
          </div>
          <div className={Styles.List}>
          <h2 className={Styles.h2Cat} >{props.price} تومان </h2>
+     
+
          </div>
          <div className={Styles.List}>
          <h2 className={Styles.h2Name} >{props.name}</h2>
 
          </div>
+        
          
 
 

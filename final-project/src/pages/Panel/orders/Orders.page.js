@@ -11,10 +11,17 @@ const OrdersPage = () => {
     const [rows, setRows] = useState([]);
     const [openModal, setOpenModal] = useState(false);
     const [filteredData, setFilter] = useState([])
+    const reqConfig = {
+        headers: {
+            'content-type': 'application/json',
+            'token': localStorage.getItem('ACCESS_TOKEN')
+        }
+    }
 
     useEffect(() => {
-        getOrders().then(data => setRows(data.data))
-        console.log(rows, 'hello from orders')
+        // getOrders().then(data => setRows(data.data))
+        // console.log(rows, 'hello from orders')
+        getOrders(reqConfig).then(data => setRows(data.data))
     }, [])
     return (
         <div>
@@ -52,16 +59,18 @@ const OrdersPage = () => {
                         data => <Table
                             key={data.id}
                             name={data.name}
-                            price={`${data.price} تومان`}
+                            price={`${data.totalPrice} تومان`}
                             date={data.createdAt}/>
 
                     )
                     : rows.map(
                         data => <Table
                             key={data.id}
-                            nameList={data.name}
-                            priceList={`${data.price} تومان`}
-                            quanitityList={data.count}/>
+                            name={data.name}
+                            date={data.date}
+                            price={data.totalPrice}
+                            
+                            />
 
                     )
             }
