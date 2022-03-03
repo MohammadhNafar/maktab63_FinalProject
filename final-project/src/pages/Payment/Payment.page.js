@@ -2,9 +2,10 @@ import React from 'react';
 import Styles from './payment.module.css'
 import http from '../../services/http.service';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 const PaymentPage = () => {
     const Nav = useNavigate()
+    
     window.onbeforeunload = function (e) {
         e = e || window.event;
     
@@ -28,13 +29,14 @@ const PaymentPage = () => {
         let result = http.post('http://localhost:3002/orders' , JSON.parse(datas))
         console.log(result)
         localStorage.clear();
+        Nav('/PaymentResult/Success')
     }
 
     function cancelData()
     {
         console.log("clicked")
         localStorage.clear();
-        Nav('/')
+        Nav('/PaymentResult/Failed')
     }
 
     return (

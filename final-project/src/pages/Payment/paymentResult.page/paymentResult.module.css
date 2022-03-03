@@ -1,0 +1,27 @@
+.hrHeader
+{
+    
+    border:none;
+    
+       color: white;
+      height: 50px;
+      
+      border-bottom: 1px solid #ffffff;
+      box-shadow: 0 20px 20px -20px #333;
+  
+
+}
+.tableHead h1
+{
+	direction: rtl;
+	font-size: 1.2rem;
+	color: white;
+	padding: 1rem;
+}
+
+.h1Head
+{
+    margin:  0 auto;
+    
+    text-align: center;
+}

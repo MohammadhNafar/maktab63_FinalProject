@@ -4,8 +4,7 @@ import LoginPage from '../pages/Login/login.page';
 import Basket from '../pages/Basket/Basket.page';
 import PaymentPage from '../pages/Payment/Payment.page';
 import Checkout from '../pages/Checkout/CheckOut.page';
-import Paymentfaild from '../pages/Payment/paymentResultFail/paymentFail.page';
-import Paymentsuccess from '../pages/Payment/paymentResultSuccess/paymentSuccess.page';
+import PaymentResult from '../pages/Payment/paymentResult.page/paymentResult.page';
 import Product from '../pages/Product/Product.page';
 import Orders from '../pages/Panel/orders//Orders.page';
 import Products from '../pages/Panel/products/Products.page';
@@ -38,6 +37,7 @@ const AppRoute = () => {
     <Route path={PATHS.CHECKOUT} element={<Checkout/>} />
     <Route path={PATHS.PAYMENT} element = {<PaymentPage/>}   />
     <Route path={PATHS.BASKET} element={<Basket/>} />
+    <Route path='/PaymentResult/:status' element={<PaymentResult/>} />
     <Route  path="/Product/:id" element={<Product/>} />
     <Route path="*" element={<NotFound/>} />
     <Route element = {<ProtectdRoutes/>}>

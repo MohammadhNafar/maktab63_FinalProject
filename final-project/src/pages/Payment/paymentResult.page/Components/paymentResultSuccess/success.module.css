@@ -1,0 +1,44 @@
+.animation
+{
+    width: 45rem;
+    height: 25rem;
+    
+    
+    position: absolute;
+    margin-left: 27rem;
+    align-items: center;
+    z-index: -1;
+}
+.randomNum
+{
+    position: absolute;
+    margin-left: 38.5rem;
+    margin-top: 25rem;
+    text-align: right;
+    direction: rtl;
+}
+.wrapper
+{
+    
+    overflow: hidden;
+    
+}
+.random
+{
+    color: #EE2D40;
+    
+}
+.back
+{
+    position: absolute;
+    margin-left: 46.5rem;
+    margin-top: 35rem;
+    text-align: center;
+    direction: rtl;
+    font-size: 1.2rem;
+}
+.Link
+{
+    color: #EE2D40;
+    text-decoration: none;
+}
