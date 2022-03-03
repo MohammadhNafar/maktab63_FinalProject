@@ -1,0 +1,79 @@
+
+.modalBox
+{
+    background-color: #EE2D40;
+    width: 35rem;
+    height: 25rem;
+    border-radius: 10px;
+    margin: 0 auto;
+   
+   
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 1px 80rem rgba(0,0,0,0.5);
+
+
+}
+.title
+{
+    padding-left: 12rem;
+}
+
+.modalBox input
+{
+    direction: rtl;
+    padding-right: 0.5rem;
+    height: 2rem;
+    margin: 1rem;
+    border: none;
+    font-size: 1rem;
+}
+.modalBox h1
+{
+    color: white;
+    font-size: 1.5rem;
+}
+.items
+{
+    width: 100%;
+    
+    
+   direction: rtl;
+}
+.item
+{
+    color: white;
+    margin: 1rem;
+}
+.items button
+{
+    height: 2rem;
+    border: none;
+    color: #EE2D40;
+    background-color: white;
+   
+}
+
+.container
+{
+    
+   
+}
+.closeBtn
+{
+   
+
+    float: right;
+    margin-right: 0.5rem;
+    
+}
+.closeBtn button
+{
+    font-size: 1.5rem;
+    border: none;
+    
+    color: white;
+    background-color: #EE2D40;
+}

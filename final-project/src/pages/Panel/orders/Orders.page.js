@@ -4,7 +4,7 @@ import Styles from './orders.module.css';
 import Header from '../../../layouts/manage/header/Header';
 import {useEffect, useState} from 'react';
 import {getOrders} from '../../../api/orders.api'
-import Modal from '../../../Components/Modal/modal.page';
+import Modal from './Components/ordersModal/OrdersModal.component';
 
 const OrdersPage = () => {
 
@@ -69,6 +69,7 @@ const OrdersPage = () => {
                             name={data.name}
                             date={data.date}
                             price={data.totalPrice}
+                            show = {setOpenModal}
                             
                             />
 
@@ -77,11 +78,7 @@ const OrdersPage = () => {
 
             {
                 openModal && <Modal
-                        placeHolder2={"سلام"}
-                        placeHolder1={"سلام"}
-                        secendBtnTitle={'باتل دوم'}
-                        firstBtnTitle={'باتن اول'}
-                        titleHead={'ویرایش'}
+                        
                         closeModal={setOpenModal}/>
             }
 
