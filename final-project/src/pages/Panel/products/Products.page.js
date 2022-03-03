@@ -8,6 +8,8 @@ import {IMAGE_URL} from '../../../configs/image.url';
 import Modal from '../../../Components/Modal/modal.page';
 import ModalAdd from './Components/AddProductModal/addModal.js';
 import Pagination from '../../../Components/pagination/pagination.component';
+import BASE_URL from '../../../configs/variable.config';
+import axios from 'axios';
 
 const ProductPage = () => {
     
@@ -41,13 +43,39 @@ const ProductPage = () => {
     //     headers: {'Aceept': 'application/json'},
     //     'content-type': 'application/json'
     // })
+
+
+     async function deleteProduct(id) {
+      console.log('getOrders',id)
+      try {
+          const res = await axios.delete(`${BASE_URL}/products/${id}`);
+              return {
+                  data: res.data,
+              }
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
     // }
-    //get current page
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
-      //change page
-      const paginate = (pageNumber) => setCurrentPage(pageNumber);
+          //get current page
+          const indexOfLastPost = currentPage * postsPerPage;
+          const indexOfFirstPost = indexOfLastPost - postsPerPage;
+          const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
+            //change page
+            const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+      
     return (
       
         <div>
@@ -81,13 +109,16 @@ const ProductPage = () => {
               }
              {
             currentPosts.map(
+              
                 data =>
+                
               <Table 
               nameList = {data.name}
                PicList = {data.image}
                 categoryList = {data.category}
                 show = {setOpenModal}
-                // deleteItem = {deleteRows(data.id)}
+                id = {data.id}
+                deleteFunc = {deleteProduct}
               />
               
             )}
