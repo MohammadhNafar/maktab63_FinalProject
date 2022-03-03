@@ -7,23 +7,31 @@ import {getOrders} from '../../../api/orders.api'
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchOrders} from '../../../redux/Orders/orders.thunk'
 import Modal from './Components/ordersModal/OrdersModal.component';
+import Pagination from '../../../Components/pagination/pagination.component'
 
 const OrdersPage = () => {
     const proOrders = useSelector(state => state.orders)
+    const dispatch = useDispatch();
+
     const loading = proOrders.loading
     const error = proOrders.error
     const ordersNew = useSelector(state => state.orders.orders.data)
+    
     console.log(ordersNew ,"orders" )
     // const [rows, setRows] = useState([]);
     const [openModal, setOpenModal] = useState(false);
     const [filteredData, setFilter] = useState([])
-    const dispatch = useDispatch();
-    // const reqConfig = {
-    //     headers: {
-    //         'content-type': 'application/json',
-    //         'token': localStorage.getItem('ACCESS_TOKEN')
-    //     }
-    // }
+
+
+    /////////////////////////////////////// pagination
+    // const [currentPage , setCurrentPage] = useState(1);
+    // const [postsPerPage] = useState(5);
+    // const indexOfLastPost = currentPage * postsPerPage;
+    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    // const currentPosts = ordersNew.slice(indexOfFirstPost, indexOfLastPost)
+    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+   //////////////////////////////////////// pagination
+
 
     useEffect(() => {
         dispatch(fetchOrders())
@@ -81,6 +89,12 @@ const OrdersPage = () => {
 
                    )
             }
+             {/* <Pagination
+             postsPerPage={postsPerPage}
+             totalPosts = {currentPosts.length}
+             paginate = {paginate}
+             
+             /> */}
 
             {
                 openModal && <Modal

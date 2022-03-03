@@ -23,15 +23,22 @@ const OrdersmodalComponent = (props) => {
                 </div>
                 <div className={Styles.items}>
                     <div className={Styles.item}>
-                          <h3> نام کاربر : {modalData.name}  </h3> 
-                          <h3> کالا ها  : {modalData.products}  </h3> 
-                        <h3>{""} زمان ثبت سفارش : {modalData.date} </h3> 
-                        <h3>{""} شماره تماس :{modalData.phone}  </h3> 
-                        <h3>{""} ایمیل : {modalData.email} </h3> 
-                        <h3>{""} نشانی : {modalData.address} </h3> 
-                        <h3>{""} مجموع کالا ها : {modalData.totalItems} </h3> 
-                        <h3>{""} مبلغ کل : {modalData.totalPrice} </h3>
-                        <h3>{""} وضعیت تحویل : {modalData.status} </h3>
+                          <p> نام کاربر : <span className={Styles.spans}>{modalData.name} </span>  </p> 
+                          <p> کالا ها  : <span className={Styles.spans}> {modalData.products}</span>  </p> 
+                        <p>{""} زمان ثبت سفارش : <span className={Styles.spans}> {modalData.date} </span> </p> 
+                        <p>{""} شماره تماس : <span className={Styles.spans}> {modalData.phone}</span>  </p> 
+                        <p>{""} ایمیل : <span className={Styles.spans}> {modalData.email} </span> </p> 
+                        <p>{""} نشانی : <span className={Styles.spans}> {modalData.address} </span> </p> 
+                    
+                        </div>
+                        <div className={Styles.modalFooter}>
+                            <div className={Styles.footerItems}>
+                            <p>{""} مجموع کالا ها : <span className={Styles.spans}> {modalData.totalItems} </span> </p> 
+                        <p>{""} وضعیت تحویل : <span className={Styles.spans}>{modalData.status} </span>  </p>
+                        <p>{""} مبلغ کل :  <span className={Styles.spans}> {modalData.totalPrice}</span> </p>
+
+                            </div>
+                     
                         </div>
                     
                     
