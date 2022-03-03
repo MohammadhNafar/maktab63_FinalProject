@@ -2,11 +2,32 @@ import React from 'react';
 import Styles from './ordersModal.module.css';
 import {connect} from 'react-redux';
 import {useDispatch, useSelector } from 'react-redux';
+import { useEffect,useState } from 'react';
 
 const OrdersmodalComponent = (props) => {
-   
+    const dispatch = useDispatch();
     const modalData = useSelector(state => state.orders.modal)
+    const statusData = useSelector(state => state.orders.modal.status)
+    const [status, setStatus] = useState([])
+    setStatus(statusData);
+    console.log(modalData.status)
     console.log(modalData)
+
+    // const handleStatusChange = () => {
+    //     // if(modalData.status === 0){
+    //     //     setStatus(1)
+    //     // }
+    //     console.log(modalData.status)
+    // };
+       
+
+
+
+
+
+    useEffect(() => {
+       
+    }, [])
     return (
         <div className={Styles.container}>
         
@@ -29,16 +50,23 @@ const OrdersmodalComponent = (props) => {
                         <p>{""} شماره تماس : <span className={Styles.spans}> {modalData.phone}</span>  </p> 
                         <p>{""} ایمیل : <span className={Styles.spans}> {modalData.email} </span> </p> 
                         <p>{""} نشانی : <span className={Styles.spans}> {modalData.address} </span> </p> 
-                    
+                        
                         </div>
+                        <button
+                       
+                         className={Styles.recive} >تحویل سفارش</button>
                         <div className={Styles.modalFooter}>
                             <div className={Styles.footerItems}>
-                            <p>{""} مجموع کالا ها : <span className={Styles.spans}> {modalData.totalItems} </span> </p> 
-                        <p>{""} وضعیت تحویل : <span className={Styles.spans}>{modalData.status} </span>  </p>
+                            <p>{""} مجموع کالا ها : <span className={Styles.spans}> {modalData.totalItems} </span> </p>
+                            {modalData.status ==='0'?  <p>{""} وضعیت تحویل : <span className={Styles.spans}> تحویل شد</span>  </p> :
+                             <p>{""} وضعیت تحویل : <span className={Styles.spans}> در انتظار تحویل </span>  </p>
+                        
+                        }    
+                       
                         <p>{""} مبلغ کل :  <span className={Styles.spans}> {modalData.totalPrice}</span> </p>
 
                             </div>
-                     
+
                         </div>
                     
                     
