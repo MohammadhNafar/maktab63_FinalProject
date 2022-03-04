@@ -200,14 +200,14 @@ const ProductPage = (props) => {
             <div className={Styles.addComment}>
               <h2>نظر خودرا بنویسید</h2> 
               <div className={Styles.commentSec}>
-              <form>
-                <input onChange={(e) => setusername(e.target.value)}
+              <form onSubmit={sendComment}  >
+                <input required onChange={(e) => setusername(e.target.value)}
                  className={Styles.input} type='text' placeholder='نام'></input>
-                <input onChange={(e) => setscore(e.target.value)}
+                <input required onChange={(e) => setscore(e.target.value)}
                  className={Styles.inputScore} type='number' placeholder='نمره'></input>
-                <input onChange={(e) => setcomment(e.target.value)}
+                <input required onChange={(e) => setcomment(e.target.value)}
                  className={Styles.inputComment} type='text' placeholder='نظر'></input>
-                <button onClick={sendComment} className={Styles.submitBtn} >ثبت نظر</button>
+                <button id="submit" className={Styles.submitBtn} >ثبت نظر</button>
               </form>
       </div>
             </div>
