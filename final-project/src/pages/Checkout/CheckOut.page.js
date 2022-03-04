@@ -35,21 +35,6 @@ const CheckoutPage = () => {
     {
         e.preventDefault();
         console.log(name,proDuctName,email,phone,address,date,totalPrice,totalItems);
-        
-        // let result = http.post('http://localhost:3002/orders' , {
-        //     name,
-           
-
-        //     email,
-        //     phone,
-        //     address,
-        //     date,
-        //     totalPrice,
-        //     totalItems,
-        //     goods,
-        //     status
-        // })
-        
              localStorage.setItem('datas', JSON.stringify(datas))
          localStorage.setItem('price',totalPrice)
          console.log(datas)
@@ -96,28 +81,32 @@ const CheckoutPage = () => {
 
 
 
-                                <form className={Styles.formstyle7}>
+                                <form 
+                                onSubmit={sendOrders}
+                                
+                                className={Styles.formstyle7}>
                 <ul>
                 <li>
                     <label for="name">نام</label>
                     <input
                     onChange={(e) => setName(e.target.value)}
-                    
+                    required 
                     type="text" name="name" maxlength="100"/>
                     <span>نام کامل خود را وارد کنید</span>
                 </li>
                 <li>
                     <label for="email">ایمیل</label>
                     <input
+                    required
                     onChange={(e) => setEmail(e.target.value)}
-                    
+                    required
                     type="email" name="email" maxlength="100"/>
                     <span>ایمیل خودرا وارد کنید</span>
                 </li>
                 <li>
                     <label for="address">آدرس</label>
                     <input
-                    
+                    required
                     onChange={(e) => setAddress(e.target.value)}
                     type="text" name="address" maxlength="100"/>
                     <span>لطفا نشانی کامل خودرا وارد کنید</span>
@@ -125,6 +114,7 @@ const CheckoutPage = () => {
                 <li>
                     <label for="phone">موبایل</label>
                     <input
+                    required
                     onChange={(e) => setPhone(e.target.value)}
                     type="number" name="phone" maxlength="100"/>
 
@@ -134,13 +124,14 @@ const CheckoutPage = () => {
                     
                     <label for="date">تاریخ تحویل</label>
                     <input
+                    required 
                     onChange={(e) => setDate(e.target.value)}
                     type="date" name="date" maxlength="100"/>
 
                     <span>لطفا تاریخ تحویل خودرا وارد کنید</span>
                 </li>
                 <li>
-                    <button onClick={sendOrders} >تکمیل و پرداخت </button>
+                    <button id="submit" >تکمیل و پرداخت </button>
                 </li>
                 </ul>
                 </form>

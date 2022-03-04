@@ -99,7 +99,7 @@ const OrdersPage = () => {
             {
                 openModal && <Modal
                         
-                        closeModal={setOpenModal}/>
+                        closeModal={setOpenModal}/> 
             }
 
         </div>

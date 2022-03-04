@@ -65,11 +65,19 @@
 }
 .cancel
 {
-    background: #D35749
+    background: #D35749;
+    width: 5rem;
+    height: 2rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-left: 0rem;
+    
 }
 .submit
 {
     background-color: #3C7AAE;
+    margin-left: 41rem;
 }
 .image
 {
