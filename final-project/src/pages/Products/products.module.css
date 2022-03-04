@@ -1,0 +1,30 @@
+.firstSec
+{
+    
+    
+    
+    
+    width: 100%;
+    min-height: 20rem;
+   
+    
+    
+   
+}
+
+.firstSecCards
+{
+    padding-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    direction: rtl;
+
+}
+.firstSecCards h2
+{
+    margin-top: 7rem;
+    margin-right: 2rem;
+}
