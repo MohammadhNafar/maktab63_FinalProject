@@ -42,7 +42,12 @@ const CheckoutPage = () => {
          toast.success('سفارش شما با موفقیت ثبت شد')
     }
 
-
+    function cancelOrder(e)
+    {
+        e.preventDefault();
+        localStorage.clear();
+        Nav('/Basket')
+    }
 
 
 
@@ -135,6 +140,12 @@ const CheckoutPage = () => {
                 </li>
                 </ul>
                 </form>
+                <div className={Styles.cancel} >
+                <button
+                onClick={cancelOrder}
+                className={Styles.cancelBtn} >لغو خرید و بازگشت به سبد خرید</button>
+
+                     </div>
                 </div>
             : <h1 className={Styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
 

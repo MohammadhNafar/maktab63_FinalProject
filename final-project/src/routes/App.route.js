@@ -6,6 +6,7 @@ import PaymentPage from '../pages/Payment/Payment.page';
 import Checkout from '../pages/Checkout/CheckOut.page';
 import PaymentResult from '../pages/Payment/paymentResult.page/paymentResult.page';
 import Product from '../pages/Product/Product.page';
+import ProductsPage from '../pages/Products/Products.page'
 import Orders from '../pages/Panel/orders//Orders.page';
 import Products from '../pages/Panel/products/Products.page';
 import profile from '../pages/Panel/profile/index';
@@ -39,6 +40,7 @@ const AppRoute = () => {
     <Route path={PATHS.BASKET} element={<Basket/>} />
     <Route path='/PaymentResult/:status' element={<PaymentResult/>} />
     <Route  path="/Product/:id" element={<Product/>} />
+    <Route  path="/Products/:category" element={<ProductsPage/>}/>
     <Route path="*" element={<NotFound/>} />
     <Route element = {<ProtectdRoutes/>}>
     <Route exact path={PATHS.QUANTITY} element={<Quantity/>} />

@@ -163,3 +163,27 @@
     border-radius: 15px;
    
 }
+
+.cancel
+{
+	
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+
+.cancelBtn
+{
+	margin: 0 auto;
+	background: #EE2D40;
+    width: 15rem;
+    height: 2.2rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.cancelBtn:hover
+{
+	cursor: pointer;
+}

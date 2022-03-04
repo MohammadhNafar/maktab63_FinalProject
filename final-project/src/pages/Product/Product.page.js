@@ -10,7 +10,7 @@ import {getProducts} from '../../api/products.api';
 import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import http from '../../services/http.service'
 import { useParams } from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
@@ -42,7 +42,8 @@ const ProductPage = (props) => {
       let result = http.post('http://localhost:3002/comments' , {
         username,
         comment,
-        score
+        score,
+        for : id
     
       })
      
@@ -129,7 +130,20 @@ const ProductPage = (props) => {
                             product.map(
                                 data =>
                                 <div> 
-                                <div className={Styles.levels} >محصولات/{data.category}</div>
+                                  <div className={Styles.levels} > 
+                                  <Link 
+                                  className = {Styles.Link}
+                                  to = "/" >
+                                  <div  >محصولات/</div>
+                                  </Link>
+                                  <Link
+                                   className = {Styles.Link}
+                                  to = {`/Products/${data.category}`} >
+                                  <div  >{data.category}</div>
+                                  </Link>
+                                  
+                                  </div>
+                                
 
                                 <div className={Styles.productSec}>
                     
@@ -186,43 +200,63 @@ const ProductPage = (props) => {
             <div className={Styles.addComment}>
               <h2>نظر خودرا بنویسید</h2> 
               <div className={Styles.commentSec}>
-              <form>
-                <input onChange={(e) => setusername(e.target.value)}
+              <form onSubmit={sendComment}  >
+                <input required onChange={(e) => setusername(e.target.value)}
                  className={Styles.input} type='text' placeholder='نام'></input>
-                <input onChange={(e) => setscore(e.target.value)}
+                <input required onChange={(e) => setscore(e.target.value)}
                  className={Styles.inputScore} type='number' placeholder='نمره'></input>
-                <input onChange={(e) => setcomment(e.target.value)}
+                <input required onChange={(e) => setcomment(e.target.value)}
                  className={Styles.inputComment} type='text' placeholder='نظر'></input>
-                <button onClick={sendComment} className={Styles.submitBtn} >ثبت نظر</button>
+                <button id="submit" className={Styles.submitBtn} >ثبت نظر</button>
               </form>
       </div>
             </div>
-{
-    currentPosts.map(
-        data =>
-        <Comments
-        key = {data.id}
-        score = {data.score}
-        username = {data.username}
-        userComment = {data.comment}
-        like = {likef}
-        dislike = {dislikef}
-        likes = {like}
-        dislikes = {dislike}
-        />
+                          {rows.filter(value=> value.for == id).length !== 0 ? 
+                          <div>
+                          {currentPosts?.filter(value=> value.for == id).map(
+                            values => 
+                            <Comments
+                            key = {values.id}
+                            score = {values.score}
+                            username = {values.username}
+                            userComment = {values.comment}
+                            like = {likef}
+                            dislike = {dislikef}
+                            likes = {like}
+                            dislikes = {dislike}
+                            />
+                       )
+               } 
+                        <div className={Styles.pageNums} >
 
-    )
-}
-<div className={Styles.pageNums} >
+          <Pagination
+                      postsPerPage={postsPerPage}
+                      totalPosts = {datas.length}
+                      paginate = {paginate}
+                      
+                      />
+                      
+                  </div>
+           </div>
+                                
+                          :  <div className={Styles.noComment} ><h1 className={Styles.noCommentH1} >کامنتی برای نمایش وجود ندارد</h1></div> }
 
-        <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPosts = {datas.length}
-                    paginate = {paginate}
-                    
-                    />
-                    
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     );
