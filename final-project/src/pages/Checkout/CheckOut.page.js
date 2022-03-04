@@ -18,9 +18,9 @@ const CheckoutPage = () => {
     const [date , setDate] = useState([])
     const [totalPrice , setTotalPrice] = useState([])
     const [totalItems , setTotalItems] = useState([])
-    const status = 0;
+    
     const datas = {"name" : name, "products" :proDuctName, "email" : email, "phone":phone,"address":address,
-    "date":date,"totalPrice":totalPrice, "totalItems":totalItems, "status":status}
+    "date":date,"totalPrice":totalPrice, "totalItems":totalItems, status: "false"}
     const goods = [{proDuctName}];
     useEffect(() => {
         setTotalItems(localStorage.getItem('totalItems'));
