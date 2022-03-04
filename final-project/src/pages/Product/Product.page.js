@@ -204,6 +204,7 @@ const ProductPage = (props) => {
                 <input required onChange={(e) => setusername(e.target.value)}
                  className={Styles.input} type='text' placeholder='نام'></input>
                 <input required onChange={(e) => setscore(e.target.value)}
+                max = "5"
                  className={Styles.inputScore} type='number' placeholder='نمره'></input>
                 <input required onChange={(e) => setcomment(e.target.value)}
                  className={Styles.inputComment} type='text' placeholder='نظر'></input>
@@ -211,7 +212,7 @@ const ProductPage = (props) => {
               </form>
       </div>
             </div>
-                          {rows.filter(value=> value.for == id).length !== 0 ? 
+                          {datas.filter(value=> value.for == id).length !== 0 ? 
                           <div>
                           {currentPosts?.filter(value=> value.for == id).map(
                             values => 
