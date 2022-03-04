@@ -135,3 +135,19 @@
     direction: rtl;
     margin-right: 1rem;
 }
+
+.continue
+{
+    background: #EE2D40;
+    width: 10rem;
+    height: 2.2rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-left: 1rem;
+    
+}
+.continue:hover
+{
+    cursor: pointer;
+}

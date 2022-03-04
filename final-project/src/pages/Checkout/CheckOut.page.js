@@ -131,7 +131,7 @@ const CheckoutPage = () => {
                     <span>لطفا تاریخ تحویل خودرا وارد کنید</span>
                 </li>
                 <li>
-                    <button id="submit" >تکمیل و پرداخت </button>
+                    <button className={Styles.sub} id="submit" >تکمیل و پرداخت </button>
                 </li>
                 </ul>
                 </form>
