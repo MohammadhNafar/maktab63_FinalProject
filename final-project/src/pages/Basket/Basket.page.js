@@ -62,7 +62,7 @@ const BasketPage = ({cart}) => {
 
             <div className={Styles.wrapper}>
                 {
-                    totalItems
+                    totalItems > 0
                         ? <div className={Styles.tableHead}>
                                 <h1></h1>
                                 <h1>تعداد</h1>
@@ -79,7 +79,8 @@ const BasketPage = ({cart}) => {
                         ? ""
                         : <Empty/>
                 }
-                {
+                {cart.length > 0 
+                    ? 
                     cart.map(item => (
                         <Table
                             count = {item.count}
@@ -90,7 +91,19 @@ const BasketPage = ({cart}) => {
                             id={item.id}/>
                             
                     ))
-                }
+                : ""}
+                {/* {
+                    cart.map(item => (
+                        <Table
+                            count = {item.count}
+                            key={item.id}
+                            product={item.name}
+                            price={item.price}
+                            qty={item.qty}
+                            id={item.id}/>
+                            
+                    ))
+                } */}
 
                 {
                     totalItems
@@ -134,7 +147,7 @@ const BasketPage = ({cart}) => {
                                         <button onClick={submit} className={Styles.confirmBtn}>
                                                 نهایی کردن خرید
                                             </button></Link> 
-                                        : ""
+                                        : "sss"
                                 }
                             </div>
 

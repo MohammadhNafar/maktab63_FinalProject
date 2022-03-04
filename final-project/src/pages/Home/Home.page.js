@@ -68,7 +68,7 @@ const HomePage = () => {
 </div>
             </div>
             <div className= {Styles.bodySec}>
-                <div className={Styles.sideBarContent}>
+                {/* <div className={Styles.sideBarContent}>
                 { productsNew?.filter(value=> value.category == 'شکلات').map(
                  values => 
                  <Sidebar
@@ -77,7 +77,7 @@ const HomePage = () => {
                  />        
             )
 } 
-                </div>
+                </div> */}
           
             
                 <div className={Styles.products}>
