@@ -10,7 +10,7 @@ import {getProducts} from '../../api/products.api';
 import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import http from '../../services/http.service'
 import { useParams } from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
@@ -129,7 +129,20 @@ const ProductPage = (props) => {
                             product.map(
                                 data =>
                                 <div> 
-                                <div className={Styles.levels} >محصولات/{data.category}</div>
+                                  <div className={Styles.levels} > 
+                                  <Link 
+                                  className = {Styles.Link}
+                                  to = "/" >
+                                  <div  >محصولات/</div>
+                                  </Link>
+                                  <Link
+                                   className = {Styles.Link}
+                                  to = {`/Products/${data.category}`} >
+                                  <div  >{data.category}</div>
+                                  </Link>
+                                  
+                                  </div>
+                                
 
                                 <div className={Styles.productSec}>
                     

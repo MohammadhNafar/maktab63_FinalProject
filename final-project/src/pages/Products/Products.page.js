@@ -26,10 +26,16 @@ const ProductsPage = () => {
 
 
     return (
-        <div>
+        <div  >
             <Header/>
-            <h1>this is products</h1>
-            <h1>{category}</h1>
+            <div className={Styles.wrapper}>
+            <hr className={Styles.hrHeader}></hr>
+            <div className={Styles.h1Head}>
+                
+                <h1 >
+                محصولات گروه   {category} 
+                </h1>
+            </div>
                { <div className={Styles.firstSecCards}>
                 { productsNew?.filter(value=> value.category == category).map(
                  values => 
@@ -46,6 +52,8 @@ const ProductsPage = () => {
             )
 } 
                 </div> }
+            </div>
+         
             
         </div>
     );

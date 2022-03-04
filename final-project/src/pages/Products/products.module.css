@@ -1,3 +1,13 @@
+
+.wrapper
+{
+    direction: rtl;
+}
+
+
+
+
+
 .firstSec
 {
     
@@ -27,4 +37,30 @@
 {
     margin-top: 7rem;
     margin-right: 2rem;
+}
+
+.hrHeader
+{
+    
+    border:none;
+    
+       color: white;
+      height: 50px;
+      
+      border-bottom: 1px solid #ffffff;
+      box-shadow: 0 20px 20px -20px #333;
+   
+
+}
+
+.h1Head
+{
+    padding-top: 2rem;
+    margin-right: 10rem;
+
+}
+.h1Head h1
+{
+    color: gray;
+    font-size: 1.3rem;
 }

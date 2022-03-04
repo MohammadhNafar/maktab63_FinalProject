@@ -11,6 +11,8 @@
     color: #EE2D40;
     margin-bottom: 1rem;
     margin-right: 1rem;
+   
+    display: flex;
 }
 .productSec
 {
@@ -174,4 +176,10 @@
     width: 42rem;
     min-height: 10rem;
     word-break: normal;
+}
+
+.Link
+{
+    text-decoration: none;
+    color: #EE2D40;
 }
