@@ -152,3 +152,14 @@
     padding-top: 10rem;
     padding-left: 44rem;
 }
+
+.sub
+{
+	background: green;
+    width: 10rem;
+    height: 2.2rem;
+    color: white;
+    border: none;
+    border-radius: 15px;
+   
+}
