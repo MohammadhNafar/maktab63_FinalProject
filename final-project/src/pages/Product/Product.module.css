@@ -183,3 +183,14 @@
     text-decoration: none;
     color: #EE2D40;
 }
+.noComment
+{
+    width: 100%;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.noCommentH1
+{
+    color: gray;
+    font-size: 1rem;
+}

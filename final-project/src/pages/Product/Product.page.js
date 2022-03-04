@@ -42,7 +42,8 @@ const ProductPage = (props) => {
       let result = http.post('http://localhost:3002/comments' , {
         username,
         comment,
-        score
+        score,
+        for : id
     
       })
      
@@ -210,32 +211,52 @@ const ProductPage = (props) => {
               </form>
       </div>
             </div>
-{
-    currentPosts.map(
-        data =>
-        <Comments
-        key = {data.id}
-        score = {data.score}
-        username = {data.username}
-        userComment = {data.comment}
-        like = {likef}
-        dislike = {dislikef}
-        likes = {like}
-        dislikes = {dislike}
-        />
+                          {rows.filter(value=> value.for == id).length !== 0 ? 
+                          <div>
+                          {currentPosts?.filter(value=> value.for == id).map(
+                            values => 
+                            <Comments
+                            key = {values.id}
+                            score = {values.score}
+                            username = {values.username}
+                            userComment = {values.comment}
+                            like = {likef}
+                            dislike = {dislikef}
+                            likes = {like}
+                            dislikes = {dislike}
+                            />
+                       )
+               } 
+                        <div className={Styles.pageNums} >
 
-    )
-}
-<div className={Styles.pageNums} >
+          <Pagination
+                      postsPerPage={postsPerPage}
+                      totalPosts = {datas.length}
+                      paginate = {paginate}
+                      
+                      />
+                      
+                  </div>
+           </div>
+                                
+                          :  <div className={Styles.noComment} ><h1 className={Styles.noCommentH1} >کامنتی برای نمایش وجود ندارد</h1></div> }
 
-        <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPosts = {datas.length}
-                    paginate = {paginate}
-                    
-                    />
-                    
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     );
