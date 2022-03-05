@@ -3,7 +3,7 @@
 {
     background-color: white;
     width: 45rem;
-    height: 28rem;
+    height: 30rem;
     border-radius: 10px;
     margin: 0 auto;
    
@@ -13,7 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 1px 80rem rgba(0,0,0,0.5);
-
+    
 
 }
 .title
@@ -54,12 +54,13 @@
     width: 100%;
     
     
-   direction: rtl;
+   
 }
 .item
 {
     color: black;
     margin: 1rem;
+    padding-left: 20rem;
 }
 .item p 
 {
@@ -117,6 +118,32 @@
     background-color: #EE2D40;
 }
 .recive:hover
+{
+    cursor: pointer;
+}
+.btns
+{
+    display: flex;
+    
+    justify-content: center;
+    gap: 3rem;
+    height: 3rem;
+}
+
+.formEdit
+{
+    direction: rtl;
+}
+.btns button
+{
+    background-color: #EE2D40;
+    color: white;
+    border: none;
+    
+    width: 20rem;
+    font-size: 1rem;
+}
+.btns button:hover
 {
     cursor: pointer;
 }

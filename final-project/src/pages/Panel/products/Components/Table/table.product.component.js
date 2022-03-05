@@ -41,13 +41,13 @@ const TableProductComponent = (props) => {
            </div>
            
             <div className={Styles.List}>
-            <h2 className={Styles.h2Cat} >{props.categoryList}</h2>
+            <h2 className={Styles.h2Cat} >{props.category}</h2>
             </div>
             <div className={Styles.List}>
-            <h2 className={Styles.h2Name} >{props.nameList}</h2>
+            <h2 className={Styles.h2Name} >{props.name}</h2>
             </div>
             <div className={Styles.List}>
-                <img className={Styles.thumbnail} src={`${IMAGE_URL}${props.PicList}`} ></img>
+                <img className={Styles.thumbnail} src={`${IMAGE_URL}${props.image}`} ></img>
                 
             
 

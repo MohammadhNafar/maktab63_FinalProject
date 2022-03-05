@@ -110,9 +110,9 @@ const ProductPage = () => {
                 data =>
                 
               <Table 
-              nameList = {data.name}
-               PicList = {data.image}
-                categoryList = {data.category}
+              name = {data.name}
+              image = {data.image}
+                category = {data.category}
                 show = {setOpenModal}
                 id = {data.id}
                 count = {data.count}
