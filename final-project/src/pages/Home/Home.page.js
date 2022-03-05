@@ -19,9 +19,17 @@ const HomePage = () => {
     const loading = proDatas.loading
     const error = proDatas.error
     const container = useRef(null)
-     //let categorys = productsNew.map(item =>  item.category)
-     //console.log(categorys)
-     
+    //  let categorys ;
+    //  console.log([productsNew.category])
+    // //  console.log(categorys)
+    // productsNew?.filter(value=> value.category == "شکلات").map
+    // {
+    //     values =>
+        
+    //         console.log(values.name)
+        
+    // }
+   
     //  let productsSet = [...new Set(productsNew)]
     //  console.log( productsSet)
 
@@ -108,23 +116,88 @@ const HomePage = () => {
                     />
                             )
                         }      
+
                   
                     </div>
                 </div>
+                <h1>شکلات ها</h1>
                 <div className={Styles.chokoSec}>
-                    {/* {
-                        datas.filter(value=> value.category == 'شکلات').map(
+                   
+                     {
+                        productsNew?.filter(value=> value.category == 'شکلات').map(
                             values => 
-                            <ul>
-                                <li>{values.category}</li>
-                            <li>{values.name}</li>
-
-                            </ul>
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+                    
+                    />
                             
                         )
-                    } */}
+                    } 
 
                 </div>
+                <h1 className={Styles.h1Sec} >بیسکوییت ها </h1>
+
+                    <div className={Styles.biscSec}>
+                          
+                     {
+                        productsNew?.filter(value=> value.category == 'بیسکوییت').map(
+                            values => 
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+                    
+                    />
+                            
+                        )
+                    } 
+
+                    </div>
+                                        <h1 className={Styles.h1Sec} >کیک ها </h1>
+
+                    <div className={Styles.biscSec}>
+                        
+                    {
+                        productsNew?.filter(value=> value.category == 'کیک').map(
+                            values => 
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+
+                    />
+                            
+                        )
+                    } 
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             
             </div>

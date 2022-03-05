@@ -102,3 +102,26 @@ body
     
    
 }
+.chokoSec
+{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+}
+.biscSec
+{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.h1Sec
+{
+    padding-top: 1rem;
+}
