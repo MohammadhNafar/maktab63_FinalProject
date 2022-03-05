@@ -4,6 +4,8 @@ import { Icon } from '@iconify/react';
 import { removeFromCart,adjustItemQty } from '../../../../redux/Shopping/shopping-actions';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {IMAGE_URL} from '../../../../configs/image.url';
+
 
 const BasketTableComponent = (props) => {
     const dispatch = useDispatch();
@@ -47,11 +49,10 @@ const BasketTableComponent = (props) => {
               <Link className={Styles.linkToProduct} to= {`/Product/${props.id}`} >
               <h2>{props.product}</h2>
               </Link>
-            
-
-
             </div>
-
+        <div className={Styles.List}>
+        <img className={Styles.productImg} src={`${IMAGE_URL}${props.PicList}`}></img>
+        </div>
       </div>
         </div>
     );

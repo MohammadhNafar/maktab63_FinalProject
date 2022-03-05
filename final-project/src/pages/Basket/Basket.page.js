@@ -77,6 +77,8 @@ const BasketPage = ({cart}) => {
                                 <h1>قیمت</h1>
                                 <h1>نام کالا
                                 </h1>
+                                <h1>عکس
+                                </h1>
 
                             </div>
                         : ""
@@ -96,7 +98,9 @@ const BasketPage = ({cart}) => {
                             product={item.name}
                             price={item.price}
                             qty={item.qty}
+                            PicList = {item.image}
                             id={item.id}/>
+                           
                             
                     ))
                 : ""}
