@@ -3,14 +3,27 @@ import React from 'react';
 import Styles from './table.product.module.css';
 import {IMAGE_URL} from '../../../../../configs/image.url';
 import { Icon } from '@iconify/react';
+import { useDispatch } from 'react-redux';
+
+import { loadCurrentItem } from '../../../../../redux/Shopping/shopping-actions';
 
 
 const TableProductComponent = (props) => {
+    const dispatch = useDispatch();
     const handleDelete = () => 
             {
                 console.log(props.id)
                 props.deleteFunc(props.id)
             }
+
+            function handleClick(props) {
+                dispatch(loadCurrentItem(props));
+                props.show(true);
+                console.log(props)
+           
+            }
+
+
 
                 return (
 
@@ -20,7 +33,7 @@ const TableProductComponent = (props) => {
             
            <div className={Styles.Btns}>
                <button 
-               onClick = {() => props.show(true)}
+               onClick = {() => handleClick(props)}
                >ویرایش</button>
                <button onClick={handleDelete}> 
                <Icon className={Styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="30" height="30" />

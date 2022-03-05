@@ -5,6 +5,7 @@ const INITIAL_STATE = {
 
     products: [],
     cart: [],
+    modal: null,
     loading: false,
     error: null
  
@@ -55,7 +56,12 @@ const shopReducer = (state = INITIAL_STATE, action) => {
 
                   case actionTypes.FETCH_PRODUCTS_FAILED:
             return { ...state, loading: false, error: action.payload }
-
+            
+            case actionTypes.LOAD_CURRENT_ITEM:
+                return {
+                    ...state,
+                    modal: action.payload,
+                }
 
 
 
