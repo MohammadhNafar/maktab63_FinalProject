@@ -26,8 +26,9 @@ const Editmodal = (props) => {
                 </div>
                 <div className={styles.items}>
                     <div className={styles.item}>
-                        <p> نام کالا : <span className={styles.spans}>{modalData.nameList} </span>  </p>
-                        <p>  برند کالا : <span className={styles.spans}>{modalData.brand} </span>  </p>
+                      
+                        <p> نام کالا :  <input  defaultValue={modalData.nameList} />  </p>
+                        <p>  برند کالا :  <input defaultValue={modalData.brand} />  </p>
                         <p>  قیمت کالا : <span className={styles.spans}>{modalData.price} </span>  </p>
                         <p>  موجودی: <span className={styles.spans}>{modalData.count} </span>  </p>
                     </div>
