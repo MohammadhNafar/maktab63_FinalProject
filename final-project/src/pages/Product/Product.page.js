@@ -85,6 +85,8 @@ function dislikef() {
 const [rows, setRows] = useState([]);
 const [product, setProduct] = useState([]);
  let proCategory = product.map(data => data.category)
+ let proName = product.map(data => data.name)
+
 console.log(proCategory)
 useEffect(() => {
     dispatch(fetchProducts())
@@ -207,7 +209,7 @@ return (
 
       
         <div className={Styles.addComment}>
-            <h2>نظر خودرا بنویسید</h2>
+            <h2>نظر خودرا راجع به {proName} بنویسید</h2>
             <div className={Styles.commentSec}>
                 <form onSubmit={sendComment}>
                     <div className={Styles.addCommentInputs}>
