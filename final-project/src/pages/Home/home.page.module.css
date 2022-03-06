@@ -152,3 +152,9 @@ body
     text-decoration: none;
     color: #000;
 }
+.dataLoad
+{
+   display: flex;
+    justify-content: center;
+   flex-wrap: wrap;
+}

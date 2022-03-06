@@ -1,0 +1,21 @@
+.animation
+{
+    width: 35rem;
+    height: 35rem;
+    padding-top: 2rem;
+    
+    position: absolute;
+    margin-left: 32rem;
+    align-items: center;
+    z-index: -1;
+    
+}
+.wrapper
+{
+    padding-bottom: 10rem;
+}
+.wrapper h1
+{
+    color: gray;
+    margin-left: 2.5rem;
+}
