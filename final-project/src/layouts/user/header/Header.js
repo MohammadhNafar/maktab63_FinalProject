@@ -25,6 +25,7 @@ const Header = ({cart}) => {
             {/* <div className={Styles.addSec}>
              
             </div> */}
+            
         <div className={Styles.container}>
             <Left
                         // {...cartCount.length < 0 ? "" : {cartNum} = {cartCount} }
@@ -39,7 +40,9 @@ const Header = ({cart}) => {
             <Right/>
             
         </div>
+        <hr className={Styles.hrHeader}></hr>
         </div>
+        
     );
 }
 
