@@ -20,12 +20,11 @@ const ProductPage = () => {
     const loading = proDatas.loading
     const error = proDatas.error
   const dispatch = useDispatch();
-  const  [rows, setRows] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
   const [currentPage , setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
-  const [posts , setPosts] = useState([]);
+
   
 
 
@@ -71,7 +70,7 @@ const ProductPage = () => {
           //get current page
           const indexOfLastPost = currentPage * postsPerPage;
           const indexOfFirstPost = indexOfLastPost - postsPerPage;
-          //const currentPosts = productsNew.slice(indexOfFirstPost, indexOfLastPost)
+          const currentPosts = productsNew&&productsNew.slice(indexOfFirstPost, indexOfLastPost)
             //change page
             const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
@@ -106,7 +105,7 @@ const ProductPage = () => {
                 />
               }
              {
-            productsNew?.map(
+            currentPosts?.map(
               
                 data =>
                 
@@ -123,12 +122,12 @@ const ProductPage = () => {
               />
               
             )}
-             {/* <Pagination
+             <Pagination
              postsPerPage={postsPerPage}
-             totalPosts = {datas.length}
+             totalPosts = {productsNew&&productsNew.length}
              paginate = {paginate}
              
-             /> */}
+             />
            
             </div>
            

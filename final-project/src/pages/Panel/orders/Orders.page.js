@@ -17,24 +17,25 @@ const OrdersPage = () => {
     const error = proOrders.error
     const ordersNew = useSelector(state => state.orders.orders.data)
     
-    console.log(ordersNew ,"orders" )
-    // const [rows, setRows] = useState([]);
+    
     const [openModal, setOpenModal] = useState(false);
     const [filteredData, setFilter] = useState([])
-
+    
 
     /////////////////////////////////////// pagination
-    // const [currentPage , setCurrentPage] = useState(1);
-    // const [postsPerPage] = useState(5);
-    // const indexOfLastPost = currentPage * postsPerPage;
-    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // const currentPosts = ordersNew.slice(indexOfFirstPost, indexOfLastPost)
-    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const [currentPage , setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(5);
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = ordersNew&&ordersNew.slice(indexOfFirstPost, indexOfLastPost)
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
    //////////////////////////////////////// pagination
 
 
     useEffect(() => {
         dispatch(fetchOrders())
+        
+        
         // getOrders(reqConfig).then(data => setRows(data.data))
 
     }, [])
@@ -70,7 +71,7 @@ const OrdersPage = () => {
             </div>
             
              
-                     { ordersNew?.map(
+                     { currentPosts?.map(
                          data => <Table
                              key={data.id}
                              name={data.name}
@@ -89,12 +90,11 @@ const OrdersPage = () => {
 
                    )
             }
-             {/* <Pagination
+               <Pagination
              postsPerPage={postsPerPage}
-             totalPosts = {currentPosts.length}
+             totalPosts = {ordersNew&&ordersNew.length}
              paginate = {paginate}
-             
-             /> */}
+             />
 
             {
                 openModal && <Modal
