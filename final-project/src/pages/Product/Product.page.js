@@ -28,6 +28,7 @@ const ProductPage = (props) => {
     const [username, setusername] = useState([]);
     const [comment, setcomment] = useState([]);
     const [score, setscore] = useState([]);
+    const [email, setemail] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
     const productsNew = useSelector(state => state.shop.products.data)
@@ -45,6 +46,7 @@ const ProductPage = (props) => {
             username,
             comment,
             score,
+            email,
             for: id}
         )
         result = await result.json();
@@ -203,20 +205,25 @@ return (
                         </div>
                         <hr></hr>
 
-        <h1 className={Styles.nazarat}>
-            نظرات
-        </h1>
-
+      
         <div className={Styles.addComment}>
             <h2>نظر خودرا بنویسید</h2>
             <div className={Styles.commentSec}>
                 <form onSubmit={sendComment}>
+                    <div className={Styles.addCommentInputs}>
+                    <div className={Styles.inputRight} >
                     <input
                         required="required"
                         onChange={(e) => setusername(e.target.value)}
                         className={Styles.input}
                         type='text'
                         placeholder='نام'></input>
+                         <input
+                        required="required"
+                        onChange={(e) => setemail(e.target.value)}
+                        className={Styles.input}
+                        type='text'
+                        placeholder='ایمیل'></input>
                     <input
                         required="required"
                         onChange={(e) => setscore(e.target.value)}
@@ -224,15 +231,27 @@ return (
                         className={Styles.inputScore}
                         type='number'
                         placeholder='امتیاز'></input>
-                    <input
+                    </div>
+                   <div className={Styles.inputLeft}>
+                   <input
                         required="required"
                         onChange={(e) => setcomment(e.target.value)}
                         className={Styles.inputComment}
                         type='text'
                         placeholder='نظر'></input>
-                    <button id="submit" className={Styles.submitBtn}>ثبت نظر</button>
+                <button id="submit" className={Styles.submitBtn}>ثبت نظر</button>
+                   </div>
+                   
+                    </div>
+                   
+                   
                 </form>
+                
             </div>
+            <h1 className={Styles.nazarat}>
+            نظرات
+        </h1>
+
         </div>
         {
             datas
@@ -253,14 +272,7 @@ return (
                                                 dislikes={dislike}/>
                                         )
                             }
-                            <div className={Styles.pageNums}>
-
-                                <Pagination
-                                    postsPerPage={postsPerPage}
-                                    totalPosts={datas.length}
-                                    paginate={paginate}/>
-
-                            </div>
+                           
                         </div>
 
                     : <div className={Styles.noComment}>
