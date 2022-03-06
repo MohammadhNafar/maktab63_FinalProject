@@ -12,7 +12,7 @@ import List from './components/List/List.component'
 import Sidebar from '../../layouts/user/sideBar/SideBar';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-
+import Footer from '../../layouts/user/footer/Footer';
 const HomePage = () => {
     const dispatch = useDispatch();
     const productsNew = useSelector(state => state.shop.products.data)
@@ -250,7 +250,9 @@ const HomePage = () => {
             
             </div>
 
-           
+           <footer>
+               <Footer/>
+           </footer>
 
         </div>
                 

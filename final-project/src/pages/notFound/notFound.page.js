@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import lottie from 'lottie-web';
 import {useEffect, useState , useRef} from 'react';
 import RainAnimation from '../../assets/lottie/rain/53484-digital-clouds-rain.json';
-
+import Footer from '../../layouts/user/footer/Footer';
 
 const NotfoundPage = () => {
     const container = useRef(null)
@@ -36,7 +36,9 @@ const NotfoundPage = () => {
                         <h1 className={Styles.notFoundH1}> صفحه اصلی  </h1>
                         </Link>
             </div>
-            
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     );
 }

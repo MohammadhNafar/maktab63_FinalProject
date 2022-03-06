@@ -14,7 +14,7 @@ body
 {
     margin: 0 auto;
     width: 89.5vw;
-    height: 200vh;
+    height: 100%;
    direction: rtl;
    display: flex;
    
@@ -24,7 +24,7 @@ body
 .products
 {
     width: 85%;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 
   

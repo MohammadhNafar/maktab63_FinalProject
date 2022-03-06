@@ -14,6 +14,7 @@ import http from '../../services/http.service'
 import {useParams} from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
 import Comments from './Components/Coments/Comments.component';
+import Footer from '../../layouts/user/footer/Footer';
 const ProductPage = (props) => {
 
     const [like, setlike] = useState(0)
@@ -217,7 +218,9 @@ return (
                             <h1 className={Styles.noCommentH1}>کامنتی برای نمایش وجود ندارد</h1>
                         </div>
         }
-
+    <footer>
+        <Footer/>
+    </footer>
     </div>
 );
 }

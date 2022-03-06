@@ -5,7 +5,7 @@ import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import Card from '../../Components/Cards/Card.component'
-
+import Footer from '../../layouts/user/footer/Footer';
 import { useParams } from 'react-router';
 
 const ProductsPage = () => {
@@ -53,7 +53,9 @@ const ProductsPage = () => {
 } 
                 </div> }
             </div>
-         
+         <footer>
+             <Footer/>
+         </footer>
             
         </div>
     );
