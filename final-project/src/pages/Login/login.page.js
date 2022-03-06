@@ -12,6 +12,7 @@ import {BASE_URL} from '../../configs/variable.config';
 import axios, { Axios } from 'axios';
 import http from '../../services/http.service';
 import Footer from '../../layouts/user/footer/Footer';
+import Header from '../../layouts/user/header/Header';
 
 toast.configure();
 const LoginPage = () => {
@@ -129,9 +130,10 @@ const LoginPage = () => {
 
 
     <div>
-         <Link to='/'>
+         {/* <Link to='/'>
                  <button className={Styles.HomeBtn}></button>
-            </Link>
+            </Link> */}
+            <Header/>
    
     <div className={Styles.LoginPage}>
         <form  className={Styles.form1}>
