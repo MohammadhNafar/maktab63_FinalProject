@@ -4,6 +4,8 @@ import Styles from './Product.module.css';
 import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
+import { Icon } from '@iconify/react';
+
 import {connect} from 'react-redux'
 import {IMAGE_URL} from '../../configs/image.url';
 import {getProduct} from '../../api/products.api';
@@ -160,6 +162,21 @@ return (
         <hr></hr>
         <div className={Styles.same} >
         <h1>کالا های مشابه</h1>
+        
+                <div className={Styles.headerCategory} >
+                <h1></h1>
+                <Link
+                className={Styles.Link}
+                to= {`/Products/${proCategory}`} >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
                     <div className={Styles.biscSec}>
                         
                         {
