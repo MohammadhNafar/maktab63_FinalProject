@@ -8,6 +8,7 @@ import moment from 'jalali-moment'
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router';
+import Footer from '../../layouts/user/footer/Footer';
 const CheckoutPage = () => {
     const Nav = useNavigate();
     const  [proDuctName, setProductName] = useState([])
@@ -171,7 +172,9 @@ const CheckoutPage = () => {
 
 
 
-                
+                <footer>
+                    <Footer/>
+                </footer>
             </div>
         
     );

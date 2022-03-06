@@ -3,15 +3,16 @@ import Header from '../../layouts/user/header/Header';
 import Middle from './components/middle/middle.component';
 import Styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
-import { Icon } from '@iconify/react';
+
 import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import lottie from 'lottie-web';
 import List from './components/List/List.component'
 import Sidebar from '../../layouts/user/sideBar/SideBar';
-
-
+import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
+import Footer from '../../layouts/user/footer/Footer';
 const HomePage = () => {
     const dispatch = useDispatch();
     const productsNew = useSelector(state => state.shop.products.data)
@@ -19,9 +20,17 @@ const HomePage = () => {
     const loading = proDatas.loading
     const error = proDatas.error
     const container = useRef(null)
-     //let categorys = productsNew.map(item =>  item.category)
-     //console.log(categorys)
-     
+    //  let categorys ;
+    //  console.log([productsNew.category])
+    // //  console.log(categorys)
+    // productsNew?.filter(value=> value.category == "شکلات").map
+    // {
+    //     values =>
+        
+    //         console.log(values.name)
+        
+    // }
+   
     //  let productsSet = [...new Set(productsNew)]
     //  console.log( productsSet)
 
@@ -108,28 +117,142 @@ const HomePage = () => {
                     />
                             )
                         }      
+
                   
                     </div>
                 </div>
+                <div className={Styles.headerCategory} >
+                <h1>شکلات ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/شکلات' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
+              
                 <div className={Styles.chokoSec}>
-                    {/* {
-                        datas.filter(value=> value.category == 'شکلات').map(
+                   
+                     {
+                        productsNew?.filter(value=> value.category == 'شکلات')
+                        .slice(0, 4)
+                        .map(
                             values => 
-                            <ul>
-                                <li>{values.category}</li>
-                            <li>{values.name}</li>
-
-                            </ul>
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+                    
+                    />
                             
                         )
-                    } */}
+                    } 
 
                 </div>
+                <div className={Styles.headerCategory} >
+                <h1>بیسکوییت ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/بیسکوییت' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
+
+                    <div className={Styles.biscSec}>
+                          
+                     {
+                        productsNew?.filter(value=> value.category == 'بیسکوییت')
+                        .slice(0, 4)
+                        .map(
+                            values => 
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+                    
+                    />
+                            
+                        )
+                    } 
+
+                    </div>
+                    <div className={Styles.headerCategory} >
+                <h1>کیک ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/کیک' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
+
+                    <div className={Styles.biscSec}>
+                        
+                    {
+                        productsNew?.filter(value=> value.category == 'کیک').
+                        slice(0, 4)
+                        
+                        .map(
+                            values => 
+                                <Card
+                                id = {values.id}
+                                key = {values.id}
+                    Name = {values.name}
+                    info = {values.category}
+                    Price = {values.price}
+                    PicList = {values.image}
+                    count = {values.count}
+
+                    />
+                            
+                        )
+                 } 
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             
             </div>
 
-           
+           <footer>
+               <Footer/>
+           </footer>
 
         </div>
                 

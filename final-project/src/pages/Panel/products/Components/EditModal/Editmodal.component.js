@@ -10,6 +10,8 @@ const Editmodal = (props) => {
     const [brand , setBrand] = useState(modalData.brand);
     const [price , setPrice] = useState(modalData.price);
     const [count, setCount] = useState(modalData.count);
+    const [category, setCategory] = useState(modalData.category);
+
     let image = modalData.image;
     let id = modalData.id;
     console.log("pic",image)
@@ -28,6 +30,7 @@ const Editmodal = (props) => {
         data.brand = brand;
         data.price = price;
         data.count = count;
+        data.category = category;
         data.image =image;
         try {  
             editData({id ,data})
@@ -65,6 +68,11 @@ const Editmodal = (props) => {
                         onChange={(e) => setName(e.target.value)}
                         required
                         value={name}
+                        />  </p>
+                          <p> گروه کالا :  <input name='category'  
+                        onChange={(e) => setCategory(e.target.value)}
+                        required
+                        value={category}
                         />  </p>
                         <p>  برند کالا :  <input name='brand'
                          onChange={(e) => setBrand(e.target.value)}

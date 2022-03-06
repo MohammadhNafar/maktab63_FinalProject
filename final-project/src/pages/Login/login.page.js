@@ -11,7 +11,7 @@ import * as Yup from 'yup';
 import {BASE_URL} from '../../configs/variable.config';
 import axios, { Axios } from 'axios';
 import http from '../../services/http.service';
-
+import Footer from '../../layouts/user/footer/Footer';
 
 toast.configure();
 const LoginPage = () => {
@@ -157,6 +157,9 @@ const LoginPage = () => {
         </form>
 
     </div>
+    <footer>
+        <Footer/>
+    </footer>
 
     </div>
 

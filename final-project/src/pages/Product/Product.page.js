@@ -4,16 +4,21 @@ import Styles from './Product.module.css';
 import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
+import { Icon } from '@iconify/react';
+
 import {connect} from 'react-redux'
 import {IMAGE_URL} from '../../configs/image.url';
 import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'
 import {useDispatch, useSelector} from 'react-redux';
+import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import {Link} from 'react-router-dom';
 import http from '../../services/http.service'
 import {useParams} from 'react-router';
 import Pagination from '../../Components/pagination/pagination.component';
 import Comments from './Components/Coments/Comments.component';
+import Footer from '../../layouts/user/footer/Footer';
+import Card from '../../Components/Cards/Card.component';
 const ProductPage = (props) => {
 
     const [like, setlike] = useState(0)
@@ -25,14 +30,16 @@ const ProductPage = (props) => {
     const [score, setscore] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
+    const productsNew = useSelector(state => state.shop.products.data)
     const dispatch = useDispatch();
     let {id} = useParams();
-    console.log(id)
+    
+    
 
     async function sendComment(e) {
 
         e.preventDefault();
-        console.log(username, comment, score)
+       
 
         let result = http.post('http://localhost:3002/comments', {
             username,
@@ -75,16 +82,14 @@ function dislikef() {
 
 const [rows, setRows] = useState([]);
 const [product, setProduct] = useState([]);
-
+ let proCategory = product.map(data => data.category)
+console.log(proCategory)
 useEffect(() => {
+    dispatch(fetchProducts())
     getComments().then(data => setRows(data.data))
-    console.log(rows, 'hello')
     getProduct(id).then(data => setProduct(data.data))
-    // http.get("http://localhost:3002/products").then(data =>
-    // setProduct(data.data))
-    console.log(product, "sdsd");
-
 }, [])
+
 const datas = rows;
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -145,14 +150,59 @@ return (
 
                             <BuyCard count={data.count} price={data.price} click={test}/>
                         </div>
+                        
                     </div>
+                    
 
                 )
             }
+        
 
         </div>
-
         <hr></hr>
+        <div className={Styles.same} >
+        <h1>کالا های مشابه</h1>
+        
+                <div className={Styles.headerCategory} >
+                <h1></h1>
+                <Link
+                className={Styles.Link}
+                to= {`/Products/${proCategory}`} >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
+                    <div className={Styles.biscSec}>
+                        
+                        {
+                            productsNew?.filter(value=> value.category == proCategory).
+                            slice(0, 5)
+                            
+                            .map(
+                                values => 
+                                    <Card
+                                    id = {values.id}
+                                    key = {values.id}
+                        Name = {values.name}
+                        info = {values.category}
+                        Price = {values.price}
+                        PicList = {values.image}
+                        count = {values.count}
+    
+                        />
+                                
+                            )
+                     } 
+    
+                        </div>
+                        </div>
+                        <hr></hr>
+
         <h1 className={Styles.nazarat}>
             نظرات
         </h1>
@@ -173,7 +223,7 @@ return (
                         max="5"
                         className={Styles.inputScore}
                         type='number'
-                        placeholder='نمره'></input>
+                        placeholder='امتیاز'></input>
                     <input
                         required="required"
                         onChange={(e) => setcomment(e.target.value)}
@@ -217,7 +267,9 @@ return (
                             <h1 className={Styles.noCommentH1}>کامنتی برای نمایش وجود ندارد</h1>
                         </div>
         }
-
+    <footer>
+        <Footer/>
+    </footer>
     </div>
 );
 }

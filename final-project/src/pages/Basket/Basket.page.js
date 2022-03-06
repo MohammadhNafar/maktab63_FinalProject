@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
 import Empty from './Components/empty/Empty.basket.component'
 import { Link } from 'react-router-dom';
-
+import Footer from '../../layouts/user/footer/Footer';
 const BasketPage = ({cart}) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
@@ -169,6 +169,9 @@ const BasketPage = ({cart}) => {
                 }
 
             </div>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     );
 }
