@@ -3,14 +3,15 @@ import Header from '../../layouts/user/header/Header';
 import Middle from './components/middle/middle.component';
 import Styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
-import { Icon } from '@iconify/react';
+
 import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import lottie from 'lottie-web';
 import List from './components/List/List.component'
 import Sidebar from '../../layouts/user/sideBar/SideBar';
-
+import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -120,11 +121,27 @@ const HomePage = () => {
                   
                     </div>
                 </div>
+                <div className={Styles.headerCategory} >
                 <h1>شکلات ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/شکلات' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
+              
                 <div className={Styles.chokoSec}>
                    
                      {
-                        productsNew?.filter(value=> value.category == 'شکلات').map(
+                        productsNew?.filter(value=> value.category == 'شکلات')
+                        .slice(0, 4)
+                        .map(
                             values => 
                                 <Card
                                 id = {values.id}
@@ -141,12 +158,27 @@ const HomePage = () => {
                     } 
 
                 </div>
-                <h1 className={Styles.h1Sec} >بیسکوییت ها </h1>
+                <div className={Styles.headerCategory} >
+                <h1>بیسکوییت ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/بیسکوییت' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
 
                     <div className={Styles.biscSec}>
                           
                      {
-                        productsNew?.filter(value=> value.category == 'بیسکوییت').map(
+                        productsNew?.filter(value=> value.category == 'بیسکوییت')
+                        .slice(0, 4)
+                        .map(
                             values => 
                                 <Card
                                 id = {values.id}
@@ -163,12 +195,28 @@ const HomePage = () => {
                     } 
 
                     </div>
-                                        <h1 className={Styles.h1Sec} >کیک ها </h1>
+                    <div className={Styles.headerCategory} >
+                <h1>کیک ها</h1>
+                <Link
+                className={Styles.Link}
+                to='/Products/کیک' >
+                <div className={Styles.more} >
+                   <p>نمایش محصولات بیشتر</p>
+                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+               </div>
+                </Link>
+            
+                
+                
+                </div>
 
                     <div className={Styles.biscSec}>
                         
                     {
-                        productsNew?.filter(value=> value.category == 'کیک').map(
+                        productsNew?.filter(value=> value.category == 'کیک').
+                        slice(0, 4)
+                        
+                        .map(
                             values => 
                                 <Card
                                 id = {values.id}
@@ -182,7 +230,7 @@ const HomePage = () => {
                     />
                             
                         )
-                    } 
+                 } 
 
                     </div>
 
