@@ -185,7 +185,7 @@ return (
                         
                         {
                             productsNew?.filter(value=> value.category == proCategory).
-                            slice(0, 5)
+                            slice(0, 3)
                             
                             .map(
                                 values => 

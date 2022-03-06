@@ -140,7 +140,7 @@ const HomePage = () => {
                    
                      {
                         productsNew?.filter(value=> value.category == 'شکلات')
-                        .slice(0, 4)
+                        .slice(0, 3)
                         .map(
                             values => 
                                 <Card
@@ -177,7 +177,7 @@ const HomePage = () => {
                           
                      {
                         productsNew?.filter(value=> value.category == 'بیسکوییت')
-                        .slice(0, 4)
+                        .slice(0, 3)
                         .map(
                             values => 
                                 <Card
@@ -214,7 +214,7 @@ const HomePage = () => {
                         
                     {
                         productsNew?.filter(value=> value.category == 'کیک').
-                        slice(0, 4)
+                        slice(0, 3)
                         
                         .map(
                             values => 
