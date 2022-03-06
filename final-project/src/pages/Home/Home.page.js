@@ -3,7 +3,8 @@ import Header from '../../layouts/user/header/Header';
 import Middle from './components/middle/middle.component';
 import Styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
-
+import DataError from './components/DataError/DataError.component'
+import DataLoading from './components/Loading/Loading.component'
 import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
@@ -41,13 +42,7 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(fetchProducts())
-        lottie.loadAnimation({
-            container: container.current,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            animationData: require('../../assets/lottie/cart/16982-shopping-loader.json')
-        })
+        
     }, [])
       
       
@@ -69,8 +64,24 @@ const HomePage = () => {
             
             <div className= {Styles.Mid} >
             <Middle/>
-            {loading && <h1 className={Styles.loadingg} >درحال بارگذاری</h1>}
-            {error && !loading && <div className={Styles.animations} ref={container}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</div>}
+            
+                   <div className={Styles.dataLoad} >
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   {loading &&  <DataLoading/>}
+                   </div>
+            
+          
+         
+           
+
+            {error && !loading && <DataError/>}
            
             <div className={Styles.listHome}>
         
@@ -93,14 +104,7 @@ const HomePage = () => {
                 
                 
                 <div className={Styles.firstSec}>
-                    
-                {/* {openModal && <Modal placeHolder2 = {"سلام"}
-
-            placeHolder1 = {"سلام"}
-             secendBtnTitle = {'باتل دوم'}
-              firstBtnTitle = {'باتن اول'} 
-              titleHead = {'ویرایش'} 
-              closeModal = {setOpenModal}/>}  */}
+         
                     <div className={Styles.firstSecCards}>
                         {
                              productsNew?.map(
@@ -121,21 +125,24 @@ const HomePage = () => {
                   
                     </div>
                 </div>
-                <div className={Styles.headerCategory} >
-                <h1>شکلات ها</h1>
-                <Link
-                className={Styles.Link}
-                to='/Products/شکلات' >
-                <div className={Styles.more} >
-                   <p>نمایش محصولات بیشتر</p>
-                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
-               </div>
-                </Link>
-            
-                
-                
-                </div>
-              
+                { error && !loading  ? 
+                          ""
+                          
+               :   <div className={Styles.headerCategory} >
+               <h1>شکلات ها</h1>
+               <Link
+               className={Styles.Link}
+               to='/Products/شکلات' >
+               <div className={Styles.more} >
+                  <p>نمایش محصولات بیشتر</p>
+                  <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+              </div>
+               </Link>
+           
+               
+               
+               </div> }
+        
                 <div className={Styles.chokoSec}>
                    
                      {
@@ -158,6 +165,7 @@ const HomePage = () => {
                     } 
 
                 </div>
+                { error && !loading   ? "" :
                 <div className={Styles.headerCategory} >
                 <h1>بیسکوییت ها</h1>
                 <Link
@@ -172,7 +180,7 @@ const HomePage = () => {
                 
                 
                 </div>
-
+}
                     <div className={Styles.biscSec}>
                           
                      {
@@ -195,6 +203,7 @@ const HomePage = () => {
                     } 
 
                     </div>
+                    { error && !loading   ? "" :
                     <div className={Styles.headerCategory} >
                 <h1>کیک ها</h1>
                 <Link
@@ -209,7 +218,7 @@ const HomePage = () => {
                 
                 
                 </div>
-
+}
                     <div className={Styles.biscSec}>
                         
                     {
