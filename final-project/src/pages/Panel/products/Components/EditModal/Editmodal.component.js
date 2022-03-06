@@ -58,7 +58,7 @@ const Editmodal = (props) => {
                 
                 <div className={styles.title}>
                     <h1>
-                       ویرایش محصول {modalData.name}
+                       ویرایش  {modalData.name}
                     </h1>
                 </div>
                 <div className={styles.items}>

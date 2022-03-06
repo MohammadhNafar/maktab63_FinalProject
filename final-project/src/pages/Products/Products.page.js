@@ -29,7 +29,6 @@ const ProductsPage = () => {
         <div  >
             <Header/>
             <div className={Styles.wrapper}>
-            <hr className={Styles.hrHeader}></hr>
             <div className={Styles.h1Head}>
                 
                 <h1 >

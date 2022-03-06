@@ -4,7 +4,7 @@
 .wrapper
 {
     
-    background-color: white;
+    background-color: #f4f4f4;
     
 }
 
@@ -13,7 +13,7 @@
     
     width: 100vw;
     height: 5rem;
-    background-color: white;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: space-around;
     
@@ -44,4 +44,17 @@
     margin: 0 auto;
     font-family: IRANSans;
     
+}
+.hrHeader
+{
+    
+    border:none;
+    
+       color: white;
+      height: 50px;
+      
+      border-bottom: 1px solid #ffffff;
+      box-shadow: 0 20px 20px -20px #333;
+   
+
 }

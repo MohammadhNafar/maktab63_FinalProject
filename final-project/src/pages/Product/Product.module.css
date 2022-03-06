@@ -74,6 +74,7 @@
     direction: rtl;
     padding-top: 3rem;
     margin-right: 4rem;
+    font-size: 1.5rem;
 }
 .hrHeader
 {
@@ -106,22 +107,28 @@
 .addComment h2
 {
     margin-right: 2rem;
+    color: gray;
+    font-size: 1rem;
 }
 .commentSec
 {
-    border: 1px solid #EE2D40;
+    border: 1px solid gray;
     display: flex;
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 35rem;
     direction: rtl;
     padding: 1rem;
     margin-right: 2rem;
+    border-radius: 7px;
 
 }
 .input
 {
     width: 15rem;
     height: 3rem;
+    border-radius: 7px;
+    border: 1px solid gray;
+
 }
 .inputScore
 {
@@ -131,16 +138,20 @@
 .inputComment
 {
     width: 15rem;
-    height: 5rem;
+    height: 10rem;
+    border-radius: 7px;
+    border: 1px solid gray;
+
 }
 .submitBtn
 {
-    width: 8rem;
+    width: 5rem;
     height: 2rem;
     background-color: #EE2D40;
     border: none;
     color: white;
     border-radius: 1rem;
+    float: left;
 }
 .commentSec input
 {
@@ -246,4 +257,10 @@
 {
     text-decoration: none;
     color: #000;
+}
+
+.addCommentInputs
+{
+    display: flex;
+    gap: 1rem;
 }
