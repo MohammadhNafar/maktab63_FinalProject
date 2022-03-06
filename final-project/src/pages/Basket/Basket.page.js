@@ -53,7 +53,7 @@ const BasketPage = ({cart}) => {
     return (
         <div className={Styles.container}>
             <Header/>
-            <hr className={Styles.hrHeader}></hr>
+            
             <div className={Styles.h1Head}>
                 <h1 >
                     سبد خرید

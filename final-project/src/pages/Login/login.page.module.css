@@ -1,7 +1,7 @@
 .form1 {
     position: relative;
     z-index: 1;
-    
+  
     max-width: 34rem;
     margin-left: 32%;
     border-radius: 1rem;
@@ -130,4 +130,7 @@
     position: absolute;
     
 }
- 
+ .LoginPage
+ {
+   padding-top: 5rem;
+ }

@@ -68,7 +68,7 @@ const CheckoutPage = () => {
     return (
         <div>
             <Header/>
-            <hr className={Styles.hrHeader}></hr>
+            
             <div className={Styles.h1Head}>
                 <h1 >
                     تکمیل خرید
