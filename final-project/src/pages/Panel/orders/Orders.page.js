@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {fetchOrders} from '../../../redux/Orders/orders.thunk'
 import Modal from './Components/ordersModal/OrdersModal.component';
 import Pagination from '../../../Components/pagination/pagination.component'
-
+import DataLoading from '../products/Components/DataLoading/PanelProductsLoading.component'
 const OrdersPage = () => {
     const proOrders = useSelector(state => state.orders)
     const dispatch = useDispatch();
@@ -69,7 +69,9 @@ const OrdersPage = () => {
                 <h1>نام کاربر</h1>
 
             </div>
-            
+            <div className={Styles.productList}>
+            {loading && <DataLoading/>}
+            {error && !loading && <h1 className={Styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
              
                      { currentPosts?.map(
                          data => <Table
@@ -90,6 +92,7 @@ const OrdersPage = () => {
 
                    )
             }
+            </div>
                <Pagination
              postsPerPage={postsPerPage}
              totalPosts = {ordersNew&&ordersNew.length}

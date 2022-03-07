@@ -54,3 +54,9 @@
 {
 	cursor: pointer;
 }
+.error
+{
+	padding-top: 5rem;
+	color: #EE2D40;
+	font-size: 1.2rem;
+}
