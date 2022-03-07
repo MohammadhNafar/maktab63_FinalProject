@@ -7,33 +7,54 @@ import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import Card from '../../Components/Cards/Card.component'
 import Footer from '../../layouts/user/footer/Footer';
 import { useParams } from 'react-router';
-
+import DataLoading from '../../pages/Home/components/Loading/Loading.component';
+import DataError from '../../pages/Home/components/DataError/DataError.component'
 const ProductsPage = () => {
     const productsNew = useSelector(state => state.shop.products.data)
     const dispatch = useDispatch();
     let {category} = useParams(); 
-
+    const proDatas = useSelector(state => state.shop)
+    const loading = proDatas.loading;
+    const error = proDatas.error;
     console.log(category)
-
+ 
     useEffect(() => {
         dispatch(fetchProducts())
     }, [])
       
-
-
-
-
-
 
     return (
         <div  >
             <Header/>
             <div className={Styles.wrapper}>
             <div className={Styles.h1Head}>
-                
-                <h1 >
+
+
+
+
+
+
+
+
+
+
+            {productsNew?.filter(value=> value.category == category).length > 0 ?  <h1 >
                 محصولات گروه   {category} 
-                </h1>
+                </h1> :
+                
+                
+                <h1>محصولی با نام {category} پیدا نشد</h1>}
+                <div className={Styles.dataLoad}>
+                        {loading && <DataLoading/>}
+                        {loading && <DataLoading/>}
+                        {loading && <DataLoading/>}
+                        
+                        
+                      
+                    </div>
+
+                    {error && !loading && "خطا در ارتباط با سرور"}
+               
             </div>
                { <div className={Styles.firstSecCards}>
                 { productsNew?.filter(value=> value.category == category).map(

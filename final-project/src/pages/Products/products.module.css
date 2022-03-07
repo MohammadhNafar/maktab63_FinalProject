@@ -2,6 +2,7 @@
 .wrapper
 {
     direction: rtl;
+    height: 110vh;
 }
 
 
@@ -63,4 +64,12 @@
 {
     color: gray;
     font-size: 1.3rem;
+}
+.dataLoad
+{
+    padding-left: 10rem;
+   display: flex;
+    justify-content: center;
+   flex-wrap: wrap;
+  
 }
