@@ -14,11 +14,21 @@ const DataerrorComponent = () => {
         })
     },[])
 
+    const tryAgain = () => {
+        window.location.reload();
+        console.log('try again')
+    }
+
     return (
         <div className={styles.wrapper}>
              <div className={styles.animation} ref={container}>
             <h1 >!دریافت اطلاعات با خطا مواجه شد</h1>
+         
+
             </div>
+            <button
+            onClick={tryAgain}
+             className={styles.tryAgain} >تلاش مجدد</button>
         </div>
     );
 }

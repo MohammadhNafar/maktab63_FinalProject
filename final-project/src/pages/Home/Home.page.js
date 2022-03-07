@@ -41,6 +41,7 @@ const HomePage = () => {
              />
             ) */
             }
+           
 
             <div className={Styles.Mid}>
                     <Middle/>

@@ -22,6 +22,7 @@ const Addmodal = (props) => {
         
         let form = new FormData();
         form.append('image', e.target.images.files[0])
+        
         const reqConfig = {
             headers: {
                 'content-type': 'multipart/form-data',
@@ -90,7 +91,7 @@ const Addmodal = (props) => {
                     <input
                      name = "images" id='images' type='file'
                      className={Styles.inputStyleFile} placeholder= "عکس"/>
-
+                   
 
 
 

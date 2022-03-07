@@ -1,12 +1,17 @@
 import React from 'react';
 import './Footer.css';
+import IMG from '../../../assets/images/logo.svg';
 const Footer = () => {
     return (
         <div>
             <footer className="footer">
   <div className="footer__addr">
+    <div className='logoSec'>
+    <img className='footer_img' src={IMG}></img>
     <h1 className="footer__logo">فروشگاه چوکوفور</h1>
-        
+       
+    </div>
+  
     <h2>ارتباط با ما </h2>
     
     <address>
