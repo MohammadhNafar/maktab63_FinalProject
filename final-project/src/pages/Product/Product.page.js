@@ -113,7 +113,7 @@ return (
 
         <div className={Styles.body}>
             {
-                product.map(
+                product?.map(
                     data => <div>
                         <div className={Styles.levels}>
                             <Link className={Styles.Link} to="/">
