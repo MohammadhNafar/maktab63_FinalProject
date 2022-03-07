@@ -7,7 +7,7 @@ import {getProducts} from '../../../api/products.api'
 import {IMAGE_URL} from '../../../configs/image.url';
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchProducts} from '../../../redux/Shopping/shopping.thunk'
-
+import DataLoading from './Components/DataLoading/PanelProductsLoading.component'
 import Modal from './Components/EditModal/Editmodal.component';
 import ModalAdd from './Components/AddProductModal/addModal.js';
 import Pagination from '../../../Components/pagination/pagination.component';
@@ -79,8 +79,8 @@ const ProductPage = () => {
       
         <div>
             <Header/>
-            {loading && <h1 className={Styles.loadingg} >درحال بارگذاری</h1>}
-            {error && !loading && <div className={Styles.animations}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</div>}
+            
+           
             <div className={Styles.wrapper}>
             <div className= {Styles.title}>
             <h1>محصولات</h1>
@@ -94,6 +94,8 @@ const ProductPage = () => {
 
             </div>
             <div className={Styles.productList}>
+            {loading && <DataLoading/>}
+            {error && !loading && <h1 className={Styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
             {openModal && <Modal 
               closeModal = {setOpenModal}/>} 
 
@@ -105,6 +107,7 @@ const ProductPage = () => {
                 />
               }
              {
+               
             currentPosts?.map(
               
                 data =>

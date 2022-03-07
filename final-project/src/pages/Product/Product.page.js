@@ -5,7 +5,7 @@ import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
 import { Icon } from '@iconify/react';
-import {fetchProduct} from '../../redux/Shopping/shopping.thunk'
+import DataLoading from './Components/ProductPage Data Loading/ProductLoading.component'
 import {connect} from 'react-redux'
 import {IMAGE_URL} from '../../configs/image.url';
 import {getProduct} from '../../api/products.api';
@@ -32,9 +32,13 @@ const ProductPage = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
     const productsNew = useSelector(state => state.shop.products.data)
+    const proDatas = useSelector(state => state.shop)
+    const loading = proDatas.loading;
+    const error = proDatas.error;
+
     const dispatch = useDispatch();
     let {id} = useParams();
-    const productRedux = useSelector(state => state.shop.product)
+    
     
 
     async function sendComment(e) {
@@ -84,8 +88,8 @@ function dislikef() {
 
 const [rows, setRows] = useState([]);
 const [product, setProduct] = useState([]);
- let proCategory = product.map(data => data.category)
- let proName = product.map(data => data.name)
+ let proCategory = product?.map(data => data.category)
+ let proName = product?.map(data => data.name)
 
 console.log(proCategory)
 useEffect(() => {
@@ -99,7 +103,7 @@ useEffect(() => {
 const datas = rows;
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
-const currentPosts = datas.slice(indexOfFirstPost, indexOfLastPost)
+const currentPosts = datas?.slice(indexOfFirstPost, indexOfLastPost)
 const paginate = (pageNumber) => setCurrentPage(pageNumber)
 function test() {
     console.log("sd")
@@ -112,6 +116,11 @@ return (
       
 
         <div className={Styles.body}>
+
+        {loading && <DataLoading/>}
+                        
+                        
+                        {error && !loading && <div className={Styles.dataError} > <h1>خطا در دریافت اطلاعات</h1> </div>}
             {
                 product?.map(
                     data => <div>
@@ -187,101 +196,119 @@ return (
         
 
         </div>
-        <hr></hr>
-        <div className={Styles.same} >
-        <h1>کالا های مشابه</h1>
+        {  !loading && !error &&   productsNew?.filter(value=> value.name == proName).length > 0 ?
         
-                <div className={Styles.headerCategory} >
-                <h1></h1>
-                <Link
-                className={Styles.Link}
-                to= {`/Products/${proCategory}`} >
-                <div className={Styles.more} >
-                   <p>نمایش محصولات بیشتر</p>
-                   <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
-               </div>
-                </Link>
-            
+                <div className={Styles.same} >
+                                                   <hr></hr>
+
+                <h1>کالا های مشابه</h1>
                 
-                
-                </div>
-                    <div className={Styles.biscSec}>
+                        <div className={Styles.headerCategory} >
+                        <h1></h1>
+                        <Link
+                        className={Styles.Link}
+                        to= {`/Products/${proCategory}`} >
+                        <div className={Styles.more} >
+                           <p>نمایش محصولات بیشتر</p>
+                           <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+                       </div>
+                        </Link>
+                    
                         
-                        {
-                            productsNew?.filter(value=> value.category == proCategory).
-                            slice(0, 3)
-                            
-                            .map(
-                                values => 
-                                    <Card
-                                    id = {values.id}
-                                    key = {values.id}
-                        Name = {values.name}
-                        info = {values.category}
-                        Price = {values.price}
-                        PicList = {values.image}
-                        count = {values.count}
-    
-                        />
+                        
+                        </div>
+                            <div className={Styles.biscSec}>
                                 
-                            )
-                     } 
+                                {
+                                    productsNew?.filter(value=> value.category == proCategory).
+                                    slice(0, 3)
+                                    
+                                    .map(
+                                        values => 
+                                            <Card
+                                            id = {values.id}
+                                            key = {values.id}
+                                Name = {values.name}
+                                info = {values.category}
+                                Price = {values.price}
+                                PicList = {values.image}
+                                count = {values.count}
+            
+                                />
+                                        
+                                    )
+                             } 
+            
+                                </div>
+                                </div>
+        
+        
+        
+        
+       : <div className={Styles.dataError} > <h1>محصولی وجود ندارد</h1> </div> }
     
-                        </div>
-                        </div>
-                        <hr></hr>
+                        
 
-      
-        <div className={Styles.addComment}>
-            <h2>نظر خودرا راجع به {proName} بنویسید</h2>
-            <div className={Styles.commentSec}>
-                <form onSubmit={sendComment}>
-                    <div className={Styles.addCommentInputs}>
-                    <div className={Styles.inputRight} >
-                    <input
-                        required="required"
-                        onChange={(e) => setusername(e.target.value)}
-                        className={Styles.input}
-                        type='text'
-                        placeholder='نام'></input>
-                         <input
-                        required="required"
-                        onChange={(e) => setemail(e.target.value)}
-                        className={Styles.input}
-                        type='text'
-                        placeholder='ایمیل'></input>
-                    <input
-                        required="required"
-                        onChange={(e) => setscore(e.target.value)}
-                        max="5"
-                        className={Styles.inputScore}
-                        type='number'
-                        placeholder='امتیاز'></input>
-                    </div>
-                   <div className={Styles.inputLeft}>
-                   <input
-                        required="required"
-                        onChange={(e) => setcomment(e.target.value)}
-                        className={Styles.inputComment}
-                        type='text'
-                        placeholder='نظر'></input>
-                <button id="submit" className={Styles.submitBtn}>ثبت نظر</button>
-                   </div>
-                   
-                    </div>
-                   
-                   
-                </form>
-                
-            </div>
-            <h1 className={Styles.nazarat}>
-            نظرات
-        </h1>
-
-        </div>
+                        {productsNew?.filter(value=> value.name == proName).length > 0 ? 
+                           <div className={Styles.addComment}>
+                               <hr></hr>
+                           <h2>نظر خودرا راجع به {proName} بنویسید</h2>
+                           <div className={Styles.commentSec}>
+                               <form onSubmit={sendComment}>
+                                   <div className={Styles.addCommentInputs}>
+                                   <div className={Styles.inputRight} >
+                                   <input
+                                       required="required"
+                                       onChange={(e) => setusername(e.target.value)}
+                                       className={Styles.input}
+                                       type='text'
+                                       placeholder='نام'></input>
+                                        <input
+                                       required="required"
+                                       onChange={(e) => setemail(e.target.value)}
+                                       className={Styles.input}
+                                       type='text'
+                                       placeholder='ایمیل'></input>
+                                   <input
+                                       required="required"
+                                       onChange={(e) => setscore(e.target.value)}
+                                       max="5"
+                                       className={Styles.inputScore}
+                                       type='number'
+                                       placeholder='امتیاز'></input>
+                                   </div>
+                                  <div className={Styles.inputLeft}>
+                                  <input
+                                       required="required"
+                                       onChange={(e) => setcomment(e.target.value)}
+                                       className={Styles.inputComment}
+                                       type='text'
+                                       placeholder='نظر'></input>
+                               <button id="submit" className={Styles.submitBtn}>ثبت نظر</button>
+                                  </div>
+                                  
+                                   </div>
+                                  
+                                  
+                               </form>
+                               
+                           </div>
+                           <h1 className={Styles.nazarat}>
+                           نظرات
+                       </h1>
+               
+                       </div>
+                       : ""
+                    
+                    
+                    
+                    
+                    
+                    }
+     
         {
             datas
-                .filter(value => value.for == id)
+                ?.filter(value => value.for == id)
                 .length !== 0
                     ? <div>
                             {
