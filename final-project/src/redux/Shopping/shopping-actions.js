@@ -53,6 +53,38 @@ export const getProductsFailed = (err) => {
         payload: err
     }
 };
+
+
+export const getProductRequest = () => {
+    return {
+        type: actionTypes.FETCH_PRODUCT_REQUEST,
+    }
+};
+
+
+export const getProductSuccess = (data) => {
+    return {
+        type: actionTypes.FETCH_PRODUCT_SUCCESS,
+        payload: data
+    }
+};
+
+export const getProductFailed = (err) => {
+    return {
+        type: actionTypes.FETCH_PRODUCT_FAILED,
+        payload: err
+    }
+};
+
+
+
+
+
+
+
+
+
+
 export const loadCurrentItem = (item) => {
     return {
       type: actionTypes.LOAD_CURRENT_ITEM,
