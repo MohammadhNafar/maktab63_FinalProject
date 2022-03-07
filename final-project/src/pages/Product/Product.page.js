@@ -104,6 +104,8 @@ const datas = rows;
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
 const currentPosts = datas?.slice(indexOfFirstPost, indexOfLastPost)
+
+ console.log(datas?.filter(value => value.for == id)) 
 const paginate = (pageNumber) => setCurrentPage(pageNumber)
 function test() {
     console.log("sd")
@@ -312,7 +314,7 @@ return (
                 .length !== 0
                     ? <div>
                             {
-                                currentPosts?.filter(value => value.for == id)
+                                datas?.filter(value => value.for == id)
                                         .map(
                                             values => <Comments
                                                 key={values.id}
@@ -325,6 +327,12 @@ return (
                                                 dislikes={dislike}/>
                                         )
                             }
+                               <Pagination
+             postsPerPage={postsPerPage}
+             totalPosts = {productsNew&&productsNew.length}
+             paginate = {paginate}
+             
+             />
                            
                         </div>
 
