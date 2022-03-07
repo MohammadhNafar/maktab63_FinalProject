@@ -5,7 +5,7 @@ import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
 import { Icon } from '@iconify/react';
-
+import {fetchProduct} from '../../redux/Shopping/shopping.thunk'
 import {connect} from 'react-redux'
 import {IMAGE_URL} from '../../configs/image.url';
 import {getProduct} from '../../api/products.api';
@@ -34,7 +34,7 @@ const ProductPage = (props) => {
     const productsNew = useSelector(state => state.shop.products.data)
     const dispatch = useDispatch();
     let {id} = useParams();
-    
+    const productRedux = useSelector(state => state.shop.product)
     
 
     async function sendComment(e) {
@@ -90,6 +90,8 @@ const [product, setProduct] = useState([]);
 console.log(proCategory)
 useEffect(() => {
     dispatch(fetchProducts())
+    //dispatch(fetchProduct(id));
+    
     getComments().then(data => setRows(data.data))
     getProduct(id).then(data => setProduct(data.data))
 }, [])
@@ -151,8 +153,30 @@ return (
                                 </div>
 
                             </div>
+                        
+                            {/* <Card
+                                    id = {data.id}
+                                    key = {data.id}
+                        Name = {data.name}
+                        info = {data.category}
+                        Price = {data.price}
+                        PicList = {data.image}
+                        count = {data.count}
+    
+                        /> */}
 
-                            <BuyCard count={data.count} price={data.price} click={test}/>
+
+
+
+                             <BuyCard  count={data.count} price={data.price} id = {props.id}    id = {data.id}
+                                    key = {data.id}
+                        Name = {data.name}
+                        info = {data.category}
+                        Price = {data.price}
+                        PicList = {data.image}
+                        count = {data.count}
+     /> 
+
                         </div>
                         
                     </div>

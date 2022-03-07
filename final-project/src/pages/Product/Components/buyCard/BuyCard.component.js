@@ -1,8 +1,11 @@
 import React from 'react';
 import Styles from './buyCard.module.css';
 import { Icon } from '@iconify/react';
-
+import { useDispatch } from 'react-redux';
+import { addToCart   } from '../../../../redux/Shopping/shopping-actions' 
 const BuycardComponent = (props) => {
+    const dispatch = useDispatch();
+
     return (
         <div className={Styles.buyBox}>
             <div className={Styles.boxItems}>
@@ -30,7 +33,7 @@ const BuycardComponent = (props) => {
     
             { props.count > 0 ? 
                         <button
-                        onClick={props.click}
+                        onClick={() => dispatch(addToCart(props.id)) }
                         className={Styles.addButton}>افزودن به سبد خرید</button>
                         : <h1 className={Styles.namojod} >ناموجود</h1>
 

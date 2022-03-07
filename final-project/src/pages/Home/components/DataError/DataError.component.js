@@ -17,7 +17,7 @@ const DataerrorComponent = () => {
     return (
         <div className={styles.wrapper}>
              <div className={styles.animation} ref={container}>
-            <h1 >مشکلی پیش آمده لطفا بعدا تلاش کنید</h1>
+            <h1 >!دریافت اطلاعات با خطا مواجه شد</h1>
             </div>
         </div>
     );
