@@ -89,7 +89,8 @@ const BasketPage = ({cart}) => {
                         ? ""
                         : <Empty/>
                 }
-                {cart.length > 0 
+                <div className={Styles.itemsTable}>
+                {cart?.length > 0 
                     ? 
                     cart.map(item => (
                         <Table
@@ -104,6 +105,7 @@ const BasketPage = ({cart}) => {
                             
                     ))
                 : ""}
+                </div>
                 {/* {
                     cart.map(item => (
                         <Table
