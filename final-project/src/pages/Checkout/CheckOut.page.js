@@ -4,7 +4,8 @@ import Styles from './checkout.module.css'
 import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
-import moment from 'jalali-moment'
+//import {DatePicker} from "jalali-react-datepicker";
+import moment from "moment";
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router';
@@ -20,6 +21,32 @@ const CheckoutPage = () => {
     const [totalPrice , setTotalPrice] = useState([])
     const [totalItems , setTotalItems] = useState([])
     
+
+    const [value, setValue] = useState(moment());
+
+  
+    const handleChange = ({ value }) => {
+      setValue(value);
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const datas = {"name" : name, "products" :proDuctName, "email" : email, "phone":phone,"address":address,
     "date":date,"totalPrice":totalPrice, "totalItems":totalItems, status: false}
     const goods = [{proDuctName}];

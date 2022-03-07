@@ -11,7 +11,7 @@ const PanelproductsloadingComponent = () => {
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            animationData: require('../../../../../assets/lottie/list loading/94510-list-items-loading-skeleton.json')
+            animationData: require('../../../../../assets/lottie/listnewloading/81883-greeking-table-dekstop.json')
         })
     },[])
 

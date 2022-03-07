@@ -28,7 +28,7 @@ const ordersReducer = (state = INITIAL_STATE, action) => {
             }
 
         case actionTypes.CHANGE_STATUS:
-            return { ...state, status: action.payload }
+            return { ...state, status: true }
 
         default:
             return state
