@@ -12,5 +12,36 @@
    
     color: #EE2D40;
     list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    
+    font-size: 1rem;
+    font-weight: bold;
         
 }
+.Link
+{
+    text-decoration: none;
+    color: #EE2D40;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
