@@ -6,10 +6,12 @@ import Logo from '../../../assets/images/logo.svg';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 
 
 const Header = ({cart}) => {
+    const dispatch = useDispatch();
 
     const [cartCount,setCartCount] = useState(0)
     useEffect(()=>{

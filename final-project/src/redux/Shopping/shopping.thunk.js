@@ -12,9 +12,7 @@ export const fetchProducts = () => {
             dispatch(getProductsSuccess(data))
         }).catch(err => {
             dispatch(getProductsFailed(err.message))
-        })
-            
-            
+        })   
     }
 }
 export async function fetchProduct(id){
