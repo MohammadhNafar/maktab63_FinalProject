@@ -38,7 +38,7 @@ const OrdersPage = () => {
         
         // getOrders(reqConfig).then(data => setRows(data.data))
 
-    }, [])
+    }, [openModal])
     return (
         <div>
             <Header/>

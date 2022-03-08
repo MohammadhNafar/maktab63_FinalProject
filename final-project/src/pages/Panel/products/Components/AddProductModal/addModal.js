@@ -1,10 +1,12 @@
+
+
 import React, { useState } from 'react';
 import Styles from './addModal.module.css';
 import http from '../../../../../services/http.service';
 import { imageUpload } from '../../../../../api/uploadImage.api';
 
 const Addmodal = (props) => {
-
+    
     const [name, setname] = useState([])
     const [brand, setbrand] = useState([])
     const [price, setprice] = useState([])
@@ -16,7 +18,7 @@ const Addmodal = (props) => {
 
     async function addProduct(e) {
         e.preventDefault();
-        console.log(e.target.images.files[0])
+        
 
         let form = new FormData();
         form.append('image', e.target.images.files[0])
@@ -28,7 +30,7 @@ const Addmodal = (props) => {
             }
         }
         imageUpload(form, reqConfig).then(res => {
-            console.log(res.data.filename)
+            
             let result = http.post('http://localhost:3002/products', {
                 name,
                 brand,
@@ -38,10 +40,13 @@ const Addmodal = (props) => {
                 description,
                 image: res.data.filename
             })
-            console.log(result)
+            props.closeModal(false)
+            
+            
         })
+       
 
-        console.log(name, brand, price, category, images, count)
+        
 
     }
 

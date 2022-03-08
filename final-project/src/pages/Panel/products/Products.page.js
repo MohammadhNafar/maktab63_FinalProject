@@ -26,12 +26,11 @@ const ProductPage = () => {
     const [postsPerPage] = useState(5);
 
     useEffect(() => {
-
+        
         dispatch(fetchProducts())
-        console.log("redux datas", productsNew)
-    }, [])
-    // const datas = rows; console.log(datas) if (!datas) return 'no data'; if
-    // (!Array.isArray(datas)) return 'results are not array'
+        
+    }, [openAddModal])
+
 
     function addModal() {
         setOpenAddModal(true);

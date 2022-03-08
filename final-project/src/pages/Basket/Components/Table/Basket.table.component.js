@@ -22,7 +22,7 @@ const BasketTableComponent = (props) => {
       confirmAlert({
           
         title: 'تایید حذف',
-        message: 'آیا از حذف این محصول اطمینان دارید؟',
+        message: `آیا میخواهید ${props.product} را از سبد خرید حذف کنید؟`,
         buttons: [
           {
             label: 'بله',

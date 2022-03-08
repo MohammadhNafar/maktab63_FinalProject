@@ -17,8 +17,8 @@ const OrdersmodalComponent = (props) => {
         }
         axios.put('http://localhost:3002/orders/'+tempOrder.id,tempOrder).then 
         (res => {
-            dispatch(changeStatus())
-            console.log(res)
+            
+            props.closeModal(false)
         })
     }
     const handleChangeStatus = (data) => {

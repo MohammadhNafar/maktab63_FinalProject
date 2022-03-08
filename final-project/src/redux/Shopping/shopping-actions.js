@@ -81,10 +81,6 @@ export const getProductFailed = (err) => {
 
 
 
-
-
-
-
 export const loadCurrentItem = (item) => {
     return {
       type: actionTypes.LOAD_CURRENT_ITEM,

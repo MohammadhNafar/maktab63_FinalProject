@@ -42,11 +42,11 @@
 {
     display: flex;
     
-    width: 1rem;
+    width: 10rem;
     height: 2.5rem;
     gap: 1rem;
     padding-top: 0.5rem;
-    padding-left: 5rem;
+   
 
 
 }
