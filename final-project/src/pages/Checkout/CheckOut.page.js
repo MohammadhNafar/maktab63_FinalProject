@@ -125,7 +125,7 @@ const CheckoutPage = () => {
                     onChange={(e) => setName(e.target.value)}
                     required 
                     type="text" name="name" maxlength="100"/>
-                    <span>نام کامل خود را وارد کنید</span>
+                    
                 </li>
                 <li>
                     <label for="email">ایمیل</label>
@@ -134,7 +134,7 @@ const CheckoutPage = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     type="email" name="email" maxlength="100"/>
-                    <span>ایمیل خودرا وارد کنید</span>
+                    
                 </li>
                 <li>
                     <label for="address">آدرس</label>
@@ -142,7 +142,7 @@ const CheckoutPage = () => {
                     required
                     onChange={(e) => setAddress(e.target.value)}
                     type="text" name="address" maxlength="100"/>
-                    <span>لطفا نشانی کامل خودرا وارد کنید</span>
+                   
                 </li>
                 <li>
                     <label for="phone">موبایل</label>
@@ -151,9 +151,9 @@ const CheckoutPage = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     type="number" name="phone" maxlength="100"/>
 
-                    <span>لطفا شماره تلفن خودرا وارد کنید</span>
+                   
                 </li>
-                <li>
+                <li className={Styles.dateLi} >
                     
                     <label for="date">تاریخ تحویل</label>
                     <input
@@ -161,7 +161,7 @@ const CheckoutPage = () => {
                     onChange={(e) => setDate(e.target.value)}
                     type="date" name="date" maxlength="100"/>
 
-                    <span>لطفا تاریخ تحویل خودرا وارد کنید</span>
+                   
                 </li>
                 <li>
                     <button className={Styles.sub} id="submit" >تکمیل و پرداخت </button>
@@ -176,27 +176,6 @@ const CheckoutPage = () => {
                      </div>
                 </div>
             : <h1 className={Styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <footer>

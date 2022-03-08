@@ -47,16 +47,16 @@ const LoginPage = () => {
         
     // }
     
-    // const validate = Yup.object({
-    //     userName: Yup
-    //         .string()
-    //         .max(15, "کلمات وارد شده باید 15 یا کمتر باشند")
-    //         .required('لطفا این قسمت را خالی نگذارید'),
-    //     passWord: Yup
-    //         .string()
-    //         .max(6, "رمز عبور باید حداقل 6 کاراکتر باشد ")
-    //         .required('رمز عبور الزامی است ')
-    // })
+    const validate = Yup.object({
+        username: Yup
+            .string()
+            .max(15, "کلمات وارد شده باید 15 یا کمتر باشند")
+            .required('لطفا این قسمت را خالی نگذارید'),
+        password: Yup
+            .string()
+            .max(6, "رمز عبور باید حداقل 6 کاراکتر باشد ")
+            .required('رمز عبور الزامی است ')
+    })
 
     const Nav = useNavigate();
 
@@ -93,38 +93,38 @@ const LoginPage = () => {
     //         <Link to='/'>
     //             <button className={Styles.HomeBtn}></button>
     //         </Link>
-    //         {/* <Formik
-    //             initialValues={{
-    //                 userName: '',
-    //                 passWord: ''
-    //             }} */}
-    //             validationSchema={validate}>
-    //             {
-    //                 formik => (
-    //                     <div className={Styles.loginpage}>
+            //  <Formik
+            //     initialValues={{
+            //         userName: '',
+            //         passWord: ''
+            //     }} 
+            //     validationSchema={validate}>
+            //     {
+            //         formik => (
+            //             <div className={Styles.loginpage}>
 
-    //                         <div className={Styles.form}>
+            //                 <div className={Styles.form}>
  
-    //                             <form  className={Styles.form1}>
-    //                                 <h1>ورود مدیریت</h1>
-    //                                 {console.log(formik.values)}
-    //                                  <Form>
-    //                                     <Inputs   label="نام کاربری" name="userName" type="text"  />
-    //                                     <Inputs   label="رمز عبور" name="passWord" type="password" />
+            //                     <form  className={Styles.form1}>
+            //                         <h1>ورود مدیریت</h1>
+            //                         {console.log(formik.values)}
+            //                          <Form>
+            //                             <Inputs   label="نام کاربری" name="userName" type="text"  />
+            //                             <Inputs   label="رمز عبور" name="passWord" type="password" />
 
-    //                                  </Form> 
-    //                                 {/* <Link to='/Quantity'> */}
-    //                                     <button type='submit' >ورود</button>
-    //                                 {/* </Link> */}
+            //                          </Form> 
+            //                         {/* <Link to='/Quantity'> */}
+            //                             <button type='submit' >ورود</button>
+            //                         {/* </Link> */}
 
-    //                             </form>
-    //                         </div>
-    //                     </div>
-    //                 )
-    //             }
-    //         </Formik>
+            //                     </form>
+            //                 </div>
+            //             </div>
+            //         )
+            //     }
+            // </Formik>
     //     </div>
-    // );
+    
 
 
 
@@ -136,28 +136,35 @@ const LoginPage = () => {
             <Header/>
    
     <div className={Styles.LoginPage}>
+        <Formik
+        initialValues={{
+            username: '',
+            password: ''
+        }} 
+        validationSchema={validate}
+        
+        >
+            {
+            formik => (
         <form  className={Styles.form1}>
             <h1>ورود</h1>
 
            
-
+            <Form>
             <input onChange={(e) => setUser(e.target.value)}  
              className={Styles.inputs} 
              name='username' id='username'
               type="text" placeholder='تام کاربری'></input>
-
-
-            
-
             <input onChange={(e) => setPassword(e.target.value)}
                className={Styles.inputs} 
                name = 'passowrd' id='password'
                 type="password" placeholder='رمز عبور'></input>
-
+ </Form> 
 
             <button onClick={login} type='submit' >ورود</button>
         </form>
-
+            )}
+        </Formik>
     </div>
     <footer>
         <Footer/>
@@ -199,8 +206,8 @@ const LoginPage = () => {
 
 
 
-
-    )
+    );
+    
 
 }
 

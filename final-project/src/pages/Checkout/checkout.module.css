@@ -16,12 +16,14 @@
 
 .formstyle7{
 
-	max-width:400px;
+	width: 100%;
 	margin:50px auto;
 	background:#fff;
 	border-radius:2px;
 	padding:20px;
 	direction: rtl;
+	
+	
 }
 .formstyle7 h1{
     direction: rtl;
@@ -34,14 +36,20 @@
 }
 .formstyle7 ul{
 	list-style:none;
-	padding:0;
-	margin:0;	
+	
     direction: rtl;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 1rem;
+	margin-right: 17rem;
+	gap: 1rem;
 }
 .formstyle7 li{
     direction: rtl;
 	display: block;
 	padding: 9px;
+	width: 30rem;
+	
 	border:1px solid #b6b6b6;
 	margin-bottom: 30px;
 	border-radius: 3px;
@@ -146,17 +154,25 @@
 	background: green;
     width: 10rem;
     height: 2.2rem;
+	
     color: white;
     border: none;
     border-radius: 15px;
-   
+
+	z-index: 0;
+}
+.sub:hover
+{
+	cursor: pointer;
 }
 
 .cancel
 {
 	
-	text-align: center;
+	
 	padding-bottom: 2rem;
+	
+	margin-bottom: 5rem;
 }
 
 
@@ -169,9 +185,16 @@
     color: white;
     border: none;
     border-radius: 15px;
+	margin-left: 41%;
 }
 
 .cancelBtn:hover
 {
 	cursor: pointer;
+}
+
+.dateLi
+{
+	width: 15rem!important;
+	height: 2rem !important;
 }
