@@ -12,11 +12,11 @@ import DataLoading from '../products/Components/DataLoading/PanelProductsLoading
 const OrdersPage = () => {
     const proOrders = useSelector(state => state.orders)
     const dispatch = useDispatch();
-
     const loading = proOrders.loading
     const error = proOrders.error
     const ordersNew = useSelector(state => state.orders.orders.data)
-    
+    const [falseData, setFalseData] = useState([])
+    const [trueData, setTrueData] = useState([])
     
     const [openModal, setOpenModal] = useState(false);
     const [filteredData, setFilter] = useState([])
@@ -47,12 +47,39 @@ const OrdersPage = () => {
                     onClick={(e) => {
 
                         e.preventDefault();
-
-                        // setFilter(rows.filter(item => item.status = 1))
-
-                    }}>
+    
+                         setTrueData(currentPosts.filter(item => item.status == true))
+                        console.log(trueData)
+                    }}
+                    >
                     سفارش های تحویل شده</button>
-                <button>سفارش های در انتظار ارسال</button>
+                <button
+                  onClick={(e) => {
+
+                    e.preventDefault();
+
+                     setTrueData(currentPosts.filter(item => item.status == false))
+                    console.log(trueData)
+                }}
+                
+                
+                >سفارش های در انتظار ارسال</button>
+
+                <button
+                   onClick={(e) => {
+
+                    e.preventDefault();
+
+                     setTrueData(currentPosts)
+                    console.log(trueData)
+                }}
+                
+                
+                >همه</button>
+            
+                
+             
+       
 
             </div>
             <div className={Styles.title}>
@@ -72,8 +99,85 @@ const OrdersPage = () => {
             <div className={Styles.productList}>
             {loading && <DataLoading/>}
             {error && !loading && <h1 className={Styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
-             
-                     { currentPosts?.map(
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {
+                    trueData.length > 0
+                        ? trueData.map( data => 
+                            <Table
+                            key={data.id}
+                            name={data.name}
+                            date={data.date}
+                            price={data.totalPrice}
+                        show = {setOpenModal}
+                        id = {data.id}
+                        email = {data.email}
+                        phone = {data.phone}
+                           address = {data.address}
+                           status = {data.status}
+                           totalPrice = {data.totalPrice}
+                           products = {data.products}
+                           totalItems = {data.totalItems}
+                          />
+
+                  )
+                        : currentPosts?.map(
+                            data => <Table
+                                key={data.id}
+                                name={data.name}
+                                date={data.date}
+                                price={data.totalPrice}
+                            show = {setOpenModal}
+                            id = {data.id}
+                            email = {data.email}
+                            phone = {data.phone}
+                               address = {data.address}
+                               status = {data.status}
+                               totalPrice = {data.totalPrice}
+                               products = {data.products}
+                               totalItems = {data.totalItems}
+                              />
+   
+                      )
+
+                        
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     {/* { currentPosts?.map(
                          data => <Table
                              key={data.id}
                              name={data.name}
@@ -91,7 +195,7 @@ const OrdersPage = () => {
                            />
 
                    )
-            }
+            } */}
             </div>
                <Pagination
              postsPerPage={postsPerPage}
