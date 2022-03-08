@@ -93,7 +93,7 @@ const CheckoutPage = () => {
     // let totalItems = localStorage.getItem('totalItems');
     //console.log(proDuctName,totalItems,totalPrice)
     return (
-        <div>
+        <div className={Styles.wrapper} >
             <Header/>
             
             <div className={Styles.h1Head}>

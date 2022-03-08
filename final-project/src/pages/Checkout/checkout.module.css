@@ -1,16 +1,4 @@
-.hrHeader
-{
-    
-    border:none;
-    
-       color: white;
-      height: 50px;
-      
-      border-bottom: 1px solid #ffffff;
-      box-shadow: 0 20px 20px -20px #333;
-  
 
-}
 .tableHead h1
 {
 	direction: rtl;
@@ -22,7 +10,7 @@
 .h1Head
 {
     margin:  0 auto;
-    
+    padding-top: 12rem;
     text-align: center;
 }
 
