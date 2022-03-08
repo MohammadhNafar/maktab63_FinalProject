@@ -7,6 +7,7 @@ import {useEffect, useState} from 'react';
 import { Icon } from '@iconify/react';
 import DataLoading from './Components/ProductPage Data Loading/ProductLoading.component'
 import {connect} from 'react-redux'
+import { fetchProduct } from '../../redux/Shopping/shopping.thunk';
 import {IMAGE_URL} from '../../configs/image.url';
 import {getProduct} from '../../api/products.api';
 import {addToCart} from '../../redux/Shopping/shopping-actions'

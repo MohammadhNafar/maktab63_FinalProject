@@ -24,7 +24,7 @@ const TableProductComponent = (props) => {
               onClick: () =>  {
                 console.log(props.id)
                  props.deleteFunc(props.id)
-                 window.location.reload()
+                
             }
             },
             {
