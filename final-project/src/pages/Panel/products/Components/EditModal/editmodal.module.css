@@ -3,7 +3,7 @@
 {
     background-color: white;
     width: 45rem;
-    height: 37rem;
+    height: 45rem;
     border-radius: 10px;
     margin: 0 auto;
    
@@ -35,12 +35,12 @@
     padding-top: 1.2rem;
 }
 
-.modalBox input
+.modalBox .inputs
 {
     direction: rtl;
     padding-right: 0.5rem;
     height: 2rem;
-    margin: 1rem;
+    margin: 0.3rem;
     border: none;
     font-size: 1rem;
 }
@@ -59,12 +59,12 @@
 .item
 {
     color: black;
-    margin: 1rem;
+    
     padding-left: 20rem;
 }
 .item p 
 {
-     margin-top: 0.5rem; 
+  
     
 }
 .spans
@@ -139,11 +139,28 @@
     background-color: #EE2D40;
     color: white;
     border: none;
-    
+    margin-top: 1rem;
     width: 20rem;
+    height: 3rem;
     font-size: 1rem;
 }
 .btns button:hover
 {
     cursor: pointer;
+}
+.desc
+{
+    width: 30rem;
+    border-radius: 10px;
+    word-wrap: break-word;
+    height: 10rem;
+    padding: 1rem;
+    margin-right: 3rem;
+    font-size: 1rem;
+    background-color: rgb(233, 233, 233);
+}
+.descH2
+{
+ font-size: 1rem;
+ padding-left: 13.5rem;
 }

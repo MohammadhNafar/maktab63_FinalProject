@@ -10,6 +10,8 @@ const Addmodal = (props) => {
     const [price, setprice] = useState([])
     const [category, setcategory] = useState([])
     const [count, setcount] = useState([])
+    const [description, setdescription] = useState([])
+
     const [images, setImages] = useState(null)
 
     async function addProduct(e) {
@@ -33,6 +35,7 @@ const Addmodal = (props) => {
                 price,
                 category,
                 count,
+                description,
                 image: res.data.filename
             })
             console.log(result)
@@ -81,12 +84,19 @@ const Addmodal = (props) => {
                             className={Styles.inputStyle}
                             placeholder="گروه"
                             type='text'></input>
+                            
+                            <input
+                            onChange={(e) => setdescription(e.target.value)}
+                            className={Styles.inputDec}
+                            placeholder="توضیحات کالا"
+                            type='text'></input>
 
                         <input
                             onChange={(e) => setcount(e.target.value)}
                             className={Styles.inputStyleNum}
                             placeholder="تعداد"
                             type='number'></input>
+
 
                         <input
                             name="images"

@@ -136,6 +136,9 @@ return (
                             <Link className={Styles.Link} to={`/Products/${data.category}`}>
                                 <div >{data.category}</div>
                             </Link>
+                          
+                               / <div>{data.name}</div>
+                           
 
                         </div>
 
@@ -158,9 +161,9 @@ return (
                                         <p className={Styles.pName}>
                                             {data.name}
                                         </p>
-                                        <p className={Styles.pBrand}>محصول: {data.brand}</p>
+                                        <p className={Styles.pBrand}></p>
                                         <p className={Styles.info}>
-                                            {data.info}
+                                            {data.description}
                                         </p>
                                     </div>
 
@@ -226,7 +229,7 @@ return (
                                 
                                 {
                                     productsNew?.filter(value=> value.category == proCategory).
-                                    slice(0, 3)
+                                    slice(0, 4)
                                     
                                     .map(
                                         values => 

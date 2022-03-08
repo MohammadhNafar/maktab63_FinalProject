@@ -110,6 +110,7 @@
 
 .addComment
 {
+    margin-top: 4rem;
     direction: rtl;
     margin-right: 2rem;
 }
@@ -118,6 +119,7 @@
     margin-right: 2rem;
     color: gray;
     font-size: 1rem;
+    margin-top: 2rem;
 }
 .commentSec
 {
@@ -129,6 +131,7 @@
     padding: 1rem;
     margin-right: 2rem;
     border-radius: 7px;
+    margin-top: 2rem;
 
 }
 .input
