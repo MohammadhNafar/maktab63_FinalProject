@@ -9,7 +9,7 @@ const PaymentPage = () => {
     window.onbeforeunload = function (e) {
         e = e || window.event;
     
-        // For IE and Firefox prior to version 4
+        
         if (e) {
             e.returnValue = 'Sure?';
         }
@@ -25,16 +25,16 @@ const PaymentPage = () => {
     async function sendData(e)
     {
         e.preventDefault();
-        console.log(datas)
+        
         let result = http.post('http://localhost:3002/orders' , JSON.parse(datas))
-        console.log(result)
+        
         localStorage.clear();
         Nav('/PaymentResult/Success')
     }
 
     function cancelData()
     {
-        console.log("clicked")
+        
         localStorage.clear();
         Nav('/PaymentResult/Failed')
     }
