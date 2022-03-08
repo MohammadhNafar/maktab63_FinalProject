@@ -7,11 +7,17 @@ body
 .wrapper
 {
     display: flex;
+   
+}
+.Mid
+{
+    padding-top: 10rem;
 }
 
 
 .bodySec
 {
+    
     margin: 0 auto;
     width: 89.5vw;
     height: 100%;

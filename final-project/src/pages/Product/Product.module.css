@@ -1,8 +1,17 @@
+
+.container
+{
+    width: 100vw;
+    
+}
+
+
+
 .body
 {
     
    
-    margin-top: 4rem;
+    
     direction: rtl;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -12,7 +21,7 @@
     color: #EE2D40;
     margin-bottom: 1rem;
     margin-right: 1rem;
-   
+    padding-top: 12rem;
     display: flex;
 }
 .productSec
