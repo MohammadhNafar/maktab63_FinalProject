@@ -43,7 +43,7 @@ const ProductPage = (props) => {
 
     async function sendComment(e) {
 
-        e.preventDefault();
+        
        
 
         let result = http.post('http://localhost:3002/comments', {
@@ -51,7 +51,10 @@ const ProductPage = (props) => {
             comment,
             score,
             email,
-            for: id}
+            for: id,
+            
+        
+        }
         )
         result = await result.json();
 }
@@ -321,18 +324,14 @@ return (
                                                 score={values.score}
                                                 username={values.username}
                                                 userComment={values.comment}
+                                                date = {values.createdAt}
                                                 like={likef}
                                                 dislike={dislikef}
                                                 likes={like}
                                                 dislikes={dislike}/>
                                         )
                             }
-                               <Pagination
-             postsPerPage={postsPerPage}
-             totalPosts = {productsNew&&productsNew.length}
-             paginate = {paginate}
-             
-             />
+            
                            
                         </div>
 

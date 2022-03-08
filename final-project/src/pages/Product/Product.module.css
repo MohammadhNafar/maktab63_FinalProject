@@ -162,6 +162,10 @@
     border-radius: 1rem;
     float: left;
 }
+.submitBtn:hover
+{
+    cursor: pointer;
+}
 .commentSec input
 {
     margin: 0.5rem;
