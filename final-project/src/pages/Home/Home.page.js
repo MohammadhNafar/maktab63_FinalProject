@@ -139,7 +139,7 @@ const HomePage = () => {
                                          <div className={Styles.biscSec} >
                                                 {
                                                     productsNew?.filter(value=> value.category == values).length > 0 ? 
-                                                    productsNew?.filter(value=> value.category == values).slice(0, 3)
+                                                    productsNew?.filter(value=> value.category == values).slice(0, 4)
                                                         .map(
                                                             data => <Card
                                                                 id={data.id}

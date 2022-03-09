@@ -5,6 +5,9 @@ import { Icon } from '@iconify/react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { useDispatch } from 'react-redux';
+import "react-toastify/dist/ReactToastify.css";
+import {toast} from 'react-toastify'
+
 import { addToCart   } from '../../redux/Shopping/shopping-actions' 
 const CardComponent = (props) => {
 
@@ -12,6 +15,11 @@ const CardComponent = (props) => {
     let  styless = {
         backgroundColor: 'rgba(180, 180, 180, 0.199)' ,
         border: '0.5px solid rgba(129, 129, 129, 0.726)'
+    }
+
+    function addCart (id) {
+        dispatch(addToCart(id))
+        toast.success(`${props.Name}  به سبد خرید اضافه شد`)
     }
 
     return (
@@ -40,7 +48,7 @@ const CardComponent = (props) => {
                          {props.count > 0 ?  
                           <button className={Styles.addToCartBtn}
                           
-                          onClick={() => dispatch(addToCart(props.id)) }
+                          onClick={() => addCart(props.id) }
                           
                           > اضافه کردن به سبد خرید </button> 
                           

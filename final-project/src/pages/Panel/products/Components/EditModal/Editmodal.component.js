@@ -3,8 +3,7 @@ import {editData} from '../../../../../api/panel.api'
 import { useDispatch, useSelector } from 'react-redux';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 import styles from './editmodal.module.css'
 const Editmodal = (props) => {
@@ -23,7 +22,7 @@ const Editmodal = (props) => {
     console.log(id)
     console.log("modaldata", modalData.nameList)
     useEffect (() => {
-        console.log("modalData", modalData)
+        console.log("modalData", modalData.description)
         
     },[modalData])
 
@@ -95,21 +94,14 @@ const Editmodal = (props) => {
                             value={count}
                          required
                         />  </p>
-                         {/* <h2 className={styles.descH2} >  توضیحات:  </h2>
-                         <textarea className={styles.desc} name = 'description' 
+                      
+                        <div className={styles.descr}>
+                        <h2 className={styles.descH2} >  توضیحات:  </h2>
+                         <input className={styles.desc} name = 'description' 
                          onChange={(e) => setdescription(e.target.value)}
                             value={description}
                          required
-                        />  */}
-                        <div className={styles.descr}>
-                        <CKEditor
-                    editor={ ClassicEditor }
-                    data={description}
-                        
-                    onChange={(e) => setdescription(e.target.value)}
-                  
-                   
-                />
+                        />
                         </div>
                    
 

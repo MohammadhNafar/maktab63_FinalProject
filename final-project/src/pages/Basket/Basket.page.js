@@ -83,15 +83,7 @@ const BasketPage = ({cart}) => {
                     سبد خرید
                 </h1>
             </div>
-            {
-                                    localStorage.getItem('totalItems') ?
-                                    <Link to='/Checkout' > 
-                                    <button className={Styles.continue} >ادامه خرید خبلی</button> 
-                                    </Link>
-                                    
-                                    
-                                    : ""
-                                }
+         
             <div className={Styles.wrapper}>
                 {
                     totalItems > 0

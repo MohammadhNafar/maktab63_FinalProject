@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import Styles from './addModal.module.css';
 import http from '../../../../../services/http.service';
 import { imageUpload } from '../../../../../api/uploadImage.api';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 const Addmodal = (props) => {
     
@@ -12,7 +15,15 @@ const Addmodal = (props) => {
     const [price, setprice] = useState([])
     const [category, setcategory] = useState([])
     const [count, setcount] = useState([])
-    const [description, setdescription] = useState([])
+    const [description, setDescription] = useState('');
+    
+    const describeChange =( event, editor ) => {
+        const describeData = editor.getData();
+        setDescription(describeData)
+      }
+
+
+
 
     const [images, setImages] = useState(null)
 
@@ -22,6 +33,7 @@ const Addmodal = (props) => {
 
         let form = new FormData();
         form.append('image', e.target.images.files[0])
+        form.append('description', description);
 
         const reqConfig = {
             headers: {
@@ -92,13 +104,7 @@ const Addmodal = (props) => {
                             className={Styles.inputStyle}
                             placeholder="گروه"
                             type='text'></input>
-                            
-                            <input
-                            onChange={(e) => setdescription(e.target.value)}
-                            className={Styles.inputDec}
-                            placeholder="توضیحات کالا"
-                            type='text'></input>
-
+                      
                         <input
                             onChange={(e) => setcount(e.target.value)}
                             className={Styles.inputStyleNum}
@@ -112,6 +118,16 @@ const Addmodal = (props) => {
                             type='file'
                             className={Styles.inputStyleFile}
                             placeholder="عکس"/>
+      
+                      
+
+                            <CKEditor
+                                    editor={ ClassicEditor }
+                                    name="description"
+                                    config={{ language : 'fa' }}
+                                    onChange={ describeChange }
+                              />
+
 
                         <button className={Styles.btn}>
                             اضافه کردن کالا

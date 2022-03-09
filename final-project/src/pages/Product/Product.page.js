@@ -163,8 +163,12 @@ return (
                                             {data.name}
                                         </p>
                                         <p className={Styles.pBrand}></p>
-                                        <p className={Styles.info}>
-                                            {data.description}
+                                        <p 
+                                            className={Styles.info}
+                                            dangerouslySetInnerHTML={{__html: data.description && data.description}}
+                                            >
+
+                                            
                                         </p>
                                     </div>
 

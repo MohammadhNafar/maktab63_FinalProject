@@ -3,50 +3,21 @@ import {Link , useNavigate , useLocation } from 'react-router-dom';
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import Styles from './login.page.module.css';
-import {Formik} from 'formik';
-import {Form}  from 'formik';
-import {History} from 'react-router-dom'
-import Inputs from '../../Components/Inputs/Input.component';
+
+
 import * as Yup from 'yup';
 import {BASE_URL} from '../../configs/variable.config';
-import axios, { Axios } from 'axios';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import http from '../../services/http.service';
 import Footer from '../../layouts/user/footer/Footer';
 import Header from '../../layouts/user/header/Header';
 
 toast.configure();
 const LoginPage = () => {
-    
-
-    
-   //const [FormData, setFormData] = useState({username: '' , password: ''});
-    // const formRef = useRef();
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const form = new FormData(e.target);
-    //     const data = Object.fromEntries(form);
-    //     //setFormData(data);
-    //     try {
-    //         console.log('submit', e)
-    //         console.log("username is ",e , data)
-    //     } catch (e) {
-            
-    //     }
-
-    // };
-
-    // const handleBlur = (e) =>{
-    //     if (!formRef.current) return;
-    //     console.log("handleBlur: 0 " , formRef)
 
 
-    
-    //     const form = new FormData(formRef.current);
-    //     const data = Object.fromEntries(form);
-    //     console.log("handleBlur " , data)
-        
-    // }
-    
     const validate = Yup.object({
         username: Yup
             .string()
@@ -59,6 +30,9 @@ const LoginPage = () => {
     })
 
     const Nav = useNavigate();
+    const {register,handleSubmit, errors } = useForm({
+        resolver : yupResolver(validate)
+    });
 
     const [username,setUser] = useState("");
     const [password,setPassword] = useState("");
@@ -101,22 +75,23 @@ const LoginPage = () => {
        
             
             
-        <form  className={Styles.form1}>
+        <form   className={Styles.form1}>
             <h1>ورود</h1>
 
            
          
-            <input onChange={(e) => setUser(e.target.value)}  
+            <input  onChange={(e) => setUser(e.target.value)}  
              className={Styles.inputs} 
              name='username' id='username'
               type="text" placeholder='تام کاربری'></input>
-            <input onChange={(e) => setPassword(e.target.value)}
+            <input  onChange={(e) => setPassword(e.target.value)}
                className={Styles.inputs} 
                name = 'passowrd' id='password'
                 type="password" placeholder='رمز عبور'></input>
+                
  
 
-            <button onClick={login} type='submit' >ورود</button>
+            <button onClick={login}  type='submit' >ورود</button>
         </form>
             
         
