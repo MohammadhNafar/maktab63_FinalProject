@@ -89,68 +89,23 @@ const LoginPage = () => {
     
 
     return (
-    //     <div>
-    //         <Link to='/'>
-    //             <button className={Styles.HomeBtn}></button>
-    //         </Link>
-            //  <Formik
-            //     initialValues={{
-            //         userName: '',
-            //         passWord: ''
-            //     }} 
-            //     validationSchema={validate}>
-            //     {
-            //         formik => (
-            //             <div className={Styles.loginpage}>
-
-            //                 <div className={Styles.form}>
- 
-            //                     <form  className={Styles.form1}>
-            //                         <h1>ورود مدیریت</h1>
-            //                         {console.log(formik.values)}
-            //                          <Form>
-            //                             <Inputs   label="نام کاربری" name="userName" type="text"  />
-            //                             <Inputs   label="رمز عبور" name="passWord" type="password" />
-
-            //                          </Form> 
-            //                         {/* <Link to='/Quantity'> */}
-            //                             <button type='submit' >ورود</button>
-            //                         {/* </Link> */}
-
-            //                     </form>
-            //                 </div>
-            //             </div>
-            //         )
-            //     }
-            // </Formik>
-    //     </div>
     
 
 
 
 
     <div>
-         {/* <Link to='/'>
-                 <button className={Styles.HomeBtn}></button>
-            </Link> */}
             <Header/>
    
     <div className={Styles.LoginPage}>
-        <Formik
-        initialValues={{
-            username: '',
-            password: ''
-        }} 
-        validationSchema={validate}
-        
-        >
-            {
-            formik => (
+       
+            
+            
         <form  className={Styles.form1}>
             <h1>ورود</h1>
 
            
-            <Form>
+         
             <input onChange={(e) => setUser(e.target.value)}  
              className={Styles.inputs} 
              name='username' id='username'
@@ -159,12 +114,12 @@ const LoginPage = () => {
                className={Styles.inputs} 
                name = 'passowrd' id='password'
                 type="password" placeholder='رمز عبور'></input>
- </Form> 
+ 
 
             <button onClick={login} type='submit' >ورود</button>
         </form>
-            )}
-        </Formik>
+            
+        
     </div>
     <footer>
         <Footer/>
