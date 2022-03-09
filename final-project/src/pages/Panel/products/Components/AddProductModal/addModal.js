@@ -53,7 +53,7 @@ const Addmodal = (props) => {
                 image: res.data.filename
             })
             props.closeModal(false)
-            http.put(`${BASE_URL}/categorys`, {
+            http.post(`${BASE_URL}/categorys`, {
                 category
         })
 
