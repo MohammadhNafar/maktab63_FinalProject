@@ -1,5 +1,4 @@
 import React from 'react';
-import Styles from './products.module.css'
 import Header from '../../layouts/user/header/Header'
 import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +8,8 @@ import Footer from '../../layouts/user/footer/Footer';
 import { useParams } from 'react-router';
 import DataLoading from '../../pages/Home/components/Loading/Loading.component';
 import DataError from '../../pages/Home/components/DataError/DataError.component'
-const ProductsPage = () => {
+import styles from './AllProducts.module.css';
+const AllproductsPage = () => {
     const productsNew = useSelector(state => state.shop.products.data)
     const dispatch = useDispatch();
     let {category} = useParams(); 
@@ -17,33 +17,27 @@ const ProductsPage = () => {
     const loading = proDatas.loading;
     const error = proDatas.error;
     console.log(category)
- 
+
     useEffect(() => {
         dispatch(fetchProducts())
     }, [])
-      
 
     return (
-        <div>
+         <div>
             <Header/>
-            <div className={Styles.wrapper}>
-            <div className={Styles.h1Head}>
+            <div className={styles.wrapper}>
+            <div className={styles.h1Head}>
 
 
 
 
 
 
+
+            <h1>همه محصولات</h1>
 
             
-
-            {productsNew?.filter(value=> value.category == category).length > 0 ?  <h1 >
-                محصولات گروه   {category} 
-                </h1> :
-                
-                
-                <h1>محصولی با نام {category} پیدا نشد</h1>}
-                <div className={Styles.dataLoad}>
+                <div className={styles.dataLoad}>
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
@@ -55,8 +49,8 @@ const ProductsPage = () => {
                     {error && !loading && "خطا در ارتباط با سرور"}
                
             </div>
-               { <div className={Styles.firstSecCards}>
-                { productsNew?.filter(value=> value.category == category).map(
+               { <div className={styles.firstSecCards}>
+                { productsNew?.map(
                  values => 
                     <Card
                                 id = {values.id}
@@ -80,4 +74,4 @@ const ProductsPage = () => {
     );
 }
 
-export default ProductsPage;
+export default AllproductsPage;

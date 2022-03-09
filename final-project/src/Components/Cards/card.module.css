@@ -50,8 +50,8 @@
     
     height: 12rem;
     
-    filter: grayscale(100%);
-    z-index: -1;
+    /* filter: grayscale(100%);
+    z-index: -1; */
     object-fit: cover;
 }
 .boxMid

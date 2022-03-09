@@ -41,7 +41,10 @@ const Addmodal = (props) => {
                 image: res.data.filename
             })
             props.closeModal(false)
-            
+            http.put('http://localhost:3002/categorys', {
+                category
+        })
+
             
         })
        
