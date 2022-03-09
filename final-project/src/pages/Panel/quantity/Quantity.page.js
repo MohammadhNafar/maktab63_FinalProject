@@ -53,6 +53,15 @@ const QuantityPage = () => {
             }
         })
     }
+    const cancel = (e) => {
+        setIsShow(false);
+        window
+                        .location
+                        .reload();
+        dispatch({type: 'RE_RENDER_STATUS', payload: !renderStatus})
+        setRows(rows)
+        console.log(rows);
+    }
 
 
 
@@ -98,6 +107,12 @@ return (
             </button>
 
             }
+            {
+                isShow && <button onClick={cancel} >
+                لغو تغییرات
+            </button>
+
+            }
             
         </div>
         <div className={Styles.wrapper}>
@@ -115,20 +130,19 @@ return (
                 {
                     filterdPaginate.length > 0
                         ? filterdPaginate.map(
-                            data => <Table
-                                key={data.id}
-                                nameList={data.name}
-                                priceList={ `${data.price} تومان` }
+                            ({id , name , price , count},index) => <Table
+                            key={id}
+                            nameList={name}
+                            priceList={ <input className={Styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
+                            quanitityList={<input className={Styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
 
-                                quanitityList={data.count}/>
-
-                        )
+                    )
                         : currentPosts.map(
                             ({id , name , price , count},index) => <Table
                                 key={id}
                                 nameList={name}
-                                priceList={ <input type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
-                                quanitityList={<input type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
+                                priceList={ <input className={Styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
+                                quanitityList={<input className={Styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
 
                         )
                 }

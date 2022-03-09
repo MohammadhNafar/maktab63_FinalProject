@@ -80,6 +80,12 @@ const shopReducer = (state = INITIAL_STATE, action) => {
                     )
             }
 
+            case actionTypes.CLEAR_CART:
+                return {
+                    
+                    cart: []
+                }
+
         case actionTypes.FETCH_PRODUCTS_REQUEST:
             return {
                 ...state,

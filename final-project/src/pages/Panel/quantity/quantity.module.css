@@ -10,7 +10,7 @@
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	background-color: #EE2D40;
 	
-	width: 60rem;
+	width: 80%;
 	
 	margin: 0 auto;
 	height: 5rem;
@@ -51,7 +51,7 @@
 .quantityList
 {
 	
-	width: 50rem;
+	width: 80%;
 	height: 30rem;
 	
 	text-align: center;
@@ -62,4 +62,10 @@
 {
 	
 	margin-bottom: 5rem;
+}
+
+
+.inputChange
+{
+	height: 1.5rem;
 }

@@ -16,6 +16,7 @@ import { fetchProducts } from '../../redux/Shopping/shopping.thunk';
 import {Link} from 'react-router-dom';
 import http from '../../services/http.service'
 import {useParams} from 'react-router';
+import BASE_URL from '../../configs/variable.config';
 import Pagination from '../../Components/pagination/pagination.component';
 import Comments from './Components/Coments/Comments.component';
 import Footer from '../../layouts/user/footer/Footer';
@@ -47,7 +48,7 @@ const ProductPage = (props) => {
         
        
 
-        let result = http.post('http://localhost:3002/comments', {
+        let result = http.post(`${BASE_URL}/comments`, {
             username,
             comment,
             score,

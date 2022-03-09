@@ -14,7 +14,8 @@ import {Icon} from '@iconify/react';
 import Footer from '../../layouts/user/footer/Footer';
 const HomePage = () => {
     const dispatch = useDispatch();
-    const productsNew = useSelector(state => state.shop.products.data)
+    const productsNew = useSelector(state => state?.shop?.products?.data)
+    
     const proDatas = useSelector(state => state.shop)
     const loading = proDatas.loading
     const error = proDatas.error
@@ -92,7 +93,7 @@ const HomePage = () => {
                             <div className={Styles.firstSecCards}>
                                
                                 {
-                                    productsNew?.slice(0, 4)
+                                 productsNew && productsNew.slice(0, 4)
                                         ?.map(
                                             data => <Card
                                                 id={data.id}

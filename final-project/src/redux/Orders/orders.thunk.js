@@ -1,7 +1,8 @@
 
 import http from "../../services/http.service";
 import {getOrdersRequest , getOrdersSuccess , getOrdersFailed} from './orders-actions';
-const url = "http://localhost:3002/orders";
+import BASE_URL from "../../configs/variable.config";
+const url = BASE_URL;
 
 const reqConfig = {
     headers: {
@@ -14,7 +15,7 @@ const reqConfig = {
 export const fetchOrders = () => {
     return (dispatch) => {
         dispatch(getOrdersRequest())
-        http.get(url,reqConfig).then(data => {
+        http.get(`${url}/orders`,reqConfig).then(data => {
             dispatch(getOrdersSuccess(data))
         }).catch(err => {
             dispatch(getOrdersFailed(err.message))

@@ -3,19 +3,20 @@ import Header from '../../../layouts/manage/header/Header';
 import Styles from './products.module.css';
 import Table from './Components/Table/table.product.component';
 import {useEffect, useState} from 'react';
-import {getProducts} from '../../../api/products.api'
-import {IMAGE_URL} from '../../../configs/image.url';
-import { useDispatch, useSelector } from 'react-redux';
 import {fetchProducts} from '../../../redux/Shopping/shopping.thunk'
 import DataLoading from './Components/DataLoading/PanelProductsLoading.component'
 import Modal from './Components/EditModal/Editmodal.component';
 import ModalAdd from './Components/AddProductModal/addModal.js';
 import Pagination from '../../../Components/pagination/pagination.component';
 import BASE_URL from '../../../configs/variable.config';
+import { useSelector ,useDispatch} from 'react-redux'
+
 import axios from 'axios';
 
 const ProductPage = () => {
+   
     const productsNew = useSelector(state => state.shop.products.data)
+    
     const proDatas = useSelector(state => state.shop)
     const loading = proDatas.loading
     const error = proDatas.error
@@ -24,7 +25,7 @@ const ProductPage = () => {
     const [openAddModal, setOpenAddModal] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
-
+    let renderStatus = useSelector(state => state.renderStatus.renderStatus)
     useEffect(() => {
         
         dispatch(fetchProducts())
@@ -37,10 +38,12 @@ const ProductPage = () => {
     }
 
     async function deleteProduct(id) {
-        console.log('getOrders', id)
+        window.location.reload();
+        dispatch({type: 'RE_RENDER_STATUS', payload: !renderStatus})
         try {
             const res = await axios.delete(`${BASE_URL}/products/${id}`);
             return {data: res.data}
+            
         } catch (error) {
             console.log(error);
         }
@@ -95,7 +98,10 @@ const ProductPage = () => {
                                     count={data.count}
                                     brand={data.brand}
                                     deleteFunc={deleteProduct}
+                                    description = {data.description}
+                                    key={data.id}
                                     price={data.price}/>
+                                    
 
                             )
                     }

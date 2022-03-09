@@ -97,7 +97,7 @@ const Editmodal = (props) => {
                       
                         <div className={styles.descr}>
                         <h2 className={styles.descH2} >  توضیحات:  </h2>
-                         <input className={styles.desc} name = 'description' 
+                         <textarea className={styles.desc} name = 'description' 
                          onChange={(e) => setdescription(e.target.value)}
                             value={description}
                          required

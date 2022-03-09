@@ -1,11 +1,16 @@
 import React from 'react';
 import lottie from 'lottie-web';
+import { useSelector ,useDispatch} from 'react-redux'
 import {useEffect, useState , useRef} from 'react';
 import Styles from './success.module.css';
 import { Link } from 'react-router-dom';
 const PaymentsuccessPage = () => {
     const container = useRef(null)
+    const dispatch = useDispatch();
+    const productsNew = useSelector(state => state.shop.cart);
     useEffect(()=>{
+        
+       
         lottie.loadAnimation({
             container: container.current,
             renderer: 'svg',

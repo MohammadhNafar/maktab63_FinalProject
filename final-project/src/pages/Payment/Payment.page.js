@@ -1,9 +1,15 @@
 import React from 'react';
 import Styles from './payment.module.css'
 import http from '../../services/http.service';
+import BASE_URL from '../../configs/variable.config';
+import { useSelector ,useDispatch} from 'react-redux'
+import {clearCart} from '../../redux/Shopping/shopping-actions'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 const PaymentPage = () => {
+    const dispatch = useDispatch();
+    const productsNew = useSelector(state => state.shop.cart);
+    console.log(productsNew)
     const Nav = useNavigate()
     
     window.onbeforeunload = function (e) {
@@ -26,10 +32,11 @@ const PaymentPage = () => {
     {
         e.preventDefault();
         
-        let result = http.post('http://localhost:3002/orders' , JSON.parse(datas))
+        let result = http.post(`${BASE_URL}/orders` , JSON.parse(datas))
         
         localStorage.clear();
         Nav('/PaymentResult/Success')
+        dispatch(clearCart())
     }
 
     function cancelData()

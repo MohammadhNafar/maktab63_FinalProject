@@ -6,7 +6,7 @@ import http from '../../../../../services/http.service';
 import { imageUpload } from '../../../../../api/uploadImage.api';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import BASE_URL from '../../../../../configs/variable.config';
 
 const Addmodal = (props) => {
     
@@ -43,7 +43,7 @@ const Addmodal = (props) => {
         }
         imageUpload(form, reqConfig).then(res => {
             
-            let result = http.post('http://localhost:3002/products', {
+            let result = http.post(`${BASE_URL}/products`, {
                 name,
                 brand,
                 price,
@@ -53,7 +53,7 @@ const Addmodal = (props) => {
                 image: res.data.filename
             })
             props.closeModal(false)
-            http.put('http://localhost:3002/categorys', {
+            http.put(`${BASE_URL}/categorys`, {
                 category
         })
 
