@@ -17,8 +17,18 @@ const Header = ({cart}) => {
     useEffect(()=>{
          let count = 0;
          cart.forEach(item => {
+             if (item.qty > item.count)
+             {
+                //toast.error(`${item.name}  بیشتر از تعداد موجود است`)
+                 count = item.qty - item.qty
+             }
+                else
+                {
+                    count += item.qty
+                }
+                
           //count += item.qty 
-          item.qty > item.count ?   count = item.count : count += item.qty;
+          //item.qty > item.count ?   count = item.count : count += item.qty;
          });
          setCartCount(count)
     },[cart,cartCount])

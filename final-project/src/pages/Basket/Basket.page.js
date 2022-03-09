@@ -5,11 +5,15 @@ import Table from './Components/Table/Basket.table.component';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
 import {toast} from 'react-toastify'
+import { useDispatch} from 'react-redux';
+
+import { removeFromCart,adjustItemQty  } from '../../redux/Shopping/shopping-actions';
 import "react-toastify/dist/ReactToastify.css";
 import Empty from './Components/empty/Empty.basket.component'
 import { Link } from 'react-router-dom';
 import Footer from '../../layouts/user/footer/Footer';
 const BasketPage = ({cart}) => {
+    const dispatch = useDispatch();
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
     const send = 12000;
@@ -23,14 +27,25 @@ const BasketPage = ({cart}) => {
             {
                 items = item.qty - item.qty
                 price = item.price - item.price
-                
-                toast.error(`${item.name}  بیشتر از تعداد موجود است`)
+                dispatch(adjustItemQty(item.id,item.count));
+
+                toast.error(`${item.name}  بیشتر از تعداد موجود است. نهایت سفارش ${item.count} عدد `)
                 
             }
             else
             {
+                if (item.qty > item.count)
+                {
+                    setTotalItems(item.qty - item.qty)
+                    setTotalPrice(item.price - item.price)
+                    item.name = null
+                }
+              
+                else
+                {
                 items += item.qty
                 price += item.price * item.qty
+                }
                 
                 
             }
