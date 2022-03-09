@@ -22,12 +22,17 @@ const BasketPage = ({cart}) => {
             if (item.qty > item.count)
             {
                 items = item.qty - item.qty
+                price = item.price - item.price
+                
                 toast.error(`${item.name}  بیشتر از تعداد موجود است`)
+                
             }
             else
             {
                 items += item.qty
                 price += item.price * item.qty
+                
+                
             }
             //item.qty > item.count ? items = item.qty - item.qty : items += item.qty;
             
@@ -39,7 +44,7 @@ const BasketPage = ({cart}) => {
 
     function submit()
     {
-    
+        
         localStorage.setItem('totalItems',totalItems );
         localStorage.setItem('totalPrice',totalPrice );
         localStorage.setItem('productName', [cart.map(item => (
