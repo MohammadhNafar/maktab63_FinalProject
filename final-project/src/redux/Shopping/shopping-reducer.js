@@ -20,8 +20,8 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             const item = state
                 .products
                 .data
-                .find(data => data.id === action.payload.id);
-            console.log(state.products)
+                .find(data => data.id === action.payload.id );
+           
 
             const inCart = state
                 .cart
@@ -30,6 +30,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
                         ? true
                         : false
                 );
+
 
             return {
                 ...state,
@@ -40,7 +41,9 @@ const shopReducer = (state = INITIAL_STATE, action) => {
                             (item) => item.id === action.payload.id
                                 ? {
                                     ...item,
-                                    qty: item.qty + 1
+                                        qty : item.count > item.qty ? item.qty + 1 : item.qty
+                                           //qty : item.qty > item.count ? item.qty - item.count :  item.qty + 1      
+                                             //  qty: item.qty + 1
                                 }
                                 : item
                         )

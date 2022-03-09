@@ -8,7 +8,8 @@ import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import Sidebar from '../sideBar/SideBar';
-
+import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = ({cart}) => {
     const dispatch = useDispatch();
@@ -16,7 +17,8 @@ const Header = ({cart}) => {
     useEffect(()=>{
          let count = 0;
          cart.forEach(item => {
-             count += item.qty
+          //count += item.qty 
+          item.qty > item.count ?   count = item.count : count += item.qty;
          });
          setCartCount(count)
     },[cart,cartCount])

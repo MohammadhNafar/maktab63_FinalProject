@@ -4,6 +4,8 @@ import Styles from './basket.module.css';
 import Table from './Components/Table/Basket.table.component';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
+import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import Empty from './Components/empty/Empty.basket.component'
 import { Link } from 'react-router-dom';
 import Footer from '../../layouts/user/footer/Footer';
@@ -17,25 +19,27 @@ const BasketPage = ({cart}) => {
         let items = 0;
         let price = 0;
         cart.forEach(item => {
-            items += item.qty;
-            price += item.qty * item.price
+            if (item.qty > item.count)
+            {
+                items = item.qty - item.qty
+                toast.error(`${item.name}  بیشتر از تعداد موجود است`)
+            }
+            else
+            {
+                items += item.qty
+                price += item.price * item.qty
+            }
+            //item.qty > item.count ? items = item.qty - item.qty : items += item.qty;
+            
+            //price += item.qty * item.price
         });
         setTotalPrice(price);
         setTotalItems(items);
     }, [cart, totalItems, totalPrice, setTotalPrice, setTotalItems]);
-//     let orders = ["totalItems" = totalItems , "totalPrice" = totalPrice, 
-//     cart.map(item => (
-//         item.name, item.qty, item.price
-//     ))
 
-// ]
     function submit()
     {
-        // localStorage.setItem('ORDERS', orders);
-        // localStorage.setItem('ORDERS', totalItems , totalPrice , cart.map(item =>(
-        //     item.name, item.price , item.qty , [...data,new data]
-        // ))
-        // )
+    
         localStorage.setItem('totalItems',totalItems );
         localStorage.setItem('totalPrice',totalPrice );
         localStorage.setItem('productName', [cart.map(item => (
@@ -104,7 +108,16 @@ const BasketPage = ({cart}) => {
                            
                             
                     ))
-                : ""}
+                : "لطفا تعداد محصولات را کنترل کنید"}
+
+                
+
+
+
+
+
+
+
                 </div>
                 {/* {
                     cart.map(item => (
@@ -164,6 +177,7 @@ const BasketPage = ({cart}) => {
                                             </button></Link> 
                                         : ""
                                 }
+                             
                                 
                             </div>
 
