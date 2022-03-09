@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
-import Styles from './Product.module.css';
+import styles from './Product.module.css';
 import BuyCard from './Components/buyCard/BuyCard.component';
 import {getComments} from '../../api/comments.api';
 import {useEffect, useState} from 'react';
@@ -118,24 +118,24 @@ function test() {
 
 return (
 
-    <div className={Styles.container}>
+    <div className={styles.container}>
         <Header/>
       
 
-        <div className={Styles.body}>
+        <div className={styles.body}>
 
         {loading && <DataLoading/>}
                         
                         
-                        {error && !loading && <div className={Styles.dataError} > <h1>خطا در دریافت اطلاعات</h1> </div>}
+                        {error && !loading && <div className={styles.dataError} > <h1>خطا در دریافت اطلاعات</h1> </div>}
             {
                 product?.map(
                     data => <div>
-                        <div className={Styles.levels}>
-                            <Link className={Styles.Link} to="/">
+                        <div className={styles.levels}>
+                            <Link className={styles.Link} to="/">
                                 <div >محصولات/</div>
                             </Link>
-                            <Link className={Styles.Link} to={`/Products/${data.category}`}>
+                            <Link className={styles.Link} to={`/Products/${data.category}`}>
                                 <div >{data.category}</div>
                             </Link>
                           
@@ -144,28 +144,28 @@ return (
 
                         </div>
 
-                        <div className={Styles.productSec}>
+                        <div className={styles.productSec}>
 
-                            <div className={Styles.information}>
-                                <div className={Styles.images}>
-                                    <img className={Styles.productIMG} src={`${IMAGE_URL}${data.image}`}></img>
-                                    <div className={Styles.littles}>
-                                        <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
-                                        <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
-                                        <img className={Styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                            <div className={styles.information}>
+                                <div className={styles.images}>
+                                    <img className={styles.productIMG} src={`${IMAGE_URL}${data.image}`}></img>
+                                    <div className={styles.littles}>
+                                        <img className={styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                                        <img className={styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
+                                        <img className={styles.productLittleImg} src={`${IMAGE_URL}${data.image}`}></img>
                                     </div>
 
                                 </div>
-                                <div className={Styles.center}>
+                                <div className={styles.center}>
 
                                     <h1></h1>
-                                    <div className={Styles.productInfo}>
-                                        <p className={Styles.pName}>
+                                    <div className={styles.productInfo}>
+                                        <p className={styles.pName}>
                                             {data.name}
                                         </p>
-                                        <p className={Styles.pBrand}></p>
+                                        <p className={styles.pBrand}></p>
                                         <p 
-                                            className={Styles.info}
+                                            className={styles.info}
                                             dangerouslySetInnerHTML={{__html: data.description && data.description}}
                                             >
 
@@ -212,26 +212,26 @@ return (
         </div>
         {  !loading && !error &&   productsNew?.filter(value=> value.name == proName).length > 0 ?
         
-                <div className={Styles.same} >
+                <div className={styles.same} >
                                                    <hr></hr>
 
                 <h1>کالا های مشابه</h1>
                 
-                        <div className={Styles.headerCategory} >
+                        <div className={styles.headerCategory} >
                         <h1></h1>
                         <Link
-                        className={Styles.Link}
+                        className={styles.Link}
                         to= {`/Products/${proCategory}`} >
-                        <div className={Styles.more} >
+                        <div className={styles.more} >
                            <p>نمایش محصولات بیشتر</p>
-                           <Icon className={Styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
+                           <Icon className={styles.iconMore} icon="ic:outline-more" color="#ee2d40" width="25" height="30" />
                        </div>
                         </Link>
                     
                         
                         
                         </div>
-                            <div className={Styles.biscSec}>
+                            <div className={styles.biscSec}>
                                 
                                 {
                                     productsNew?.filter(value=> value.category == proCategory).
@@ -259,46 +259,46 @@ return (
         
         
         
-       : <div className={Styles.dataError} > <h1>محصولی وجود ندارد</h1> </div> }
+       : <div className={styles.dataError} > <h1>محصولی وجود ندارد</h1> </div> }
     
                         
 
                         {productsNew?.filter(value=> value.name == proName).length > 0 ? 
-                           <div className={Styles.addComment}>
+                           <div className={styles.addComment}>
                                <hr></hr>
                            <h2>نظر خودرا راجع به {proName} بنویسید</h2>
-                           <div className={Styles.commentSec}>
+                           <div className={styles.commentSec}>
                                <form onSubmit={sendComment}>
-                                   <div className={Styles.addCommentInputs}>
-                                   <div className={Styles.inputRight} >
+                                   <div className={styles.addCommentInputs}>
+                                   <div className={styles.inputRight} >
                                    <input
                                        required="required"
                                        onChange={(e) => setusername(e.target.value)}
-                                       className={Styles.input}
+                                       className={styles.input}
                                        type='text'
                                        placeholder='نام'></input>
                                         <input
                                        required="required"
                                        onChange={(e) => setemail(e.target.value)}
-                                       className={Styles.input}
+                                       className={styles.input}
                                        type='text'
                                        placeholder='ایمیل'></input>
                                    <input
                                        required="required"
                                        onChange={(e) => setscore(e.target.value)}
                                        max="5"
-                                       className={Styles.inputScore}
+                                       className={styles.inputScore}
                                        type='number'
                                        placeholder='امتیاز'></input>
                                    </div>
-                                  <div className={Styles.inputLeft}>
+                                  <div className={styles.inputLeft}>
                                   <input
                                        required="required"
                                        onChange={(e) => setcomment(e.target.value)}
-                                       className={Styles.inputComment}
+                                       className={styles.inputComment}
                                        type='text'
                                        placeholder='نظر'></input>
-                               <button id="submit" className={Styles.submitBtn}>ثبت نظر</button>
+                               <button id="submit" className={styles.submitBtn}>ثبت نظر</button>
                                   </div>
                                   
                                    </div>
@@ -307,7 +307,7 @@ return (
                                </form>
                                
                            </div>
-                           <h1 className={Styles.nazarat}>
+                           <h1 className={styles.nazarat}>
                            نظرات
                        </h1>
                
@@ -344,8 +344,8 @@ return (
                            
                         </div>
 
-                    : <div className={Styles.noComment}>
-                            <h1 className={Styles.noCommentH1}>کامنتی برای نمایش وجود ندارد</h1>
+                    : <div className={styles.noComment}>
+                            <h1 className={styles.noCommentH1}>کامنتی برای نمایش وجود ندارد</h1>
                         </div>
         }
     <footer>

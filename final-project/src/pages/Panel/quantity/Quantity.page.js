@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../../layouts/manage/header/Header';
 import Table from './Components/Table/Table';
-import Styles from './quantity.module.css';
+import styles from './quantity.module.css';
 import {useEffect, useState} from 'react';
 import {getProducts} from '../../../api/products.api';
 import Pagination from '../../../Components/pagination/pagination.component';
@@ -83,7 +83,7 @@ return (
 
     <div>
         <Header/>
-        <div className={Styles.buttons}>
+        <div className={styles.buttons}>
             <button
                 onClick={(e) => {
 
@@ -115,34 +115,34 @@ return (
             }
             
         </div>
-        <div className={Styles.wrapper}>
-            <div className={Styles.title}>
+        <div className={styles.wrapper}>
+            <div className={styles.title}>
                 <h1>موجودی ها</h1>
             </div>
-            <div className={Styles.tableHead}>
+            <div className={styles.tableHead}>
                 <h1>موجودی</h1>
                 <h1>قیمت</h1>
                 <h1>نام کالا
                 </h1>
 
             </div>
-            <div className={Styles.quantityList}>
+            <div className={styles.quantityList}>
                 {
                     filterdPaginate.length > 0
                         ? filterdPaginate.map(
                             ({id , name , price , count},index) => <Table
                             key={id}
                             nameList={name}
-                            priceList={ <input className={Styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
-                            quanitityList={<input className={Styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
+                            priceList={ <input className={styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
+                            quanitityList={<input className={styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
 
                     )
                         : currentPosts.map(
                             ({id , name , price , count},index) => <Table
                                 key={id}
                                 nameList={name}
-                                priceList={ <input className={Styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
-                                quanitityList={<input className={Styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
+                                priceList={ <input className={styles.inputChange} type='number'  name='price' value={price} onChange={(e) => handleChange(e, index)} />}
+                                quanitityList={<input className={styles.inputChange} type='number'  name='count' value={count} onChange={(e) => handleChange(e, index)} />}/>
 
                         )
                 }

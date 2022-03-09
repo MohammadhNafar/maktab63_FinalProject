@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './payment.module.css'
+import styles from './payment.module.css'
 import http from '../../services/http.service';
 import BASE_URL from '../../configs/variable.config';
 import { useSelector ,useDispatch} from 'react-redux'
@@ -48,32 +48,32 @@ const PaymentPage = () => {
 
     return (
         
-        <div className={Styles.container}>
+        <div className={styles.container}>
             {price ? 
                
-              <><div className={Styles.back}>
-                    <img className={Styles.image} src={require('../../assets/images/payment.png')} alt="" />
+              <><div className={styles.back}>
+                    <img className={styles.image} src={require('../../assets/images/payment.png')} alt="" />
 
-                </div><h1 className={Styles.priceSec}>{price}</h1>
+                </div><h1 className={styles.priceSec}>{price}</h1>
                     <form onSubmit={sendData} >
-                    <div className={Styles.inputs}>
+                    <div className={styles.inputs}>
                         <input required  placeholder='شماره کارت' type="number"></input>
                         <input required  placeholder='تاریخ انقضا' type="number"></input>
                         <input required  placeholder='cvv2' type="number"></input>
                         </div>
-                        <div className={Styles.btns}>
+                        <div className={styles.btns}>
                             
-                            <button className={Styles.submit} id="submit">تکمیل خرید</button>
+                            <button className={styles.submit} id="submit">تکمیل خرید</button>
                         </div>
                         </form>
                         <button
                             onClick={cancelData}
-                            className={Styles.cancel}>لغو خرید</button>
+                            className={styles.cancel}>لغو خرید</button>
                       
 
                     </>
               
-            : <h1 className={Styles.none} >!چیزی برای نمایش وجود ندارد </h1> }
+            : <h1 className={styles.none} >!چیزی برای نمایش وجود ندارد </h1> }
             
           
            

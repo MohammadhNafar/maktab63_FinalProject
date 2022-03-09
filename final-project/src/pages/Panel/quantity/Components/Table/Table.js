@@ -1,21 +1,21 @@
 import React from 'react';
-import Styles from './table.module.css';
+import styles from './table.module.css';
 
 const Table = (props) => {
     return (
 
-        <div className= {Styles.tableHead}>
-            <div className={Styles.List}>
+        <div className= {styles.tableHead}>
+            <div className={styles.List}>
             <h2>{props.quanitityList} </h2>
 
                 
             </div>
-            <div className={Styles.List}>
+            <div className={styles.List}>
         
             <h2>{props.priceList}</h2>
 
             </div>
-            <div className={Styles.List}>
+            <div className={styles.List}>
             <h2>{props.nameList}</h2>
 
 
@@ -45,7 +45,7 @@ const Table = (props) => {
 //         <div>
             
 
-// 		<table className= {Styles.styled}>
+// 		<table className= {styles.styled}>
 //     <thead>
    
 //     </thead>

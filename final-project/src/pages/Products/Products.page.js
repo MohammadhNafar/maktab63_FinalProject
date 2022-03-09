@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './products.module.css'
+import styles from './products.module.css'
 import Header from '../../layouts/user/header/Header'
 import {useEffect, useState, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,8 +26,8 @@ const ProductsPage = () => {
     return (
         <div>
             <Header/>
-            <div className={Styles.wrapper}>
-            <div className={Styles.h1Head}>
+            <div className={styles.wrapper}>
+            <div className={styles.h1Head}>
 
 
 
@@ -43,7 +43,7 @@ const ProductsPage = () => {
                 
                 
                 <h1>محصولی با نام {category} پیدا نشد</h1>}
-                <div className={Styles.dataLoad}>
+                <div className={styles.dataLoad}>
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
@@ -55,7 +55,7 @@ const ProductsPage = () => {
                     {error && !loading && "خطا در ارتباط با سرور"}
                
             </div>
-               { <div className={Styles.firstSecCards}>
+               { <div className={styles.firstSecCards}>
                 { productsNew?.filter(value=> value.category == category).map(
                  values => 
                     <Card

@@ -2,7 +2,7 @@ import React from 'react';
 import lottie from 'lottie-web';
 import { useSelector ,useDispatch} from 'react-redux'
 import {useEffect, useState , useRef} from 'react';
-import Styles from './success.module.css';
+import styles from './success.module.css';
 import { Link } from 'react-router-dom';
 const PaymentsuccessPage = () => {
     const container = useRef(null)
@@ -22,13 +22,13 @@ const PaymentsuccessPage = () => {
     let foo = '';
         for(let i=0; i<10; ++i) foo += Math.floor(Math.random() * 7);
     return (
-        <div className={Styles.wrapper} >
-            <div className={Styles.animation} ref={container} >
+        <div className={styles.wrapper} >
+            <div className={styles.animation} ref={container} >
                
             </div>
-            <h1 className={Styles.randomNum} > پرداخت موفقیت آمیز بود ! <br/>کد پیگیری : <span className={Styles.random} >{foo} </span> </h1>
-           <Link className={Styles.Link} to='/' >
-           <h1 className={Styles.back}> صفحه اصلی </h1>
+            <h1 className={styles.randomNum} > پرداخت موفقیت آمیز بود ! <br/>کد پیگیری : <span className={styles.random} >{foo} </span> </h1>
+           <Link className={styles.Link} to='/' >
+           <h1 className={styles.back}> صفحه اصلی </h1>
            </Link> 
         </div>
     );

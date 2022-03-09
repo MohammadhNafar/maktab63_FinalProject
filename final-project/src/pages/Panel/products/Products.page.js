@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../../layouts/manage/header/Header';
-import Styles from './products.module.css';
+import styles from './products.module.css';
 import Table from './Components/Table/table.product.component';
 import {useEffect, useState} from 'react';
 import {fetchProducts} from '../../../redux/Shopping/shopping.thunk'
@@ -64,12 +64,12 @@ const ProductPage = () => {
         <div>
             <Header/>
 
-            <div className={Styles.wrapper}>
-                <div className={Styles.title}>
+            <div className={styles.wrapper}>
+                <div className={styles.title}>
                     <h1>محصولات</h1>
                 </div>
-                <button className={Styles.addBtn} onClick={addModal}>اضافه کردن کالا</button>
-                <div className={Styles.tableHead}>
+                <button className={styles.addBtn} onClick={addModal}>اضافه کردن کالا</button>
+                <div className={styles.tableHead}>
                     <h1></h1>
                     <h1>دسته بندی
                     </h1>
@@ -78,9 +78,9 @@ const ProductPage = () => {
                     <h1>تصویر</h1>
 
                 </div>
-                <div className={Styles.productList}>
+                <div className={styles.productList}>
                     {loading && <DataLoading/>}
-                    {error && !loading && <h1 className={Styles.error}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
+                    {error && !loading && <h1 className={styles.error}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
                     {openModal && <Modal closeModal={setOpenModal}/>}
 
                     {openAddModal && <ModalAdd closeModal={setOpenAddModal}/>}

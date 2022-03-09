@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
 import Middle from './components/middle/middle.component';
-import Styles from './home.page.module.css';
+import styles from './home.page.module.css';
 import Card from '../../Components/Cards/Card.component';
 import DataError from './components/DataError/DataError.component'
 import DataLoading from './components/Loading/Loading.component'
@@ -33,14 +33,14 @@ const HomePage = () => {
     }, [])
 
     return (
-    <div className={Styles.container}>
+    <div className={styles.container}>
 
         <Header/> 
 
-            <div className={Styles.Mid}>
+            <div className={styles.Mid}>
                     <Middle/>
 
-                    <div className={Styles.dataLoad}>
+                    <div className={styles.dataLoad}>
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
                         {loading && <DataLoading/>}
@@ -64,22 +64,22 @@ const HomePage = () => {
 
                     {error && !loading && <DataError/>}
 
-                    <div className={Styles.listHome}></div>
+                    <div className={styles.listHome}></div>
                 </div>
-                <div className={Styles.bodySec}>
+                <div className={styles.bodySec}>
               
 
-                    <div className={Styles.products}>
+                    <div className={styles.products}>
 
-                        <div className={Styles.firstSec}>
+                        <div className={styles.firstSec}>
                         {
-                                    !loading && !error && <div className={Styles.headerAll}>
+                                    !loading && !error && <div className={styles.headerAll}>
                                    
-                                    <Link className={Styles.Link} to='/AllProducts'>
-                                    <div className={Styles.more}>
+                                    <Link className={styles.Link} to='/AllProducts'>
+                                    <div className={styles.more}>
                                             <h1>همه محصولات</h1>
                                             <Icon
-                                                className={Styles.iconMore}
+                                                className={styles.iconMore}
                                                 icon="ic:outline-more"
                                                 color="#ee2d40"
                                                 width="30"
@@ -90,7 +90,7 @@ const HomePage = () => {
                                 </div>
                                 }
 
-                            <div className={Styles.firstSecCards}>
+                            <div className={styles.firstSecCards}>
                                
                                 {
                                  productsNew && productsNew.slice(0, 4)
@@ -110,7 +110,7 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div className={Styles.secondSec}>
+                        <div className={styles.secondSec}>
         
                         </div>
                       <div>
@@ -119,16 +119,16 @@ const HomePage = () => {
                                   {categorysArray?.map(
                                         values => 
                                         <div> 
-                                            <div className={Styles.headerCategory} >
+                                            <div className={styles.headerCategory} >
                                             <h1>{values}</h1>
                                             <Link
-                                            className={Styles.Link}
+                                            className={styles.Link}
                                             to={`/Products/${values}`}>
                                                 
-                                                  <div className={Styles.more}>
+                                                  <div className={styles.more}>
                                             <p>نمایش محصولات بیشتر</p>
                                             <Icon
-                                                className={Styles.iconMore}
+                                                className={styles.iconMore}
                                                 icon="ic:outline-more"
                                                 color="#ee2d40"
                                                 width="25"
@@ -137,7 +137,7 @@ const HomePage = () => {
                                                
                                                 </Link>
                                                  </div>
-                                         <div className={Styles.biscSec} >
+                                         <div className={styles.biscSec} >
                                                 {
                                                     productsNew?.filter(value=> value.category == values).length > 0 ? 
                                                     productsNew?.filter(value=> value.category == values).slice(0, 4)

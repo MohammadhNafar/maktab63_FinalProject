@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
-import Styles from './checkout.module.css'
+import styles from './checkout.module.css'
 import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
-//import {DatePicker} from "jalali-react-datepicker";
+
 import moment from "moment";
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
@@ -93,10 +93,10 @@ const CheckoutPage = () => {
     // let totalItems = localStorage.getItem('totalItems');
     //console.log(proDuctName,totalItems,totalPrice)
     return (
-        <div className={Styles.wrapper} >
+        <div className={styles.wrapper} >
             <Header/>
             
-            <div className={Styles.h1Head}>
+            <div className={styles.h1Head}>
                 <h1 >
                     تکمیل خرید
                 </h1>
@@ -117,7 +117,7 @@ const CheckoutPage = () => {
                                 <form 
                                 onSubmit={sendOrders}
                                 
-                                className={Styles.formstyle7}>
+                                className={styles.formstyle7}>
                 <ul>
                 <li>
                     <label for="name">نام</label>
@@ -153,7 +153,7 @@ const CheckoutPage = () => {
 
                    
                 </li>
-                <li className={Styles.dateLi} >
+                <li className={styles.dateLi} >
                     
                     <label for="date">تاریخ تحویل</label>
                     <input
@@ -164,18 +164,18 @@ const CheckoutPage = () => {
                    
                 </li>
                 <li>
-                    <button className={Styles.sub} id="submit" >تکمیل و پرداخت </button>
+                    <button className={styles.sub} id="submit" >تکمیل و پرداخت </button>
                 </li>
                 </ul>
                 </form>
-                <div className={Styles.cancel} >
+                <div className={styles.cancel} >
                 <button
                 onClick={cancelOrder}
-                className={Styles.cancelBtn} >لغو خرید و بازگشت به سبد خرید</button>
+                className={styles.cancelBtn} >لغو خرید و بازگشت به سبد خرید</button>
 
                      </div>
                 </div>
-            : <h1 className={Styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
+            : <h1 className={styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
 
 
                 <footer>

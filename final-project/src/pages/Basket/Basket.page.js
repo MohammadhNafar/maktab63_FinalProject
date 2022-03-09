@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
-import Styles from './basket.module.css';
+import styles from './basket.module.css';
 import Table from './Components/Table/Basket.table.component';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
@@ -75,19 +75,19 @@ const BasketPage = ({cart}) => {
 
     }
     return (
-        <div className={Styles.container}>
+        <div className={styles.container}>
             <Header/>
             
-            <div className={Styles.h1Head}>
+            <div className={styles.h1Head}>
                 <h1 >
                     سبد خرید
                 </h1>
             </div>
          
-            <div className={Styles.wrapper}>
+            <div className={styles.wrapper}>
                 {
                     totalItems > 0
-                        ? <div className={Styles.tableHead}>
+                        ? <div className={styles.tableHead}>
                                 <h1></h1>
                                 <h1>تعداد</h1>
                                 <h1>قیمت</h1>
@@ -105,7 +105,7 @@ const BasketPage = ({cart}) => {
                         ? ""
                         : <Empty/>
                 }
-                <div className={Styles.itemsTable}>
+                <div className={styles.itemsTable}>
                 {cart?.length > 0 
                     ? 
                     cart.map(item => (
@@ -146,7 +146,7 @@ const BasketPage = ({cart}) => {
 
                 {
                     totalItems
-                        ? <div className={Styles.totalItems}>
+                        ? <div className={styles.totalItems}>
 
                                 تعداد کالا ها : {totalItems}
                             </div>
@@ -154,11 +154,11 @@ const BasketPage = ({cart}) => {
                 }
                 {
                     totalItems
-                        ? <div className={Styles.priceSec}>
-                                <div className={Styles.priceSecP}>
+                        ? <div className={styles.priceSec}>
+                                <div className={styles.priceSecP}>
                                     {
                                         totalPrice
-                                            ? <div className={Styles.totalPrice}>
+                                            ? <div className={styles.totalPrice}>
                                                     قیمت نهایی {totalPrice}
                                                     تومان
 
@@ -168,12 +168,12 @@ const BasketPage = ({cart}) => {
                                     {
                                         totalItems
                                             ? totalPrice < 200000
-                                                ? <div className={Styles.sendPrice}>
+                                                ? <div className={styles.sendPrice}>
                                                        
                                                             قیمت با هزینه ارسال  :         
                                                           { totalPrice + send}  تومان
                                                     </div>
-                                                : <div className={Styles.freeSend}>
+                                                : <div className={styles.freeSend}>
                                                         هزینه ارسال خرید های بیشتر 200 هزار تومان رایگان است !
                                                     </div>
                                             : ""
@@ -184,7 +184,7 @@ const BasketPage = ({cart}) => {
                                 {
                                     totalItems
                                         ? <Link to='/Checkout'  >
-                                        <button onClick={submit} className={Styles.confirmBtn}>
+                                        <button onClick={submit} className={styles.confirmBtn}>
                                                 نهایی کردن خرید
                                             </button></Link> 
                                         : ""

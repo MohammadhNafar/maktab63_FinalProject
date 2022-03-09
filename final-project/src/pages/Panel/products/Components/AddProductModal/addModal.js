@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import Styles from './addModal.module.css';
+import styles from './addModal.module.css';
 import http from '../../../../../services/http.service';
 import { imageUpload } from '../../../../../api/uploadImage.api';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -66,48 +66,48 @@ const Addmodal = (props) => {
     }
 
     return (
-        <div className={Styles.container}>
+        <div className={styles.container}>
 
-            <div className={Styles.modalBox}>
-                <div className={Styles.closeBtn}>
+            <div className={styles.modalBox}>
+                <div className={styles.closeBtn}>
 
                     <button onClick={() => props.closeModal(false)}>x</button>
 
                 </div>
-                <div className={Styles.title}>
+                <div className={styles.title}>
                     <h1>
                         اضافه کردن کالا
                     </h1>
                 </div>
-                <div className={Styles.items}>
+                <div className={styles.items}>
                     <form onSubmit={addProduct}>
                         <input
                             onChange={(e) => setname(e.target.value)}
-                            className={Styles.inputStyle}
+                            className={styles.inputStyle}
                             placeholder="نام کالا"
                             type='text'></input>
 
                         <input
                             onChange={(e) => setbrand(e.target.value)}
-                            className={Styles.inputStyle}
+                            className={styles.inputStyle}
                             placeholder="نام برند "
                             type='text'></input>
 
                         <input
                             onChange={(e) => setprice(e.target.value)}
-                            className={Styles.inputStyle}
+                            className={styles.inputStyle}
                             placeholder="قیمت "
                             type='number'></input>
 
                         <input
                             onChange={(e) => setcategory(e.target.value)}
-                            className={Styles.inputStyle}
+                            className={styles.inputStyle}
                             placeholder="گروه"
                             type='text'></input>
                       
                         <input
                             onChange={(e) => setcount(e.target.value)}
-                            className={Styles.inputStyleNum}
+                            className={styles.inputStyleNum}
                             placeholder="تعداد"
                             type='number'></input>
 
@@ -116,7 +116,7 @@ const Addmodal = (props) => {
                             name="images"
                             id='images'
                             type='file'
-                            className={Styles.inputStyleFile}
+                            className={styles.inputStyleFile}
                             placeholder="عکس"/>
       
                       
@@ -129,7 +129,7 @@ const Addmodal = (props) => {
                               />
 
 
-                        <button className={Styles.btn}>
+                        <button className={styles.btn}>
                             اضافه کردن کالا
                         </button>
                     </form>

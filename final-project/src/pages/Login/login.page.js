@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {Link , useNavigate , useLocation } from 'react-router-dom';
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
-import Styles from './login.page.module.css';
+import styles from './login.page.module.css';
 
 
 import * as Yup from 'yup';
@@ -71,21 +71,21 @@ const LoginPage = () => {
     <div>
             <Header/>
    
-    <div className={Styles.LoginPage}>
+    <div className={styles.LoginPage}>
        
             
             
-        <form   className={Styles.form1}>
+        <form   className={styles.form1}>
             <h1>ورود</h1>
 
            
          
             <input  onChange={(e) => setUser(e.target.value)}  
-             className={Styles.inputs} 
+             className={styles.inputs} 
              name='username' id='username'
               type="text" placeholder='تام کاربری'></input>
             <input  onChange={(e) => setPassword(e.target.value)}
-               className={Styles.inputs} 
+               className={styles.inputs} 
                name = 'passowrd' id='password'
                 type="password" placeholder='رمز عبور'></input>
                 

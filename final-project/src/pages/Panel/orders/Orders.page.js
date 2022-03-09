@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from './Components/ordersTable/ordersTable.component';
-import Styles from './orders.module.css';
+import styles from './orders.module.css';
 import Header from '../../../layouts/manage/header/Header';
 import {useEffect, useState} from 'react';
 import {getOrders} from '../../../api/orders.api'
@@ -42,7 +42,7 @@ const OrdersPage = () => {
     return (
         <div>
             <Header/>
-            <div className={Styles.buttons}>
+            <div className={styles.buttons}>
                 <button
                     onClick={(e) => {
 
@@ -82,12 +82,12 @@ const OrdersPage = () => {
        
 
             </div>
-            <div className={Styles.title}>
+            <div className={styles.title}>
                 <h1>سفارش ها
                 </h1>
             </div>
 
-            <div className={Styles.tableHead}>
+            <div className={styles.tableHead}>
                 <h1></h1>
                 <h1>زمان ثبت سفارش
                 </h1>
@@ -96,9 +96,9 @@ const OrdersPage = () => {
                 <h1>نام کاربر</h1>
 
             </div>
-            <div className={Styles.productList}>
+            <div className={styles.productList}>
             {loading && <DataLoading/>}
-            {error && !loading && <h1 className={Styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
+            {error && !loading && <h1 className={styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
                 
 
 
