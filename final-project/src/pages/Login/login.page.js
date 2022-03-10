@@ -4,9 +4,8 @@ import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import styles from './login.page.module.css';
 
-
 import * as Yup from 'yup';
-import {BASE_URL} from '../../configs/variable.config';
+
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 

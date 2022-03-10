@@ -84,6 +84,7 @@ const ProductPage = () => {
                     {openModal && <Modal closeModal={setOpenModal}/>}
 
                     {openAddModal && <ModalAdd closeModal={setOpenAddModal}/>}
+                    
                     {
 
                         currentPosts

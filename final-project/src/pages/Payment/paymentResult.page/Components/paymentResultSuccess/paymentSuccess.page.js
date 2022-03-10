@@ -4,12 +4,22 @@ import { useSelector ,useDispatch} from 'react-redux'
 import {useEffect, useState , useRef} from 'react';
 import styles from './success.module.css';
 import { Link } from 'react-router-dom';
+import { clearCart } from '../../../../../redux/Shopping/shopping-actions';
+import http from '../../../../../services/http.service';
+import BASE_URL from '../../../../../configs/variable.config';
 const PaymentsuccessPage = () => {
     const container = useRef(null)
     const dispatch = useDispatch();
     const productsNew = useSelector(state => state.shop.cart);
+    let datas = localStorage.getItem('datas');
+   
+
     useEffect(()=>{
+        let result = http.post(`${BASE_URL}/orders` , JSON.parse(datas))
         
+        localStorage.clear();
+        
+        dispatch(clearCart())
        
         lottie.loadAnimation({
             container: container.current,
