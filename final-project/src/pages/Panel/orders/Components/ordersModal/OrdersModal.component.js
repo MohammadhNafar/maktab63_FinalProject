@@ -8,6 +8,10 @@ const OrdersmodalComponent = (props) => {
     const dispatch = useDispatch();
     const modalData = useSelector(state => state.orders.modal)
     const statusData = useSelector(state => state.orders.modal.status)
+    let currentTimestamp = modalData.createdAt;
+    console.log(currentTimestamp); // get current timestamp
+    let date = new Intl.DateTimeFormat('en-US', { سال: 'numeric', ماه: '2-digit', روز: '2-digit', ساعت: '2-digit', دقیقه: '2-digit', ثانیه: '2-digit' }).format(currentTimestamp)
+    console.log(date)
     const set = (data) => {
         console.log(data)
         dispatch(changeStatus(true))
@@ -59,7 +63,7 @@ const OrdersmodalComponent = (props) => {
                         <p> نام کاربر : <span className={styles.spans}>{modalData.name} </span>  </p>
                         <p> کالا ها  : <span className={styles.spans}> {modalData.products}</span>  </p>
                         <p>{""} تاریخ دریافت : <span className={styles.spans}> {modalData.date} </span> </p>
-                        <p>{""} تاریخ ثبت سفارش : <span className={styles.spans}> {modalData.createdAt}</span>  </p>
+                        <p>{""} تاریخ ثبت سفارش : <span className={styles.spans}> {date}</span>  </p>
                         <p>{""} شماره تماس : <span className={styles.spans}> {modalData.phone}</span>  </p>
                         <p>{""} ایمیل : <span className={styles.spans}> {modalData.email} </span> </p>
                         <p>{""} نشانی : <span className={styles.spans}> {modalData.address} </span> </p>

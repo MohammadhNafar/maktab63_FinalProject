@@ -28,6 +28,7 @@ const OrdersPage = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = ordersNew&&ordersNew.slice(indexOfFirstPost, indexOfLastPost)
+
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
    //////////////////////////////////////// pagination
 
@@ -70,8 +71,8 @@ const OrdersPage = () => {
 
                     e.preventDefault();
 
-                     setTrueData(currentPosts)
-                    console.log(trueData)
+                     setTrueData(0)
+                    
                 }}
                 
                 
@@ -100,21 +101,6 @@ const OrdersPage = () => {
             {loading && <DataLoading/>}
             {error && !loading && <h1 className={styles.error} >مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             {
                     trueData.length > 0
                         ? trueData.map( data => 
@@ -158,46 +144,6 @@ const OrdersPage = () => {
 
                         
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                     {/* { currentPosts?.map(
-                         data => <Table
-                             key={data.id}
-                             name={data.name}
-                             date={data.date}
-                             price={data.totalPrice}
-                         show = {setOpenModal}
-                         id = {data.id}
-                         email = {data.email}
-                         phone = {data.phone}
-                            address = {data.address}
-                            status = {data.status}
-                            totalPrice = {data.totalPrice}
-                            products = {data.products}
-                            totalItems = {data.totalItems}
-                           />
-
-                   )
-            } */}
             </div>
                <Pagination
              postsPerPage={postsPerPage}

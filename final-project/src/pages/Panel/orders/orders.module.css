@@ -47,6 +47,13 @@
 	
     cursor: pointer;
 }
+.buttons button:focus,
+.buttons button:active
+{
+	
+	background-color: #EE2D40;
+	color: white;
+}
 .productList
 {
 	height: 37rem;
