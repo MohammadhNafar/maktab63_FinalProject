@@ -81,13 +81,15 @@ export const getProductFailed = (err) => {
 
 
 
-
-
-
-
 export const loadCurrentItem = (item) => {
     return {
       type: actionTypes.LOAD_CURRENT_ITEM,
       payload: item,
+    };
+}
+
+export const clearCart = () => {
+    return {
+      type: actionTypes.CLEAR_CART,
     };
 }

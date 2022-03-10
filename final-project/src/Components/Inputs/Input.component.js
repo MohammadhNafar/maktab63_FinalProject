@@ -14,7 +14,7 @@ const InputComponent = ({label, ...props}) => {
         className={Styles.inputs}
         {...field} {...props}
         autoComplete="off" 
-        
+        onChange={field.onChange}
         id = {field.name}
          name = {field.name}
          

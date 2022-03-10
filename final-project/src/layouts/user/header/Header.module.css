@@ -4,7 +4,8 @@
 .wrapper
 {
     
-    background-color: #f4f4f4;
+    background-color: white;
+    position: fixed;
     
 }
 
@@ -12,8 +13,8 @@
 {
     
     width: 100vw;
-    height: 5rem;
-    background-color: #f4f4f4;
+    height: 0.1rem;
+    background-color: white;
     display: flex;
     justify-content: space-around;
     
@@ -22,39 +23,19 @@
 .homeLogo
 {
     
-    width: 9rem;
-    margin-top: 2rem;
+    width: 6rem;
+    margin-top: 1rem;
 }
-.addSec
-{
-    background-color: #EE2D40;
-    width: 100vw;
-    height: 7rem;
-    background-repeat: repeat-x;
-    text-align: center;
-    background-size: contain;
-    background-image: url('../../../assets//images/ads.png');
-}
-.addSec h1
-{
-    color: #EE2D40;
-    font-size: 1.5rem;
-    padding-top: 5rem;
-    padding-left: 1rem;
-    margin: 0 auto;
-    font-family: IRANSans;
-    
-}
+
 .hrHeader
 {
     
     border:none;
     
        color: white;
-      height: 50px;
+      height: 35px;
       
-      border-bottom: 1px solid #ffffff;
-      box-shadow: 0 20px 20px -20px #333;
+      background-color: white;
    
 
 }
@@ -65,5 +46,9 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem 2rem 0;
-    
+    -webkit-box-shadow: 0 8px 6px -4px black;
+    -moz-box-shadow: 0 8px 6px -4px black;
+         box-shadow: 0 8px 6px -8px black;
+    background-color: white;
+    margin-top: 1.4rem
 }

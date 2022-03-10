@@ -8,7 +8,7 @@
     margin-top: 1rem;
 	height: 5rem;
 	display: flex;
-	justify-content: space-around;
+    
     
     
     
@@ -32,7 +32,7 @@
 .List
 {
    
-    width: 18rem;
+    width: 100%;
     
     
 
@@ -42,8 +42,9 @@
 {
     display: flex;
     
-    width: 1rem;
+    width: 10rem;
     height: 2.5rem;
+    margin-left: 2rem;
     gap: 1rem;
     padding-top: 0.5rem;
    
@@ -56,7 +57,7 @@
     border: none;
     color: #EE2D40;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
     border-radius: 10%;
     font-weight: bold;
     
@@ -71,7 +72,7 @@
 
 .Btns button:hover
 {
-    box-shadow: rgba(0, 0, 0, 0.30) 2px 20px 20px;
+    
     cursor: pointer;
 }
 .h2Name

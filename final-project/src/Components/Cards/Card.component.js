@@ -5,6 +5,9 @@ import { Icon } from '@iconify/react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { useDispatch } from 'react-redux';
+import "react-toastify/dist/ReactToastify.css";
+import {toast} from 'react-toastify'
+
 import { addToCart   } from '../../redux/Shopping/shopping-actions' 
 const CardComponent = (props) => {
 
@@ -12,6 +15,11 @@ const CardComponent = (props) => {
     let  styless = {
         backgroundColor: 'rgba(180, 180, 180, 0.199)' ,
         border: '0.5px solid rgba(129, 129, 129, 0.726)'
+    }
+
+    function addCart (id) {
+        dispatch(addToCart(id))
+        toast.success(`${props.Name}  به سبد خرید اضافه شد`)
     }
 
     return (
@@ -27,7 +35,7 @@ const CardComponent = (props) => {
                      {props.count > 0 ?
                                  <img className={Styles.productImg} src={`${IMAGE_URL}${props.PicList}`}></img>
                                  :
-                                 <img className={Styles.unavalibeImg} src={`${IMAGE_URL}${props.PicList}`}></img>
+                                <div className={Styles.unavalibeImg}>  <img  src={`${IMAGE_URL}${props.PicList}`}></img></div> 
                                  
                  
                  }
@@ -35,15 +43,12 @@ const CardComponent = (props) => {
                  <div className={Styles.boxMid}>
                      <h3>{props.Name}</h3>
                      <h4>{props.info}</h4>
-                     {/* <div onClick = {() => props.show(true)} className={Styles.cardInfoSec}>
-                     <Icon className={Styles.infoIcon} icon="ic:baseline-more" color="#ee2d40" width="25" height="25" />
-                     <button className={Styles.infoButton}  >جزئیات</button>
-                     </div> */}
+
                      <div className={Styles.btns}>
                          {props.count > 0 ?  
                           <button className={Styles.addToCartBtn}
                           
-                          onClick={() => dispatch(addToCart(props.id)) }
+                          onClick={() => addCart(props.id) }
                           
                           > اضافه کردن به سبد خرید </button> 
                           

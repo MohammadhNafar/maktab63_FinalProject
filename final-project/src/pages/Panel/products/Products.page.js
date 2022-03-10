@@ -1,21 +1,22 @@
 import React from 'react';
 import Header from '../../../layouts/manage/header/Header';
-import Styles from './products.module.css';
+import styles from './products.module.css';
 import Table from './Components/Table/table.product.component';
 import {useEffect, useState} from 'react';
-import {getProducts} from '../../../api/products.api'
-import {IMAGE_URL} from '../../../configs/image.url';
-import { useDispatch, useSelector } from 'react-redux';
 import {fetchProducts} from '../../../redux/Shopping/shopping.thunk'
 import DataLoading from './Components/DataLoading/PanelProductsLoading.component'
 import Modal from './Components/EditModal/Editmodal.component';
 import ModalAdd from './Components/AddProductModal/addModal.js';
 import Pagination from '../../../Components/pagination/pagination.component';
 import BASE_URL from '../../../configs/variable.config';
+import { useSelector ,useDispatch} from 'react-redux'
+
 import axios from 'axios';
 
 const ProductPage = () => {
+   
     const productsNew = useSelector(state => state.shop.products.data)
+    
     const proDatas = useSelector(state => state.shop)
     const loading = proDatas.loading
     const error = proDatas.error
@@ -24,24 +25,25 @@ const ProductPage = () => {
     const [openAddModal, setOpenAddModal] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
-
+    let renderStatus = useSelector(state => state.renderStatus.renderStatus)
     useEffect(() => {
-
+        
         dispatch(fetchProducts())
-        console.log("redux datas", productsNew)
-    }, [])
-    // const datas = rows; console.log(datas) if (!datas) return 'no data'; if
-    // (!Array.isArray(datas)) return 'results are not array'
+        
+    }, [openAddModal])
+
 
     function addModal() {
         setOpenAddModal(true);
     }
 
     async function deleteProduct(id) {
-        console.log('getOrders', id)
+        window.location.reload();
+        dispatch({type: 'RE_RENDER_STATUS', payload: !renderStatus})
         try {
             const res = await axios.delete(`${BASE_URL}/products/${id}`);
             return {data: res.data}
+            
         } catch (error) {
             console.log(error);
         }
@@ -62,12 +64,12 @@ const ProductPage = () => {
         <div>
             <Header/>
 
-            <div className={Styles.wrapper}>
-                <div className={Styles.title}>
+            <div className={styles.wrapper}>
+                <div className={styles.title}>
                     <h1>محصولات</h1>
                 </div>
-                <button className={Styles.addBtn} onClick={addModal}>اضافه کردن کالا</button>
-                <div className={Styles.tableHead}>
+                <button className={styles.addBtn} onClick={addModal}>اضافه کردن کالا</button>
+                <div className={styles.tableHead}>
                     <h1></h1>
                     <h1>دسته بندی
                     </h1>
@@ -76,12 +78,13 @@ const ProductPage = () => {
                     <h1>تصویر</h1>
 
                 </div>
-                <div className={Styles.productList}>
+                <div className={styles.productList}>
                     {loading && <DataLoading/>}
-                    {error && !loading && <h1 className={Styles.error}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
+                    {error && !loading && <h1 className={styles.error}>مشکلی پیش آمده. لطفا بعدا تلاش کنید</h1>}
                     {openModal && <Modal closeModal={setOpenModal}/>}
 
                     {openAddModal && <ModalAdd closeModal={setOpenAddModal}/>}
+                    
                     {
 
                         currentPosts
@@ -96,7 +99,10 @@ const ProductPage = () => {
                                     count={data.count}
                                     brand={data.brand}
                                     deleteFunc={deleteProduct}
+                                    description = {data.description}
+                                    key={data.id}
                                     price={data.price}/>
+                                    
 
                             )
                     }

@@ -6,6 +6,9 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {IMAGE_URL} from '../../../../configs/image.url';
 import { confirmAlert } from 'react-confirm-alert'; 
+import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 const BasketTableComponent = (props) => {
@@ -22,12 +25,13 @@ const BasketTableComponent = (props) => {
       confirmAlert({
           
         title: 'تایید حذف',
-        message: 'آیا از حذف این محصول اطمینان دارید؟',
+        message: `آیا میخواهید ${props.product} را از سبد خرید حذف کنید؟`,
         buttons: [
           {
             label: 'بله',
             onClick: () =>  {
               dispatch(removeFromCart(props.id))
+              toast.error(`${props.name} از سبد خرید حذف شد  `)
           }
           },
           {

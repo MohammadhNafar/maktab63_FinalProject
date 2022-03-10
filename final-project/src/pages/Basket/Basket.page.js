@@ -1,13 +1,19 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
-import Styles from './basket.module.css';
+import styles from './basket.module.css';
 import Table from './Components/Table/Basket.table.component';
 import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
+import {toast} from 'react-toastify'
+import { useDispatch} from 'react-redux';
+
+import { removeFromCart,adjustItemQty  } from '../../redux/Shopping/shopping-actions';
+import "react-toastify/dist/ReactToastify.css";
 import Empty from './Components/empty/Empty.basket.component'
 import { Link } from 'react-router-dom';
 import Footer from '../../layouts/user/footer/Footer';
 const BasketPage = ({cart}) => {
+    const dispatch = useDispatch();
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
     const send = 12000;
@@ -17,25 +23,43 @@ const BasketPage = ({cart}) => {
         let items = 0;
         let price = 0;
         cart.forEach(item => {
-            items += item.qty;
-            price += item.qty * item.price
+            if (item.qty > item.count)
+            {
+                items = item.qty - item.qty
+                price = item.price - item.price
+                dispatch(adjustItemQty(item.id,item.count));
+
+                toast.error(`${item.name}  بیشتر از تعداد موجود است. نهایت سفارش ${item.count} عدد `)
+                
+            }
+            else
+            {
+                if (item.qty > item.count)
+                {
+                    setTotalItems(item.qty - item.qty)
+                    setTotalPrice(item.price - item.price)
+                    item.name = null
+                }
+              
+                else
+                {
+                items += item.qty
+                price += item.price * item.qty
+                }
+                
+                
+            }
+            //item.qty > item.count ? items = item.qty - item.qty : items += item.qty;
+            
+            //price += item.qty * item.price
         });
         setTotalPrice(price);
         setTotalItems(items);
     }, [cart, totalItems, totalPrice, setTotalPrice, setTotalItems]);
-//     let orders = ["totalItems" = totalItems , "totalPrice" = totalPrice, 
-//     cart.map(item => (
-//         item.name, item.qty, item.price
-//     ))
 
-// ]
     function submit()
     {
-        // localStorage.setItem('ORDERS', orders);
-        // localStorage.setItem('ORDERS', totalItems , totalPrice , cart.map(item =>(
-        //     item.name, item.price , item.qty , [...data,new data]
-        // ))
-        // )
+        
         localStorage.setItem('totalItems',totalItems );
         localStorage.setItem('totalPrice',totalPrice );
         localStorage.setItem('productName', [cart.map(item => (
@@ -51,27 +75,19 @@ const BasketPage = ({cart}) => {
 
     }
     return (
-        <div className={Styles.container}>
+        <div className={styles.container}>
             <Header/>
             
-            <div className={Styles.h1Head}>
+            <div className={styles.h1Head}>
                 <h1 >
                     سبد خرید
                 </h1>
             </div>
-            {
-                                    localStorage.getItem('totalItems') ?
-                                    <Link to='/Checkout' > 
-                                    <button className={Styles.continue} >ادامه خرید خبلی</button> 
-                                    </Link>
-                                    
-                                    
-                                    : ""
-                                }
-            <div className={Styles.wrapper}>
+         
+            <div className={styles.wrapper}>
                 {
                     totalItems > 0
-                        ? <div className={Styles.tableHead}>
+                        ? <div className={styles.tableHead}>
                                 <h1></h1>
                                 <h1>تعداد</h1>
                                 <h1>قیمت</h1>
@@ -89,7 +105,7 @@ const BasketPage = ({cart}) => {
                         ? ""
                         : <Empty/>
                 }
-                <div className={Styles.itemsTable}>
+                <div className={styles.itemsTable}>
                 {cart?.length > 0 
                     ? 
                     cart.map(item => (
@@ -104,7 +120,16 @@ const BasketPage = ({cart}) => {
                            
                             
                     ))
-                : ""}
+                : "لطفا تعداد محصولات را کنترل کنید"}
+
+                
+
+
+
+
+
+
+
                 </div>
                 {/* {
                     cart.map(item => (
@@ -121,7 +146,7 @@ const BasketPage = ({cart}) => {
 
                 {
                     totalItems
-                        ? <div className={Styles.totalItems}>
+                        ? <div className={styles.totalItems}>
 
                                 تعداد کالا ها : {totalItems}
                             </div>
@@ -129,11 +154,11 @@ const BasketPage = ({cart}) => {
                 }
                 {
                     totalItems
-                        ? <div className={Styles.priceSec}>
-                                <div className={Styles.priceSecP}>
+                        ? <div className={styles.priceSec}>
+                                <div className={styles.priceSecP}>
                                     {
                                         totalPrice
-                                            ? <div className={Styles.totalPrice}>
+                                            ? <div className={styles.totalPrice}>
                                                     قیمت نهایی {totalPrice}
                                                     تومان
 
@@ -143,12 +168,12 @@ const BasketPage = ({cart}) => {
                                     {
                                         totalItems
                                             ? totalPrice < 200000
-                                                ? <div className={Styles.sendPrice}>
+                                                ? <div className={styles.sendPrice}>
                                                        
                                                             قیمت با هزینه ارسال  :         
                                                           { totalPrice + send}  تومان
                                                     </div>
-                                                : <div className={Styles.freeSend}>
+                                                : <div className={styles.freeSend}>
                                                         هزینه ارسال خرید های بیشتر 200 هزار تومان رایگان است !
                                                     </div>
                                             : ""
@@ -159,11 +184,12 @@ const BasketPage = ({cart}) => {
                                 {
                                     totalItems
                                         ? <Link to='/Checkout'  >
-                                        <button onClick={submit} className={Styles.confirmBtn}>
+                                        <button onClick={submit} className={styles.confirmBtn}>
                                                 نهایی کردن خرید
                                             </button></Link> 
                                         : ""
                                 }
+                             
                                 
                             </div>
 

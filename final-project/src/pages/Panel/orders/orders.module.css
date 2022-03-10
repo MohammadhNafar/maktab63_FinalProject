@@ -6,9 +6,8 @@
 }
 .tableHead
 {
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: #EE2D40;
-	
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.507);
+	background-color: #eeeeee;
 	width: 80rem;
 	margin: 0 auto;
 	height: 5rem;
@@ -19,7 +18,7 @@
 {
 	direction: rtl;
 	font-size: 1.2rem;
-	color: white;
+	color: #EE2D40;
 	padding-left: 15rem;
     padding-top: 1rem;
     border-left: 2px solid rgba(255, 255, 255, 0.418);
@@ -37,8 +36,8 @@
 	width: 10rem;
 	height: 2rem;
 	color: #EE2D40;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background-color: #eeeeee;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.507);
     border-radius: 2%;
     font-weight: bold;
 	border: none;
@@ -47,6 +46,13 @@
 {
 	
     cursor: pointer;
+}
+.buttons button:focus,
+.buttons button:active
+{
+	
+	background-color: #EE2D40;
+	color: white;
 }
 .productList
 {

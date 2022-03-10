@@ -3,7 +3,7 @@
     
     border:none;
     
-       color: white;
+       color: #EE2D40;
       height: 50px;
       
       border-bottom: 1px solid #ffffff;
@@ -25,12 +25,12 @@
     width: 70%;
     height: 100%;
     
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 .tableHead
 {
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: #EE2D40;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	background-color: #f4f4f4;
 	
 	width: 100%;
 	margin: 0 auto;
@@ -42,21 +42,21 @@
 {
 	direction: rtl;
 	font-size: 1.2rem;
-	color: white;
+	color: #EE2D40;
     padding-top: 0.7rem;
 }
 
 .h1Head
 {
     margin:  0 auto;
-    
+    padding-top: 10rem;
     text-align: center;
 }
 .confirmBtn
 {
     
     border: none;
-    background-color: #EE2D40;
+    background-color: green;
     color: white;
     font-size: 1.2rem;
     width: 15rem;
@@ -109,7 +109,7 @@
 .h1Head
 {
     font-size: 0.8rem;
-    margin-top: 1.5rem;
+  
 }
 
 .sendPrice
@@ -145,7 +145,7 @@
 
 .continue
 {
-    background: #EE2D40;
+    background: green;
     width: 10rem;
     height: 2.2rem;
     color: white;

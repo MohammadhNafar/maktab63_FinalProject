@@ -1,6 +1,6 @@
 .form1 {
-    position: relative;
-    z-index: 1;
+   
+    
   
     max-width: 34rem;
     margin-left: 32%;
@@ -40,8 +40,7 @@
     display: none;
   }
   .container {
-    position: relative;
-    z-index: 1;
+   
     max-width: 300px;
     margin: 0 auto;
   }
@@ -127,10 +126,10 @@
     direction: rtl;
     margin-bottom: 5rem;
     margin-left: 26rem;
-    position: absolute;
+   
     
 }
  .LoginPage
  {
-   padding-top: 5rem;
+   padding-top: 15rem;
  }

@@ -2,7 +2,7 @@
 {
     width: 100vw;
     height: 16vh;
-    background-color: #EE2D40;
+    background-color: #f4f4f4;
     display: flex;
     
     justify-content: space-around;
@@ -27,7 +27,7 @@
     height: 4rem;
     font-size: 0.9rem;
     
-    color: white;
+    color: #EE2D40;
     
 }
 .manageHeaderH1:hover
@@ -38,7 +38,7 @@
 .manageHeaderH2
 {
     font-size: 1.2rem;
-    color: white;
+    color: #EE2D40;
 }
 .linkTxt
 {

@@ -14,7 +14,7 @@ import Quantity from '../pages/Panel/quantity/Quantity.page';
 import {Rtl} from '../Components/Rtl/Rtl.component'
 import ProtectdRoutes from './ProtectedRoutes/protectedRtoutes';
 import NotFound from '../pages/notFound/notFound.page';
-
+import AllproductsPage from '../pages/allProducts/AllProducts.page';
 
 
 
@@ -38,6 +38,8 @@ const AppRoute = () => {
     <Route path={PATHS.CHECKOUT} element={<Checkout/>} />
     <Route path={PATHS.PAYMENT} element = {<PaymentPage/>}   />
     <Route path={PATHS.BASKET} element={<Basket/>} />
+    <Route path={PATHS.ALLPRODUCTS} element={<AllproductsPage/>} />
+    
     <Route path='/PaymentResult/:status' element={<PaymentResult/>} />
     <Route  path="/Product/:id" element={<Product/>} />
     <Route  path="/Products/:category" element={<ProductsPage/>}/>

@@ -14,6 +14,30 @@ export async function getProducts(){
         return e
     }
 }
+
+export async function getCategorys(){
+    try {
+        const response = await http.get(`/categorys`);
+        return  {
+
+                    data: response.data ,
+                    total: response.headers['x-total-count']
+                }
+    }catch(e){
+        return e
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 export async function getProduct(id){
     try {
         const response = await http.get(`/products?id=${id}`);

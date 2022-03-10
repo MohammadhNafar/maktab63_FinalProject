@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../layouts/user/header/Header';
-import Styles from './checkout.module.css'
+import styles from './checkout.module.css'
 import { useEffect,useState } from 'react';
 import Table from './Components/Table/Table.component';
 import http from '../../services/http.service';
-//import {DatePicker} from "jalali-react-datepicker";
+
 import moment from "moment";
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
@@ -66,7 +66,7 @@ const CheckoutPage = () => {
              localStorage.setItem('datas', JSON.stringify(datas))
          localStorage.setItem('price',totalPrice)
          console.log(datas)
-         Nav('/Payment')
+        window.location.assign('http://127.0.0.1:5500/src/Bank/index.html')
          toast.success('سفارش شما با موفقیت ثبت شد')
     }
 
@@ -93,10 +93,10 @@ const CheckoutPage = () => {
     // let totalItems = localStorage.getItem('totalItems');
     //console.log(proDuctName,totalItems,totalPrice)
     return (
-        <div>
+        <div className={styles.wrapper} >
             <Header/>
             
-            <div className={Styles.h1Head}>
+            <div className={styles.h1Head}>
                 <h1 >
                     تکمیل خرید
                 </h1>
@@ -117,7 +117,7 @@ const CheckoutPage = () => {
                                 <form 
                                 onSubmit={sendOrders}
                                 
-                                className={Styles.formstyle7}>
+                                className={styles.formstyle7}>
                 <ul>
                 <li>
                     <label for="name">نام</label>
@@ -125,7 +125,7 @@ const CheckoutPage = () => {
                     onChange={(e) => setName(e.target.value)}
                     required 
                     type="text" name="name" maxlength="100"/>
-                    <span>نام کامل خود را وارد کنید</span>
+                    
                 </li>
                 <li>
                     <label for="email">ایمیل</label>
@@ -134,7 +134,7 @@ const CheckoutPage = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     type="email" name="email" maxlength="100"/>
-                    <span>ایمیل خودرا وارد کنید</span>
+                    
                 </li>
                 <li>
                     <label for="address">آدرس</label>
@@ -142,7 +142,7 @@ const CheckoutPage = () => {
                     required
                     onChange={(e) => setAddress(e.target.value)}
                     type="text" name="address" maxlength="100"/>
-                    <span>لطفا نشانی کامل خودرا وارد کنید</span>
+                   
                 </li>
                 <li>
                     <label for="phone">موبایل</label>
@@ -151,9 +151,9 @@ const CheckoutPage = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     type="number" name="phone" maxlength="100"/>
 
-                    <span>لطفا شماره تلفن خودرا وارد کنید</span>
+                   
                 </li>
-                <li>
+                <li className={styles.dateLi} >
                     
                     <label for="date">تاریخ تحویل</label>
                     <input
@@ -161,42 +161,21 @@ const CheckoutPage = () => {
                     onChange={(e) => setDate(e.target.value)}
                     type="date" name="date" maxlength="100"/>
 
-                    <span>لطفا تاریخ تحویل خودرا وارد کنید</span>
+                   
                 </li>
                 <li>
-                    <button className={Styles.sub} id="submit" >تکمیل و پرداخت </button>
+                    <button className={styles.sub} id="submit" >تکمیل و پرداخت </button>
                 </li>
                 </ul>
                 </form>
-                <div className={Styles.cancel} >
+                <div className={styles.cancel} >
                 <button
                 onClick={cancelOrder}
-                className={Styles.cancelBtn} >لغو خرید و بازگشت به سبد خرید</button>
+                className={styles.cancelBtn} >لغو خرید و بازگشت به سبد خرید</button>
 
                      </div>
                 </div>
-            : <h1 className={Styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            : <h1 className={styles.nothing} >چیزی برای نمایش وجود ندارد </h1> }
 
 
                 <footer>

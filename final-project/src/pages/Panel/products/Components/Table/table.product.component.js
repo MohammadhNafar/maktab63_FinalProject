@@ -1,18 +1,20 @@
 
 import React from 'react';
-import Styles from './table.product.module.css';
+import styles from './table.product.module.css';
 import {IMAGE_URL} from '../../../../../configs/image.url';
 import { Icon } from '@iconify/react';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useState } from 'react';
 import { loadCurrentItem } from '../../../../../redux/Shopping/shopping-actions';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import Modal from '../../../../../Components/Modal/modal.page'
 
+
 const TableProductComponent = (props) => {
     const dispatch = useDispatch();
-    
+    let renderStatus = useSelector(state => state.renderStatus.renderStatus)
+
    const  submit = () => {
         confirmAlert({
             
@@ -24,7 +26,7 @@ const TableProductComponent = (props) => {
               onClick: () =>  {
                 console.log(props.id)
                  props.deleteFunc(props.id)
-                 window.location.reload()
+                 
             }
             },
             {
@@ -41,33 +43,36 @@ const TableProductComponent = (props) => {
                 console.log(props)
            
             }
+            
 
 
 
                 return (
 
 
-        <div className= {Styles.tableHead}>
+        <div className= {styles.tableHead}>
 
             
             
-           <div className={Styles.Btns}>
+           <div className={styles.Btns}>
                <button 
                onClick = {() => handleClick(props)}
-               >ویرایش</button>
+               >    
+               <Icon icon="mdi:application-edit-outline" color="#ee2d40" width="30" height="30" />
+               </button>
                <button onClick={submit}> 
-               <Icon className={Styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="30" height="30" />
+               <Icon className={styles.deleteItem}   icon="mdi:delete" color="#ee2d40" width="30" height="30" />
                </button>
            </div>
            
-            <div className={Styles.List}>
-            <h2 className={Styles.h2Cat} >{props.category}</h2>
+            <div className={styles.List}>
+            <h2 className={styles.h2Cat} >{props.category}</h2>
             </div>
-            <div className={Styles.List}>
-            <h2 className={Styles.h2Name} >{props.name}</h2>
+            <div className={styles.List}>
+            <h2 className={styles.h2Name} >{props.name}</h2>
             </div>
-            <div className={Styles.List}>
-                <img className={Styles.thumbnail} src={`${IMAGE_URL}${props.image}`} ></img>
+            <div className={styles.List}>
+                <img className={styles.thumbnail} src={`${IMAGE_URL}${props.image}`} ></img>
                 
             
 

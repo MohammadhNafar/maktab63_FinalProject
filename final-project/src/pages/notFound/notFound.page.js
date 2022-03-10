@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './notFound.module.css';
+import styles from './notFound.module.css';
 import Header from '../../layouts/user/header/Header';
 import IMG from '../../assets/images/404NotFound.png';
 import {Link} from 'react-router-dom';
@@ -22,18 +22,18 @@ const NotfoundPage = () => {
     return (
         <div>
             <Header/>
-            <div className={Styles.animation} ref={container}>
+            <div className={styles.animation} ref={container}>
 
             </div>
-            <div className={Styles.notFoundWrapper}>
-                    {/* <div  className={Styles.notFoundImage}>
+            <div className={styles.notFoundWrapper}>
+                    {/* <div  className={styles.notFoundImage}>
 
                         
                     </div> */}
-                    <h1 className={Styles.notFoundTxt} >صفحه مورد نظر پیدا نشد !</h1>
+                    <h1 className={styles.notFoundTxt} >صفحه مورد نظر پیدا نشد !</h1>
 
-                    <Link className={Styles.notFoundLink} to="/" >
-                        <h1 className={Styles.notFoundH1}> صفحه اصلی  </h1>
+                    <Link className={styles.notFoundLink} to="/" >
+                        <h1 className={styles.notFoundH1}> صفحه اصلی  </h1>
                         </Link>
             </div>
             <footer>

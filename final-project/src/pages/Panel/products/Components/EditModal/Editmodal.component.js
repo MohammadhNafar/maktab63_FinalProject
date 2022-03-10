@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import {editData} from '../../../../../api/panel.api'
 import { useDispatch, useSelector } from 'react-redux';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
+
 
 import styles from './editmodal.module.css'
 const Editmodal = (props) => {
@@ -11,6 +14,7 @@ const Editmodal = (props) => {
     const [price , setPrice] = useState(modalData.price);
     const [count, setCount] = useState(modalData.count);
     const [category, setCategory] = useState(modalData.category);
+    const [description, setdescription] = useState(modalData.description);
 
     let image = modalData.image;
     let id = modalData.id;
@@ -18,12 +22,12 @@ const Editmodal = (props) => {
     console.log(id)
     console.log("modaldata", modalData.nameList)
     useEffect (() => {
-        console.log("modalData", modalData)
+        console.log("modalData", modalData.description)
         
     },[modalData])
 
     const handleEdit = (e) => {
-        e.preventDefault();
+        props.closeModal(false)
         console.log("hello")
         const data = {...modalData};
         data.name = name;
@@ -31,6 +35,7 @@ const Editmodal = (props) => {
         data.price = price;
         data.count = count;
         data.category = category;
+        data.description = description;
         data.image =image;
         try {  
             editData({id ,data})
@@ -64,39 +69,51 @@ const Editmodal = (props) => {
                 <div className={styles.items}>
                     <div className={styles.item}>
                     
-                        <p> نام کالا :  <input name='name'  
+                        <p> نام کالا :  <input className={styles.inputs} name='name'  
                         onChange={(e) => setName(e.target.value)}
                         required
                         value={name}
                         />  </p>
-                          <p> گروه کالا :  <input name='category'  
+                          <p> گروه کالا :  <input className={styles.inputs} name='category'  
                         onChange={(e) => setCategory(e.target.value)}
                         required
                         value={category}
                         />  </p>
-                        <p>  برند کالا :  <input name='brand'
+                        <p>  برند کالا :  <input className={styles.inputs} name='brand'
                          onChange={(e) => setBrand(e.target.value)}
                          value={brand}
                          required
                         />  </p>
-                        <p>  قیمت کالا :  <input name = 'price' 
+                        <p>  قیمت کالا :  <input className={styles.inputs} name = 'price' 
                          onChange={(e) => setPrice(e.target.value)}
                             value={price}
                          required
                         /> </p>
-                        <p>  موجودی: <input name = 'count' 
+                        <p>  موجودی: <input className={styles.inputs} name = 'count' 
                          onChange={(e) => setCount(e.target.value)}
                             value={count}
                          required
                         />  </p>
+                      
+                        <div className={styles.descr}>
+                        <h2 className={styles.descH2} >  توضیحات:  </h2>
+                         <textarea className={styles.desc} name = 'description' 
+                         onChange={(e) => setdescription(e.target.value)}
+                            value={description}
+                         required
+                        />
+                        </div>
+                   
+
                     </div>
                    <div className={styles.btns}>
                    <button type='submit' >ویرایش کالا</button>
                
                    </div>
-              
+
                 </div>
                 </form>
+       
                 
             </div>
         </div>

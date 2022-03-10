@@ -1,8 +1,17 @@
+
+.container
+{
+    width: 100vw;
+    
+}
+
+
+
 .body
 {
     
    
-    margin-top: 4rem;
+    
     direction: rtl;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -12,7 +21,7 @@
     color: #EE2D40;
     margin-bottom: 1rem;
     margin-right: 1rem;
-   
+    padding-top: 12rem;
     display: flex;
 }
 .productSec
@@ -101,6 +110,7 @@
 
 .addComment
 {
+    margin-top: 4rem;
     direction: rtl;
     margin-right: 2rem;
 }
@@ -109,6 +119,7 @@
     margin-right: 2rem;
     color: gray;
     font-size: 1rem;
+    margin-top: 2rem;
 }
 .commentSec
 {
@@ -120,6 +131,7 @@
     padding: 1rem;
     margin-right: 2rem;
     border-radius: 7px;
+    margin-top: 2rem;
 
 }
 .input
@@ -152,6 +164,10 @@
     color: white;
     border-radius: 1rem;
     float: left;
+}
+.submitBtn:hover
+{
+    cursor: pointer;
 }
 .commentSec input
 {
@@ -276,4 +292,11 @@
     font-size: 1.5rem;
     color: gray;
     font-weight: normal;
+}
+
+.bottomIcons
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
