@@ -78,6 +78,7 @@ const Addmodal = (props) => {
                     <h1>
                         اضافه کردن کالا
                     </h1>
+                   
                 </div>
                 <div className={styles.items}>
                     <form onSubmit={addProduct}>

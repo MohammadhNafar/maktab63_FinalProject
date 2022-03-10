@@ -12,7 +12,7 @@ const LeftComponent = (props) => {
             </span>
             </div>
            
-            <Link to= '/Login' ><Icon className= {Styles.login} icon="mdi:account" color="black" width="30" height="120" />  </Link>
+            <Link to= '/Login' ><Icon className= {Styles.login} icon="mdi:account" color="#ee2d40" width="30" height="120" />  </Link>
 
       <Link to = '/Basket'> <Icon  className= {Styles.cart}  icon="mdi:cart-variant" color="#ee2d40" width="30" height="120" /> 
                        </Link>  

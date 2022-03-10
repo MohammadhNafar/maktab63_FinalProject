@@ -132,6 +132,7 @@ const OrdersPage = () => {
                            totalPrice = {data.totalPrice}
                            products = {data.products}
                            totalItems = {data.totalItems}
+                           createdAt  = {data.createdAt}
                           />
 
                   )
@@ -150,6 +151,7 @@ const OrdersPage = () => {
                                totalPrice = {data.totalPrice}
                                products = {data.products}
                                totalItems = {data.totalItems}
+                               createdAt  = {data.createdAt}
                               />
    
                       )

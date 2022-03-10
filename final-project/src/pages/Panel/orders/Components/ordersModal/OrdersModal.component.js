@@ -3,7 +3,7 @@ import styles from './ordersModal.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeStatus } from "../../../../../redux/Orders/orders-actions"
 import axios from 'axios';
-
+import BASE_URL from '../../../../../configs/variable.config'
 const OrdersmodalComponent = (props) => {
     const dispatch = useDispatch();
     const modalData = useSelector(state => state.orders.modal)
@@ -15,7 +15,23 @@ const OrdersmodalComponent = (props) => {
             ...data,
             status : true
         }
-        axios.put('http://localhost:3002/orders/'+tempOrder.id,tempOrder).then 
+        axios.put(`${BASE_URL}/orders/`+tempOrder.id,tempOrder).then 
+        (res => {
+            dispatch(changeStatus())
+            console.log(res)
+            props.closeModal(false)
+        })
+    }
+
+
+    const back = (data) => {
+        console.log(data)
+        dispatch(changeStatus(false))
+        const tempOrder = {
+            ...data,
+            status : false
+        }
+        axios.put(`${BASE_URL}/orders/`+tempOrder.id,tempOrder).then
         (res => {
             dispatch(changeStatus())
             console.log(res)
@@ -42,13 +58,16 @@ const OrdersmodalComponent = (props) => {
                     <div className={styles.item}>
                         <p> نام کاربر : <span className={styles.spans}>{modalData.name} </span>  </p>
                         <p> کالا ها  : <span className={styles.spans}> {modalData.products}</span>  </p>
-                        <p>{""} زمان ثبت سفارش : <span className={styles.spans}> {modalData.date} </span> </p>
+                        <p>{""} تاریخ دریافت : <span className={styles.spans}> {modalData.date} </span> </p>
+                        <p>{""} تاریخ ثبت سفارش : <span className={styles.spans}> {modalData.createdAt}</span>  </p>
                         <p>{""} شماره تماس : <span className={styles.spans}> {modalData.phone}</span>  </p>
                         <p>{""} ایمیل : <span className={styles.spans}> {modalData.email} </span> </p>
                         <p>{""} نشانی : <span className={styles.spans}> {modalData.address} </span> </p>
 
                     </div>
-                    {statusData == true ?  "" : 
+                    {statusData == true ?  <button
+                     onClick={() => back(modalData)}
+                     className={styles.recive} >برگشت سفارش</button> : 
                      <button
                      onClick={() => set(modalData)}
                      className={styles.recive} >تحویل سفارش</button>}
