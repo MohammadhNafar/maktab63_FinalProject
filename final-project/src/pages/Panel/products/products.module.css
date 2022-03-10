@@ -8,8 +8,8 @@
 
 .tableHead
 {
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: #EE2D40;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.507);
+	background-color: #eeeeee;
 	
 	width: 80rem;
 	margin: 0 auto;
@@ -21,7 +21,7 @@
 {
 	direction: rtl;
 	font-size: 1.2rem;
-	color: white;
+	color: #EE2D40;
 	padding-left: 15rem;
     padding-top: 1rem;
     border-left: 2px solid rgba(255, 255, 255, 0.418);

@@ -172,24 +172,19 @@ return (
                                             
                                         </p>
                                     </div>
-
+                                  <div> 
+                                      
+                                  </div>
+                                   <div className={styles.bottomIcons} >
+                                  
+                                       <Icon icon="mdi:food-halal" color="#ee2d40" width="30" height="30" /> 
+                                        <Icon icon="mdi:share-variant" color="#ee2d40" width="30" height="30" />
+                                        <Icon icon="mdi:food" color="#ee2d40" width="30" height="30" />
+                                
+                                        </div>
                                 </div>
 
                             </div>
-                        
-                            {/* <Card
-                                    id = {data.id}
-                                    key = {data.id}
-                        Name = {data.name}
-                        info = {data.category}
-                        Price = {data.price}
-                        PicList = {data.image}
-                        count = {data.count}
-    
-                        /> */}
-
-
-
 
                              <BuyCard  count={data.count} price={data.price} id = {props.id}    id = {data.id}
                                     key = {data.id}
@@ -308,7 +303,7 @@ return (
                                
                            </div>
                            <h1 className={styles.nazarat}>
-                           نظرات
+                           نظرات <Icon icon="mdi:comment-text-multiple" color="#ee2d40" width="30" height="30" />
                        </h1>
                
                        </div>

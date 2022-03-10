@@ -20,7 +20,9 @@ const BuycardComponent = (props) => {
             <div className={Styles.delivery}>
                 
             <Icon icon="ic:twotone-delivery-dining" color="#ee2d40" width="30" height="55" />
+            
             <p>ارسال سریع</p>
+            
             </div>
             {
                 props.count > 0 ?

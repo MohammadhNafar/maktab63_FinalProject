@@ -293,3 +293,10 @@
     color: gray;
     font-weight: normal;
 }
+
+.bottomIcons
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

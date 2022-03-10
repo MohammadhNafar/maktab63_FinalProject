@@ -46,6 +46,16 @@
     text-align: center;
     height: 1.5rem;
 }
+
+.scoreRed
+{
+    background-color: #EE2D40;
+    color: white;
+    width: 2rem;
+    text-align: center;
+    height: 1.5rem;
+
+}
 /* .commentBox:hover
 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -78,7 +88,22 @@
     color: gray;
     float: left;
 }
+.report
+{
+   float: right;
+}
+.report:hover
+{
+    cursor: pointer;
+}
+
 .userPic
 {
     padding-top: 0.2rem;
+}
+.tooltip
+{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
 }
