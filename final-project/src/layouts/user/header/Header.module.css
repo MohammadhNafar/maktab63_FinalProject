@@ -46,9 +46,9 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem 2rem 0;
-    -webkit-box-shadow: 0 8px 6px -4px black;
-    -moz-box-shadow: 0 8px 6px -4px black;
-         box-shadow: 0 8px 6px -8px black;
+    -webkit-box-shadow: 0 8px 6px -4px rgba(0, 0, 0, 0.281);
+    -moz-box-shadow: 0 8px 6px -4px rgba(0, 0, 0, 0.288);
+         box-shadow: 0 8px 6px -8px rgba(0, 0, 0, 0.514);
     background-color: white;
     margin-top: 1.4rem
 }

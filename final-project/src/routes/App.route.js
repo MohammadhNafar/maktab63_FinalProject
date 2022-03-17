@@ -15,7 +15,7 @@ import {Rtl} from '../Components/Rtl/Rtl.component'
 import ProtectdRoutes from './ProtectedRoutes/protectedRtoutes';
 import NotFound from '../pages/notFound/notFound.page';
 import AllproductsPage from '../pages/allProducts/AllProducts.page';
-
+import SearchPage from '../pages/Search Page/Search.Page';
 
 
 
@@ -39,7 +39,7 @@ const AppRoute = () => {
     <Route path={PATHS.PAYMENT} element = {<PaymentPage/>}   />
     <Route path={PATHS.BASKET} element={<Basket/>} />
     <Route path={PATHS.ALLPRODUCTS} element={<AllproductsPage/>} />
-    
+    <Route path = '/Search/:search' element = {<SearchPage/>} />
     <Route path='/PaymentResult/:status' element={<PaymentResult/>} />
     <Route  path="/Product/:id" element={<Product/>} />
     <Route  path="/Products/:category" element={<ProductsPage/>}/>

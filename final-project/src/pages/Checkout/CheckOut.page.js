@@ -66,7 +66,7 @@ const CheckoutPage = () => {
              localStorage.setItem('datas', JSON.stringify(datas))
          localStorage.setItem('price',totalPrice)
          console.log(datas)
-        window.location.assign('http://127.0.0.1:5500/src/Bank/index.html')
+        window.location.assign('http://127.0.0.1:5500/index.html')
          toast.success('سفارش شما با موفقیت ثبت شد')
     }
 

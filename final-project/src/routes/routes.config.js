@@ -13,5 +13,6 @@ export const PATHS = {
     PROFILE: '/Profile',
     QUANTITY: '/Quantity',
     PAYMENT : '/Payment',
-    ALLPRODUCTS : '/AllProducts'
+    ALLPRODUCTS : '/AllProducts',
+    SEARCHPAGE : '/SearchPage',
 }

@@ -31,7 +31,7 @@ const BasketTableComponent = (props) => {
             label: 'بله',
             onClick: () =>  {
               dispatch(removeFromCart(props.id))
-              toast.error(`${props.name} از سبد خرید حذف شد  `)
+              toast.success(`${props.product} از سبد خرید حذف شد  `)
           }
           },
           {
