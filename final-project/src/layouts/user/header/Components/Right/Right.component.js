@@ -15,7 +15,7 @@ const RightComponent = () => {
         <div className= {Styles.right}>
            <input
            type='text'
-            placeholder='Search'
+            placeholder= "جستجو..."
             value={search}
             onChange={handleChange}
 
@@ -27,7 +27,7 @@ const RightComponent = () => {
                 }
             }}
              
-            >Search</button>
+            >جستجو</button>
         </div>
         
         </div>

@@ -1,11 +1,41 @@
 .right
 {
-    font-family: system-ui;
-    font-size: 1.5rem;
+ 
     padding-top: 2rem;
+    display: flex;
+    gap: 1rem;
 }
-.right p
+
+.right input
 {
-    font-weight: bold;
-    color: #EE2D40;
+    width: 150%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #dbdbdb;
+    padding-left: 1rem;
+    margin-top: 0.3rem;
+   direction: rtl;
+    color: #000;
+    padding-right: 0.4rem;
+}
+.right input:focus
+{
+    outline: none;
+}
+.right button
+{
+    width: 50%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: tomato;
+   
+    margin-top: 0.3rem;
+    color: white;
+}
+.right button:hover
+{
+    background-color: #ff5c33;
+    cursor: pointer;
 }

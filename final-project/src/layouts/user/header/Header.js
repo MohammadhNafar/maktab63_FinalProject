@@ -35,24 +35,22 @@ const Header = ({cart}) => {
 
     return (
         <div className={Styles.wrapper}>
-            {/* <div className={Styles.addSec}>
-             
-            </div> */}
+     
             
             
         <div className={Styles.container}>
+            <div className={Styles.left}>
             <Left
-                        // {...cartCount.length < 0 ? "" : {cartNum} = {cartCount} }
-
-
             cartNum = {cartCount ? cartCount : ""}
-            
             />
+            </div>
          <Link to='/'>
          <img className={Styles.homeLogo} src={Logo}></img>
          </Link>   
+            <div className={Styles.right}>
             <Right/>
-            
+            </div>
+
         </div>
         <hr className={Styles.hrHeader}></hr>
         <div className={Styles.slideBar} >
